@@ -1,0 +1,6481 @@
+body, h1, h2, h3, h4, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 15px;
+    font-family: Tahoma, sans-serif;
+    background: url(/css/image/pg_image.jpg);
+    overflow-x: hidden;
+}
+
+h3 {
+    margin-bottom: 20px;
+    color: #4b86c2;
+}
+
+.characteristic-name-p{
+    margin-bottom: 5px;
+    color: black;
+}
+
+.characteristic-block{
+    margin-bottom: 10px;
+    float: left;
+    margin-right: 10px;
+}
+
+.clear-both {
+    clear: both;
+}
+
+.clear-float {
+    clear: both;
+}
+
+.bonus-btn:hover{
+    background-color: #89D14F !important;
+}
+
+.dataTables_paginate.pagination {
+    margin: 0 12px;
+}
+
+.dataTables_paginate {
+    text-align: right;
+}
+
+.blur {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    margin-top: -20px;
+}
+
+.pagination ul {
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.pagination ul > li {
+    display: inline;
+}
+li {
+    line-height: 20px;
+}
+
+.pagination ul > li.active > a, .pagination ul > li.active > a:hover {
+    background-color: #6faed9;
+    border-color: #6faed9;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.pagination ul > .active > a, .pagination ul > .active > span {
+    color: #999;
+    cursor: default;
+}
+.pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination ul > .active > a, .pagination ul > .active > span {
+    background-color: #f5f5f5;
+}
+.pagination ul > li > a, .pager > li > a {
+    background-color: #fafafa;
+    border-color: #e0e8eb;
+    color: #2283c5;
+    margin: 0 -1px 0 0;
+}
+.pagination ul > li > a, .pager > li > a, .pagination ul > li > span, .pager > li > span {
+    border-radius: 0 !important;
+    border-width: 1px;
+}
+
+.pagination ul > li .pag-arr-left{
+    background-image: url("/css/image/left-pag-arr.png");
+    background-repeat: no-repeat;
+    background-size: 32px 30px;
+    width: 7px;
+    height: 20px;
+    background-position: 0px -1px;
+    margin-right: 0px;
+}
+
+.pagination ul > li .pag-arr-right{
+    background-image: url("/css/image/right-pag-arr.png");
+    background-repeat: no-repeat;
+    background-size: 32px 30px;
+    width: 7px;
+    height: 20px;
+    background-position: 0px -1px;
+}
+
+.pagination ul > li > a, .pagination ul > li > span {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #fff;
+    border-color: #ddd;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    float: left;
+    line-height: 20px;
+    padding: 4px 12px;
+    text-decoration: none;
+}
+
+.icon-double-angle-left:before{content:"\f100";}
+.icon-double-angle-right:before{content:"\f101";}
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    display: inline-block;
+    text-decoration: inherit;
+}
+li [class^="icon-"], li [class*=" icon-"], .nav-list li [class^="icon-"], .nav-list li [class*=" icon-"] {
+    width: auto;
+}
+a [class^="icon-"], a [class*=" icon-"] {
+    cursor: pointer;
+}
+a [class^="icon-"], a [class*=" icon-"] {
+    display: inline;
+}
+[class*=" icon-"], [class^="icon-"] {
+    display: inline-block;
+    text-align: center;
+}
+
+.icon-double-angle-right:before {
+    content: "\f101";
+}
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    display: inline-block;
+    text-decoration: inherit;
+}
+li [class^="icon-"], li [class*=" icon-"], .nav-list li [class^="icon-"], .nav-list li [class*=" icon-"] {
+    width: auto;
+}
+a [class^="icon-"], a [class*=" icon-"] {
+    cursor: pointer;
+}
+a [class^="icon-"], a [class*=" icon-"] {
+    display: inline;
+}
+[class*=" icon-"], [class^="icon-"] {
+    display: inline-block;
+    text-align: center;
+}
+.icon-double-angle-right {
+}
+[class^="icon-"], [class*=" icon-"] {
+    background-image: none;
+    background-position: 0 0;
+    background-repeat: repeat;
+    display: inline;
+    height: auto;
+    line-height: normal;
+    margin-top: 0;
+    vertical-align: baseline;
+    width: auto;
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+[class^="icon-"], [class*=" icon-"] {
+    background-image: url("../img/glyphicons-halflings.png");
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 14px;
+}
+
+/* Basket page begin */
+
+.left-float{
+    float: left;
+}
+
+.right-float{
+    float: right;
+}
+
+.text-decoration-none{
+    text-decoration: none;
+}
+
+.brand-foto-img{
+    position: absolute;
+    z-index: 10;
+    max-width: 60px;
+    /*max-height: 33px;*/
+    margin-left: -119px;
+    margin-top: 32px;
+}
+
+
+/*.band-title{*/
+    /*background-image: url('/css/image/snowflake1.png'), url('/css/image/snowflake3.png'), url('/css/image/snowflake2.png'), url('/css/image/snowflake2.png'), url('/css/image/snowflake3.png'), url('/css/image/snowflake1.png');*/
+    /*-webkit-animation: snow 20s linear infinite;*/
+    /*-moz-animation: snow 20s linear infinite;*/
+    /*-ms-animation: snow 20s linear infinite;*/
+    /*animation: snow 20s linear infinite;*/
+/*}*/
+
+@keyframes snow {
+    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-moz-keyframes snow {
+    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-webkit-keyframes snow {
+    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-ms-keyframes snow {
+    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+.info-slide-block{
+    display: block;
+}
+
+@media (min-width: 376px)  {
+    /*.slide-block{*/
+        /*width: 95%;*/
+        /*display: block;*/
+        /*margin: auto;*/
+        /*padding-left: 0 !important;*/
+    /*}*/
+
+    /*.slide-block .inner-div{*/
+        /*margin: auto;*/
+        /*width: 100%;*/
+    /*}*/
+
+    /*.slide-block .inner-div .inner-div2{*/
+        /*margin: auto;*/
+        /*width: 100%;*/
+        /*margin-top: 5px;*/
+        /*margin-bottom: 5px;*/
+    /*}*/
+
+    /*.slide-class{*/
+        /*width: 100%;*/
+        /*margin: auto !important;*/
+    /*}*/
+
+    /*.slide-block .info-slide-block{*/
+        /*display: none;*/
+    /*}*/
+
+    /*.inner-div2 img{*/
+        /*width: 20px;*/
+        /*float: right;*/
+        /*margin-left: 2px;*/
+        /*margin-top: 3px;*/
+        /*margin-bottom: 3px;*/
+    /*}*/
+
+
+    .slideControl1{
+        display: none;
+    }
+
+    .slideControl2{
+        display: none;
+    }
+
+
+    .product-commment-count-icon-block{
+        position: absolute;
+        margin-top: 80px;
+        margin-left: 223px;
+        background-image: url('/css/image/reviews.png');
+        background-size: 32px 32px;
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        padding-top: 1px;
+    }
+
+    .product-commment-count-icon-block2{
+        position: absolute;
+        margin-left: 190px;
+        margin-top: 75px;
+        background-image: url('/css/image/reviews.png');
+        background-size: 32px 32px;
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        padding-top: 1px;
+    }
+
+    .product-commment-count-icon-block p, .product-commment-count-icon-block2 p{
+        color: white;
+        margin: 0px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .modal-basket-product-price-changes{
+        top: 30%;
+        left: 35%;
+        position: fixed;
+        border-radius: 5px;
+        padding: 30px 25px 15px;
+        width: 550px;
+        background-color: #ececec;
+        z-index: 1002;
+        display: none;
+    }
+
+    .modal-basket-product-price-changes p{
+        font-family: 'Georgia';
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .checkBoxClass {
+        display: none;
+    }
+
+
+    .discount-percent-p{
+        position: absolute;
+        color: white;
+        z-index: 10;
+        font-weight: bold;
+        font-size: 14px;
+        font-family: 'Helvetica';
+        transform: rotate(45deg);
+    }
+
+    .discount-percent-p2{
+        position: absolute;
+        color: white;
+        z-index: 10;
+        font-weight: bold;
+        font-size: 14px;
+        font-family: 'Helvetica';
+        transform: rotate(-45deg);
+    }
+
+    .discount-percent-p-margin1{
+        margin: 17px 0 0 200px;
+    }
+
+    .discount-percent-p-margin2{
+        margin: 19px 0 0 197px;
+    }
+
+    .discount-percent-product-margin1{
+        margin: 17px 0px 0px -24px;
+    }
+
+    .discount-percent-product-margin2{
+        margin: 17px 0px 0px -28px;
+    }
+
+    .discount-icon-img{
+        width: 100px;
+        position: absolute;
+        z-index: 10;
+        margin-top: -7px;
+        margin-left: 41px;
+    }
+
+    .discount-icon-img2{
+        margin-left: -37px;
+        margin-top: -10px;
+        position: absolute;
+        width: 130px;
+        z-index: 10;
+    }
+
+    .checkBoxLabelClass{
+        background:url("/css/image/uncheck.png") no-repeat;
+        display: block;
+        font-family: 'Georgia' !important;
+        padding-left: 30px;
+        margin-left: 0px !important;
+        font-size: 16px !important;
+        color: black !important;
+        padding-top: 3px;
+        -webkit-user-select: none;  /* Chrome all / Safari all */
+        -moz-user-select: none;     /* Firefox all */
+        -ms-user-select: none;      /* IE 10+ */
+        user-select: none;          /* Likely future */
+        cursor: pointer;
+    }
+
+    .labelSelected{
+        background: url("/css/image/check.png") no-repeat;
+    }
+
+    .basket-main-block{
+        float: right;
+        width: 850px;
+        border-radius: 10px;
+        margin: 20px 0px 0px 25px;
+        padding: 5px 15px 5px 15px;
+    }
+
+    #nav-wrap, .job-time-block-mobile, .category-link-nav{
+        display: none;
+    }
+
+    .basket-main-block .request-info-block{
+        margin-left: 30px;
+        font-family: Georgia;
+        font-size: 16px;
+    }
+
+    .basket-main-block .request-info-block .label-left-block{
+        float: left;
+        width: 100px;
+        margin: 10px 0px;
+    }
+
+    .basket-main-block .request-info-block .input-left-block{
+        float: left;
+        margin: 5px 0px;
+        width: 220px;
+    }
+
+    .basket-main-block .request-info-block .label-right-block{
+        float: left;
+        width: 150px;
+        margin: 10px 0px 10px 50px;
+    }
+
+    .basket-main-block .request-info-block .input-right-block{
+        float: left;
+        margin: 5px 0px;
+        width: 150px;
+    }
+
+    .basket-main-block .request-info-block .input-right-block #telephone, .basket-main-block .request-info-block .input-right-block #telephone_add{
+        width: 124px;
+    }
+
+    .basket-main-block .request-info-block .input-left-block .city-select, .basket-main-block .request-info-block .input-right-block .evening-courier-select{
+        padding:5px;
+        height:32px;
+        width:213px;
+        border-radius:3px;
+        border: 1px solid #CCCCCC;
+        cursor:pointer;
+        font-size:14px;
+        font-family: Georgia;
+    }
+
+    .basket-main-block .request-info-block .input-left-block .address{
+        width: 201px;
+        height: 100px;
+        min-height: 100px;
+        max-height: 150px;
+        resize: vertical;
+        padding:5px;
+    }
+
+    .basket-main-block .request-info-block .input-right-block .comment{
+        width: 201px;
+        height: 100px;
+        min-height: 100px;
+        max-height: 150px;
+        resize: vertical;
+        padding:5px;
+    }
+
+    .basket-main-block .request-info-block .basket-btn-block{
+        float: right;
+        margin-top: 10px;
+    }
+
+    .basket-main-block .request-info-block .basket-btn-block .bonus-btn{
+        margin: 0px;
+        width: 190px;
+        background: #7BBC46;
+    }
+
+    .basket-main-block .request-info-block .basket-btn-block .return-btn, .basket-btn-block .purchase-btn{
+        margin: 0px;
+    }
+
+    .dotted-div{
+        border: 2px dotted #EAE5E5;
+        margin-top: 20px;
+    }
+
+    .basket-main-block .basket-table .summa{
+        text-align: right;
+    }
+
+    .basket-main-block .basket-table .bonus-td{
+        text-align: right;
+        color: green;
+    }
+
+    .basket-main-block .basket-table .bonus-td .bonus_sum{
+        color: green;
+        font-weight: bold;
+    }
+
+    .basket-main-block .basket-btn-block-addit{
+        float: right;
+    }
+
+    .basket-main-block .basket-btn-block-addit .bonus-btn{
+        margin: 0px;
+        width: 190px;
+        background: #7BBC46;
+    }
+
+    .basket-main-block .basket-btn-block-addit .return-btn, .basket-btn-block-addit .purchase-btn{
+        margin: 0px;
+    }
+
+    .input-style{
+        border-radius: 5px;
+        min-height: 30px;
+        border: 1px solid #CCCCCC;
+        padding: 0 0.4em;
+        font-size: 15px;
+        width:200px;
+    }
+    .input-style:hover{
+        border: 1px solid #605656;
+    }
+    .input-style:focus{
+        border: 1px solid #F59942;
+    }
+    .basket-table{
+        width: 855px;
+        font-family:Arial, Helvetica, sans-serif;
+        color: #000000;
+        font-size:14px;
+        text-shadow: 1px 1px 0px #fff;
+        background:#eaebec;
+        margin:20px;
+        border:#ccc 1px solid;
+        border-collapse:separate;
+        margin-left: 0px;
+
+        -moz-border-radius:3px;
+        -webkit-border-radius:3px;
+        border-radius:3px;
+
+        -moz-box-shadow: 0 1px 2px #d1d1d1;
+        -webkit-box-shadow: 0 1px 2px #d1d1d1;
+        box-shadow: 0 1px 2px #d1d1d1;
+    }
+    .basket-table th {
+        font-weight:bold;
+        padding:21px 25px 22px 25px;
+        border-top:1px solid #fafafa;
+        border-bottom:1px solid #e0e0e0;
+
+        background: #ededed;
+        background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+        background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+    }
+    .basket-table th:first-child{
+        text-align: center;
+        padding-left:20px;
+    }
+    .basket-table tr:first-child th:first-child{
+        -moz-border-radius-topleft:3px;
+        -webkit-border-top-left-radius:3px;
+        border-top-left-radius:3px;
+    }
+    .basket-table tr:first-child th:last-child{
+        -moz-border-radius-topright:3px;
+        -webkit-border-top-right-radius:3px;
+        border-top-right-radius:3px;
+    }
+    .basket-table tr:first-child th{
+        padding: 10px;
+    }
+    .basket-table tr{
+        text-align: center;
+        padding-left:20px;
+    }
+    .basket-table tr td:first-child{
+        text-align: left;
+        padding-left:20px;
+        border-left: 0;
+    }
+    .basket-table tr td {
+        padding:10px;
+        border-top: 1px solid #ffffff;
+        border-bottom:1px solid #e0e0e0;
+        border-left: 1px solid #e0e0e0;
+
+        background: #fafafa;
+        background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+        background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+    }
+    .basket-table tr.even td{
+        background: #f6f6f6;
+        background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+        background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+    }
+    .basket-table tr:last-child td{
+        border-bottom:0;
+    }
+    .basket-table tr:last-child td:first-child{
+        -moz-border-radius-bottomleft:3px;
+        -webkit-border-bottom-left-radius:3px;
+        border-bottom-left-radius:3px;
+    }
+    .basket-table tr:last-child td:last-child{
+        -moz-border-radius-bottomright:3px;
+        -webkit-border-bottom-right-radius:3px;
+        border-bottom-right-radius:3px;
+    }
+    .basket-table tr:hover td{
+        background: #f2f2f2;
+        background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+        background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);
+    }
+    .count {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+        border: 0 none !important;
+        color: #000000;
+        font-size: 12px !important;
+        line-height: 14px;
+        margin: 3px 0 4px !important;
+        outline: medium none;
+        padding: 0 !important;
+        text-align: center;
+        width: 23px;
+        float: left;
+        overflow: hidden;
+    }
+    .icon-plus, .icon-minus {
+        display: block;
+        height: 19px;
+        top: 1px;
+        width: 17px;
+        float: left;
+        cursor: pointer;
+    }
+    .icon-minus{
+        margin-left: 2px;
+    }
+    #data_form label{
+        margin-left: 57px;
+        color: red;
+        font-size: 14px;
+    }
+    .required-asterix{
+        float: left;
+        color: red;
+        margin-left: 1px;
+    }
+    .telephone_div label{
+        margin-left: 12px !important;
+    }
+
+    /* Basket page end */
+
+    /* Basket items begin */
+
+    .basket-items-main-block{
+        border: 1px solid #d3d3d3;
+        padding: 2px;
+    }
+
+    .basket-items-main-block .item-photo-block{
+        float: left;
+        width: 40px;
+        padding-left: 5px;
+    }
+
+    .basket-items-main-block .item-photo-block img{
+        max-height: 45px;
+    }
+
+    .basket-items-main-block .basket-item-info-block{
+        float: left;
+        width: 195px;
+        font-size: 12px;
+    }
+
+    /* Basket items end */
+
+    /* Basket items table begin */
+
+    .basket-items-table-tr .photo-item-td{
+        padding:5px;
+        text-align: center;
+    }
+
+    .basket-items-table-tr .photo-item-td img{
+        max-width: 70px;
+        max-height: 100px;
+    }
+
+    .basket-items-table-tr .sum-td{
+        text-align: center;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .basket-items-table-tr .sum-td .inner-td-div{
+        background: url('/css/image/icons3.png') repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background-position: 112px 39px;
+        height: 21px;
+        width: 62px;
+        display: inline-block;
+    }
+
+    .basket-items-table-tr .product_price, .basket-items-table-tr .sum{
+        text-align: center;
+    }
+
+    .basket-items-table-tr .delete-td{
+        padding: 0px;
+    }
+
+    .basket-items-table-tr .delete-td img{
+        cursor: pointer;
+    }
+
+    /* Basket items table end */
+
+    /* Delivery info begin */
+
+    .delivery-info-main-block{
+        float: right;
+        width: 875px;
+        border-radius: 10px;
+        margin: 20px 0px 0px 15px;
+        padding: 5px 0px 5px 15px;
+    }
+    .bread-block{
+        margin-bottom: 20px;
+    }
+
+    .bread-block .bread-links{
+        color: #000000;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+        font-size: 18px;
+    }
+
+    .bread-block .arrow-label{
+        color: #000000;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+        font-size: 14px;
+    }
+
+    .delivery-info-main-block h1{
+        font-size: 30px;
+        color: #2588AD;
+        margin-top: 5px;
+        font-weight: normal;
+        font-family: 'Kelson Sans';
+    }
+
+    .delivery-info-main-block .delivery-img-block{
+        float: left;
+        margin: 15px 15px 30px 0px;
+    }
+
+    .delivery-info-main-block .delivery-img-block img{
+        border: 3px solid #2588AD;
+    }
+
+    .delivery-info-main-block .delivery-info-block1{
+        float: left;
+        width: 450px;
+        padding-top: 15px;
+    }
+
+    .delivery-info-main-block .delivery-info-block1 .title1{
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .delivery-info-main-block .delivery-info-block1 .title2{
+        font-size: 18px;
+        font-weight: bold;
+        margin: 10px 0px;
+    }
+
+    .delivery-info-main-block .delivery-info-block2 .delivery-add-info-title{
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .margin-left-20{
+        margin-left: 20px !important;
+    }
+
+    .margin-left-30{
+        margin-left: 30px !important;
+    }
+
+    .margin-left-100{
+        margin-left: 100px !important;
+    }
+
+    .margin-left-140{
+        margin-left: 140px !important;
+    }
+
+    .margin-left-67{
+        margin-left: 67px !important;
+    }
+
+    .margin-bottom-20{
+        margin-bottom: 20px !important;
+    }
+
+    .margin-bottom-10{
+        margin-bottom: 10px !important;
+    }
+
+    /* Delivery info end */
+
+    /* How to order begin */
+
+    .how-to-order-main-block{
+        float: right;
+        width: 850px;
+        border-radius: 10px;
+        margin: 20px 0px 0px 20px;
+        padding: 5px 15px 5px 15px;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .how-to-order-main-block h1{
+        font-size: 30px;
+        color: #2588AD;
+        margin: 5px 0px 20px 0px;
+        font-weight: normal;
+        font-family: 'Kelson Sans';
+    }
+
+    .how-to-order-main-block .how-to-info-p{
+        font-size: 20px;
+        margin: 20px 0px;
+        text-indent: 20px;
+    }
+
+    .how-to-order-main-block .how-to-info-p2{
+        font-size: 20px;
+        margin: 10px 0px 20px;
+        text-indent: 20px;
+    }
+
+    .how-to-order-main-block .how-to-info-img{
+        border-top: 2px dotted #0F6997;
+        padding-top:10px;
+    }
+
+    .how-to-order-main-block .how-to-info-img2{
+        border-bottom:2px dotted #0F6997;
+    }
+
+    .center-align{
+        text-align: center !important;
+    }
+
+    /* How to order end */
+
+    /* Offer begin */
+
+    .offer-main-block{
+        float: right;
+        width: 875px;
+        border-radius: 0px;
+        margin: 20px 0px 0px 15px;
+        padding: 5px 0px 5px 15px;
+        font-family: 'Tahoma,sans-serif';
+    }
+
+    .offer-main-block h1{
+        color: #2588AD;
+        font-size: 26px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .offer-main-block .offer-item-block .offer-item-title{
+        font-size: 26px;
+        margin-bottom: 10px;
+        color: #2588AD;
+        font-weight: bold;
+    }
+
+    .padding-bottom-15{
+        padding-bottom: 15px !important;
+    }
+
+    .padding-bottom-65{
+        padding-bottom: 65px !important;
+    }
+
+    .margin-top-30{
+        margin-top: 30px !important;
+    }
+
+    .margin-top-10{
+        margin-top: 10px !important;
+    }
+
+    .margin-top-5{
+        margin-top: 5px !important;
+    }
+
+
+    .margin-top-12{
+        margin-top: 12px !important;
+    }
+
+    .margin-top-10{
+        margin-top: 10px !important;
+    }
+
+    .margin-right-10{
+        margin-right: 10px !important;
+    }
+
+    .margin-right-50{
+        margin-right: 50px !important;
+    }
+
+    .no-margin-left{
+        margin-left: 0px !important;
+    }
+
+    .offer-main-block .offer-item-block img{
+        border: 3px solid #D8D8D8;
+    }
+
+    .offer-main-block .offer-item-block .offer-item-description{
+        font-size: 20px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .offer-main-block .offer-item-block .offer-status-label{
+        font-size: 18px;
+        float: left;
+        font-weight: bold;
+    }
+
+    .offer-main-block .offer-item-block .offer-status-name{
+        float: left;
+        font-size: 18px;
+        margin-left: 5px;
+    }
+
+    .offer-main-block .offer-item-block .offer-period-label{
+        font-size: 18px;
+        float: left;
+        font-weight: bold;
+        margin: 10px 0px;
+    }
+
+    .offer-main-block .offer-item-block .offer-period-name{
+        font-size: 18px;
+        float: left;
+        margin: 10px 0px 10px 5px;
+    }
+
+    .offer-main-block .offer-item-block .offer-how-to-label{
+        font-size: 18px;
+        float: left;
+        font-weight: bold;
+    }
+
+    .offer-main-block .offer-item-block .offer-how-to-name{
+        font-size: 18px;
+        float: left;
+        margin-left: 5px;
+        width: 650px;
+    }
+
+    .red{
+        color: red !important;
+    }
+
+    .green{
+        color: green !important;
+    }
+
+    .black{
+        color: #000000 !important;
+    }
+
+    /* Offer end */
+
+    /* Permission begin */
+
+    .permission-block{
+        float: right;
+        width: 850px;
+        border-radius: 10px;
+        margin: 20px 0px 0px 25px;
+        padding: 5px 15px 5px 15px;
+    }
+
+    .permission-block h2{
+        color:red;
+        text-align:center;
+        margin-top:20px;
+    }
+
+    /* Permission end */
+
+    /* Product List Form Begin */
+
+    .product-list-form-margin1{
+        margin: 0px 0px 10px 0px;
+    }
+
+    .product-list-form-margin2{
+        margin: 0px 10px 10px 0px;
+    }
+
+    .product-list-form-main-block .status1{
+        margin-left: 135px;
+    }
+
+    .product-list-form-main-block .status2{
+        margin-left: 115px;
+    }
+
+    .product-list-form-main-block .product-list-info{
+        height: 260px;
+        margin-bottom: 10px;
+    }
+
+    .product-list-form-main-block .product-list-info .product-image{
+        margin: 20px 35px 0px;
+    }
+
+    /* Product List Form End */
+
+    /* Shop Begin */
+
+    .shop-main-block{
+        float: right;
+        width: 875px;
+        border-radius: 0px;
+        margin: 20px 0px 0px 15px;
+        padding: 5px 0px 5px 15px;
+        font-family: 'Tahoma,sans-serif';
+    }
+
+    .shop-main-block h1{
+        color: #2588AD;
+        font-size: 26px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .shop-main-block .shop-title{
+        font-size: 26px;
+        color: #2588AD;
+        font-weight: bold;
+    }
+
+    .shop-main-block .shop-address-label{
+        font-size: 18px;
+        float: left;
+        font-weight: bold;
+        margin: 10px 0px;
+    }
+
+    .shop-main-block .shop-address-value{
+        font-size: 18px;
+        float: left;
+        margin: 10px 0px 10px 5px;
+        width: 800px;
+    }
+
+    .shop-main-block .shop-img{
+        border: 3px solid #D8D8D8;
+        margin-top: 10px;
+        width: 99.5%;
+    }
+
+    .shop-main-block .shop-description-label{
+        font-size: 18px;
+        float: left;
+        font-weight: bold;
+        margin: 10px 0px;
+    }
+
+    .shop-main-block .shop-description-value{
+        font-size: 18px;
+        float: left;
+        margin: 10px 0px 10px 5px;
+        width: 750px;
+    }
+
+    .shop-main-block .shop-time-label{
+        font-size: 18px;
+        float: left;
+        font-weight: bold;
+        margin: 10px 0px;
+    }
+
+    .shop-main-block .shop-time-value{
+        font-size: 18px;
+        float: left;
+        margin: 10px 0px 10px 5px;
+    }
+
+    .shop-main-block .shop-items-breaker{
+        border-bottom: 1px dashed #808080;
+        margin: 25px 0px;
+    }
+
+    #YMapsID {
+        width: 100%;
+        height: 400px;
+        margin-top: 20px;
+    }
+    #YMapsID2 {
+        width: 100%;
+        height: 400px;
+        margin-top: 20px;
+    }
+
+    #YMapsID3,#YMapsID4 {
+        width: 100%;
+        height: 400px;
+        margin-top: 20px;
+    }
+
+    /* Shop End */
+
+    /* Success Begin */
+
+    .success-main-block{
+        float: right;
+        width: 850px;
+        border-radius: 10px;
+        margin: 20px 0px 0px 20px;
+        padding: 5px 15px 5px 15px;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .success-main-block h2{
+        color: #132D60;
+        text-align:center;
+        margin-top:20px;
+    }
+
+    .success-main-block h3{
+        color: #132D60;
+        text-align:center;
+        margin-top:20px;
+    }
+
+    /* Success End */
+
+    /* Index Begin */
+
+    .index-main-block{
+        float: right;
+        width: 850px;
+        border-radius: 10px;
+        margin: 20px 0px 0px 20px;
+        padding: 5px 15px 5px 15px;
+    }
+
+    .index-main-block h1{
+        font-size: 28px;
+        color: #2588AD;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-weight: bold;
+        margin-bottom: 20px;
+        width: 700px;
+    }
+
+    .index-main-block .popular-title-h2{
+        font-size: 28px;
+        color: #2588AD;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-weight: bold;
+        margin-bottom: 40px;
+        width: 700px;
+    }
+
+    .index-main-block .other-title-p{
+        font-size: 28px;
+        color: #2588AD;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-weight: bold;
+        margin-bottom: 40px;
+        width: 700px;
+    }
+
+    .index-main-block .popular-from-category-h2{
+        font-size: 28px;
+        color: #2588AD;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-weight: bold;
+        margin: 20px 0px;
+        width: 700px;
+    }
+
+    .index-product-item{
+        margin: 0px 10px 10px 0px;
+    }
+
+    .index-product-item .product-img-name-block{
+        height: 260px;
+        margin-bottom: 10px;
+    }
+
+    .index-product-item .product-img-name-block .product-image{
+        margin: 20px 35px 0px;
+    }
+
+    .new-product-title-h2{
+        font-size: 28px;
+        color: #2588AD;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        margin-top: 30px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .opt-prodazha-h2{
+        font-size: 28px;
+        color: #2588AD;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        margin-top: 30px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .margin-left-135{
+        margin-left: 135px !important;
+    }
+
+    .margin-left-115{
+        margin-left: 115px !important;
+    }
+
+    .margin-left-80{
+        margin-left: 80px !important;
+    }
+
+    .margin-left-65{
+        margin-left: 65px !important;
+    }
+
+    .margin-top-40{
+        margin-top: 40px !important;
+    }
+
+    .margin-top-45{
+        margin-top: 45px !important;
+    }
+
+    .margin-bottom-30{
+        margin-bottom: 30px !important;
+    }
+    /* Index End */
+
+    /* Layout Begin */
+
+    body{
+        background: none;
+    }
+    .clearfloat{
+        clear: both;
+    }
+
+    .margin-left-28{
+        margin-left: 28px;
+    }
+
+    .brand-page-links{
+        color: #132d60;
+    }
+
+    .brand-page-links:hover{
+        text-decoration: none;
+    }
+
+    .brand-item-block{
+        text-align: center;
+        width: 275px;
+        float: left;
+        margin-bottom: 40px;
+        height: 150px;
+    }
+
+    .brand-item-block p{
+        color: #132d60;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .brand-item-block .brand-img-exist{
+        max-width: 150px;
+        max-height: 80px;
+    }
+
+    .brand-item-block .brand-img-not-exist{
+        width: 140px;
+        height: 120px;
+    }
+
+    .header{
+        width: 1200px;
+        margin: auto;
+        padding-bottom: 10px;
+        font-family: 'Kelson Sans';
+    }
+
+    .header .logo-city-block{
+        float: left;
+        width: 220px;
+        margin: 0px 0px 0px 25px;
+    }
+
+    .header .logo-city-block .city-select-div{
+        float: left;
+        padding-top: 11px;
+        margin-left: 7px;
+    }
+
+    .header .logo-city-block .city-select-div p{
+        font-size: 16px;
+        font-weight: normal;
+        color: #2588AD;
+        font-family: 'Kelson Sans Light';
+    }
+
+    .header .logo-city-block .selected-city-div{
+        float: left;
+        max-width: 120px;
+        overflow: hidden;
+        margin-left: 10px;
+        padding-top: 11px;
+    }
+
+    .header .logo-city-block .selected-city-div p{
+        color: #2588AD;
+        font-size: 16px;
+        font-family: 'Kelson Sans';
+        cursor: pointer;
+        border-bottom: 2px dotted #2588ad;
+    }
+
+    .header .logo-city-block .city-block{
+        display: none;
+        position: absolute;
+        z-index: 100;
+        margin-left: 63px;
+        margin-top: 5px;
+        background-color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #2588AD;
+    }
+
+    .header .logo-city-block .city-block p{
+        color: #2588AD;
+        font-size: 16px;
+        font-family: 'Kelson Sans';
+        cursor: pointer;
+    }
+
+    .header .header-link-block{
+        float: left;
+        margin: 10px 0px 0px 0px;
+        font-size: 16px;
+        color: #2588AD;
+        width: 660px;
+    }
+
+    .header .header-link-block .search-block{
+        margin: 0px 0px 10px 120px;
+    }
+
+    .header .header-link-block .search-block #search_word{
+        font-family: 'Kelson Sans';
+        font-size: 14px;
+        padding: 5px 10px;
+        width: 300px;
+        border-radius: 0px;
+        border: 2px solid #2588ad;
+    }
+
+    .header .header-link-block .search-block .search-btn{
+        cursor: pointer;
+        background-color: #2588ad;
+        border-radius: 5px;
+        color: white;
+        font-family: 'kelson sans';
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .header .header-link-block .search-block div{
+        margin-top: 5px;
+    }
+
+    .header .header-link-block .search-block div a{
+        color: #2588ad;
+        margin-right: 5px;
+    }
+
+    .new-product-label{
+        float: left;
+        font-size: 10px;
+        color: red;
+        font-weight: bold;
+        margin-left: 3px;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .header .header-link-block .head-akcii-info-p{
+        font-size: 20px;
+        color:red;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .header .header-link-block .authorized-user-info{
+        color: #7BBC46;
+        margin: 0px 0px 0px 0px;
+        padding-right: 30px;
+        text-align: center;
+    }
+
+    .header .connection-types-block{
+        float:left;
+        padding-top: 11px;
+        padding-right: 2px;
+    }
+
+    .header .connection-types-block .ring-icon{
+        padding-left: 2px;
+    }
+
+    .header .connection-types-block .whatsapp-icon{
+        padding-left: 3px;
+    }
+
+    .header .job-time-block{
+        float: left;
+        /*margin: 0px 0px 20px;*/
+        color: white;
+        width: 215px;
+        padding: 10px 0px;
+        text-align:center;
+        background-color: #7BBC46;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .header .job-time-block .job-time-label{
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    .header .job-time-block .job-time-value{
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    .header .basket-block{
+        float: left;
+        width: 50px;
+    }
+
+    .band-title{
+        background-color: #2588AD;
+        height: 60px;
+        text-align: center;
+    }
+
+    .band-title .inner-div{
+        /*background-color: #2588AD;*/
+        width: 1200px;
+        margin: auto;
+        height: 43px;
+        padding-top: 17px;
+    }
+
+    .band-title .inner-div p{
+        color: #ffffff;
+        font-size: 26px;
+        text-transform: uppercase;
+        font-family:'Kelson Sans';
+        font-weight:normal;
+    }
+
+    .band-title .inner-div p span{
+        border-bottom: 3px dotted #ffffff;
+    }
+
+    .slide-block{
+        margin: auto;
+        width: 1120px;
+        margin-top: 10px;
+        padding-left: 30px;
+    }
+
+    .slide-block .inner-div{
+        float: left;
+        width: 902px;
+    }
+
+    .slide-block .inner-div .inner-div2{
+        position: absolute;
+        width: 890px;
+        text-align: right;
+        margin-top: 10px;
+    }
+
+    .december-skidka{
+        border: none !important;
+        width: 50px;
+        position: absolute;
+        right: 13px;
+        top: -21px;
+        background-color: white;
+        border-radius: 100px;
+        box-shadow: 0 0 5px #000000;
+    }
+
+
+    .slide-block .info-slide-block{
+        float: left;
+        width: 210px;
+        display: block;
+        position: relative;
+    }
+
+    .slide-block .info-slide-block img{
+        border: 3px solid #7BBC46;
+    }
+
+    .layout-main-block{
+        width: 1200px;
+        margin: auto;
+    }
+
+    .layout-main-block .layout-left-block{
+        float: left;
+        font-size: 18px;
+        margin: 20px 0px 0px 30px;
+        font-family: bistro-script-web,Garamond,script;
+        color: #132D60;
+        font-weight: bold;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block{
+        background-color: #ECECEC;
+        border-radius: 10px;
+        padding: 15px;
+        width: 210px;
+        margin-left: 7px;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .selected-category-p{
+        color: #3160BF;
+        font-weight: bold;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .category-group-name-p{
+        cursor: pointer;
+        color: #132d60;
+        text-decoration: underline;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .category-group-name-p:hover{
+        text-decoration: none;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .subcategory-block{
+        margin-left: 20px;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .category-all-product-p{
+        color: #132d60;
+        font-weight: normal;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .nonselected-category-name-p{
+        color: #132d60;
+        font-weight: normal;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .selected-category-name-p{
+        color: #3160BF;
+        font-style: italic;
+        font-weight: bold;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .brand-block-title{
+        margin-top: 15px; padding-top: 10px; border-top: 1px dashed black;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .brand-list-block{
+        margin-left:20px;
+        font-weight: normal;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .brand-list-block .selected-brand{
+        color: #3160BF;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    .layout-main-block .layout-left-block .category-other-city-links{
+        width: 240px;
+        margin: 20px 0px;
+    }
+
+    .BloggerHowFB {
+        width:235px;
+        height:440px;
+        margin-top: 20px;
+    }
+
+    .FBWrap{
+        height:440px;
+        overflow:hidden;
+    }
+
+    .BloggerHowFB #fb-likes-block{
+        float: left;
+        border: 3px solid #ececec;
+        border-radius: 10px;
+        background: #ececec;
+        margin-left: 7px;
+    }
+
+    .footer .footer-band1{
+        background-color: #573D2A;
+        height: 10px;
+    }
+
+    .footer .grain .footer-links-block{
+        float: left;
+        margin-left: 110px;
+        margin-right: 170px;
+    }
+
+    .footer .grain .footer-links-block .footer-title{
+        font-family: 'Kelson Sans Light';
+        font-size: 22px;
+        font-weight: normal;
+    }
+
+    .footer .grain .footer-links-block .footer-title b{
+        font-size: 28px;
+        font-family: 'Kelson Sans';
+        font-weight: normal;
+    }
+
+    .footer .grain .footer-links-block .inner-div1{
+        font-family: 'Kelson Sans Light';
+        margin-top: 30px;
+    }
+
+    .footer .grain .footer-links-block .inner-div1 .inner-link-block{
+        float: left;
+        width: 200px;
+    }
+
+    .footer .grain .footer-links-block .inner-div1 .inner-social-block{
+        float: left;
+    }
+
+    .footer .grain .footer-links-block .inner-div1 .inner-social-block .inner-social-title{
+        font-size: 22px;
+        font-family: 'Kelson Sans Light';
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .footer .grain .footer-links-block .inner-div1 .inner-social-block .links{
+        padding-left: 5px;
+    }
+
+    .footer .grain .footer-links-block .inner-div1 .inner-social-block .links .social-link-a{
+        float: left;
+        margin: 5px 0px 0px 10px;
+    }
+
+    .footer .grain .footer-phone-block{
+        float: left;
+        font-size: 24px;
+        font-family: 'Kelson Sans';
+        margin-top: 5px;
+        color: #353535;
+    }
+
+    .footer .grain .footer-phone-block .opt-p{
+        font-size: 16px;
+        text-align:center;
+        margin-top:5px;
+    }
+
+    .footer .grain .footer-email-block{
+        float: left;
+        font-size: 18px;
+        font-family: 'Kelson Sans';
+        margin: 10px 0px;
+        color: #353535;
+    }
+
+    .footer .grain .footer-address-block{
+        float: left;
+        font-size: 18px;
+        font-family: 'Kelson Sans';
+        color: #353535;
+    }
+
+    .footer .grain .copyright-p{
+        text-align: center;
+        font-size: 18px;
+        font-family: 'Kelson Sans';
+        color: #353535;
+    }
+
+    .hidden{
+        display: none;
+    }
+
+    .cursor-pointer{
+        cursor: pointer;
+    }
+
+    .margin-left-11{
+        margin-left: 11px !important;
+    }
+
+    .margin-left-15{
+        margin-left: 15px !important;
+    }
+
+    .button{
+        background-color: #4B86C2;
+        border-radius: 5px;
+        color: #FFFFFF;
+        padding: 5px 15px;
+        margin: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        /*border: 1px solid #F60808;*/
+    }
+    .button:hover{
+        background-color: #58ABC9;
+    }
+    .footer{
+        background-color: #BFC4C5;
+        background-image: linear-gradient(#DDDDDD, #BFC4C5);
+        background-repeat: repeat-x;
+        box-shadow: 0 1px #FFFFFF inset;
+        font-size: 0.875em;
+        text-shadow: 0 1px #FFFFFF;
+        height: 321px;
+        margin-top: 100px;
+    }
+
+    .footer .grain{
+        /*background: url("../css/image/grain.png") repeat scroll 0 0 rgba(0, 0, 0, 0);*/
+        padding: 25px 0;
+        width: 1200px;
+        margin: auto;
+        background-color: #BFC4C5;
+        background-image: linear-gradient(#DDDDDD, #BFC4C5);
+        background-repeat: repeat-x;
+        height: 261px;
+    }
+    .footer .telephone {
+        background: url("/css/image/telephone.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+        padding-top: 24px;
+        width: 200px;
+        text-align: center;
+        text-shadow: 0 1px #FFFFFF;
+        color: #666666;
+        font-size: 16px;
+    }
+    .footer .email {
+        background: url("/css/image/email_2.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+        font-size: 16px;
+        padding-top: 24px;
+        width: 200px;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .footer a {
+        color: #211414;
+        text-decoration: none;
+    }
+    .footer a:hover{
+        color: #595959;
+        text-decoration: underline;
+    }
+    .footer .address {
+        background: url("/css/image/address.png") no-repeat scroll center top rgba(0,0, 0, 0);
+        line-height: 1.25em;
+        padding-top: 32px;
+        width: 200px;
+        margin-top: 10px;
+        color: #4D4D4D;
+        font-size: 16px;
+        text-align: center;
+    }
+    .footer h3{
+        font-size: 2.5em;
+        text-shadow: 0 2px #FFFFFF;
+        line-height: 1em;
+        margin-bottom: 0.375em;
+        color: #4D4D4D;
+        font-family: bistro-script-web,Garamond,script;
+    }
+    .footer .links li {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        list-style: none outside none;
+        margin: 5px 0px;
+        padding: 0px;
+        font-size: 18px;
+        font-weight: normal;
+        color: #4D4D4D;
+    }
+    .col{
+        float: left;
+        width: 250px;
+        margin-left: 110px;
+    }
+    .b-product-price {
+        background: none repeat scroll 0 0 #4B86C2;
+        color: #FFFFFF;
+        font: 24px/28px PTSans-NarrowBold,Arial,sans-serif;
+        height: 29px;
+        padding: 1px 6px 0 8px;
+        z-index: 7;
+        width: 92px;
+        margin-left: 136px;
+        position: absolute;
+        margin-top: 44px;
+    }
+
+    .b-product-price s {
+        background: url("../css/image/mr-sprite.svg") no-repeat scroll -10px 0 rgba(0, 0, 0, 0);
+        height: 30px;
+        position: absolute;
+        right: -9px;
+        top: 0;
+        width: 10px;
+    }
+    .b-product-desc {
+        background: none repeat scroll 0 0 rgba(100, 140, 180, 0.65);
+        height: 260px;
+        opacity: 0;
+        padding: 10px;
+        position: absolute;
+        width: 175px;
+        z-index: 6;
+        border-radius: 10px;
+        padding-top: 100px;
+        cursor: pointer;
+    }
+    .b-product-status {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 3px solid #2588AD;
+        color: #2588AD;
+        font-family: PTSans-NarrowBold,Arial,sans-serif;
+        letter-spacing: 0.07em;
+        padding: 2px 10px;
+        position: absolute;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+    .slider-img{
+        width: 1200px;
+    }
+    .product-item{
+        float: left;
+        width: 260px;
+        background-color: #ffffff;
+        border-radius: 3px;
+        padding: 0px 5px 5px 0px;
+        text-align: center;
+        height: 360px;
+        border: 1px solid #E0E0E0;
+    }
+    .product-item:hover{
+        border: 1px solid #E0E0E0;
+        /*background-color: #F2EEE6;*/
+        -webkit-box-shadow: 0px 3px 8px 0px rgba(55, 51, 51, 1);
+        -moz-box-shadow:    0px 3px 8px 0px rgba(55, 51, 51, 1);
+        box-shadow:         0px 3px 8px 0px rgba(55, 51, 51, 1);
+    }
+    .scroll-basket {
+        top: 115px;
+        height: 43px;
+        position: fixed;
+        right: 15px;
+        width: 40px;
+        z-index: 1000;
+        color: #000000;
+        border-radius: 5px;
+        padding: 5px;
+        border: 3px solid #ECECEC;
+        background-color: #F5F5F5;
+        cursor: pointer;
+    }
+    .scroll-basket-items{
+        display: none;
+        top: 175px;
+        position: fixed;
+        right: 15px;
+        width: 250px;
+        z-index: 1000;
+        color: #000000;
+        border-radius: 3px;
+        border: 1px solid #BBBBBB;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13);
+        font-size: 13px;
+        line-height: normal;
+        padding: 15px;
+        font-family: Tahoma,sans-serif;
+    }
+    .nav-arrow-inner{
+        border-style: solid;
+        border-width: 0 9px 9px;
+        font-size: 0;
+        height: 0;
+        line-height: 0;
+        position: absolute;
+        top: -9px;
+        width: 0;
+        right: 17px;
+        border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #FFFFFF;
+        border-left: 9px solid rgba(0, 0, 0, 0);
+        border-right: 9px solid rgba(0, 0, 0, 0);
+    }
+    .product-type-link{
+        color: #132D60;
+    }
+    .product-type-link:hover{
+        text-decoration: none;
+        color: #2588AD;
+    }
+    .product_link{
+        text-decoration: none;
+        color: #000000;
+    }
+    .product_link:hover{
+        text-decoration: underline;
+    }
+    .cabinet-link{
+        text-decoration: underline;
+        color: #7BBC46;
+    }
+    .cabinet-link:hover{
+        text-decoration: none;
+    }
+    .success-product-added-block {
+        background: rgb(83,186,0); /* Old browsers */
+        background: -moz-linear-gradient(top,  rgba(83,186,0,1) 0%, rgba(103,186,35,1) 49%, rgba(100,186,29,1) 51%, rgba(140,186,102,1) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(83,186,0,1)), color-stop(49%,rgba(103,186,35,1)), color-stop(51%,rgba(100,186,29,1)), color-stop(100%,rgba(140,186,102,1))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  rgba(83,186,0,1) 0%,rgba(103,186,35,1) 49%,rgba(100,186,29,1) 51%,rgba(140,186,102,1) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  rgba(83,186,0,1) 0%,rgba(103,186,35,1) 49%,rgba(100,186,29,1) 51%,rgba(140,186,102,1) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  rgba(83,186,0,1) 0%,rgba(103,186,35,1) 49%,rgba(100,186,29,1) 51%,rgba(140,186,102,1) 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  rgba(83,186,0,1) 0%,rgba(103,186,35,1) 49%,rgba(100,186,29,1) 51%,rgba(140,186,102,1) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#53ba00', endColorstr='#8cba66',GradientType=0 ); /* IE6-9 */
+
+        border-radius: 5px;
+        color: #FFFFFF;
+        font-size: 14px;
+        line-height: 22px;
+        margin-left: -70px;
+        margin-top: -70px;
+        padding: 20px 30px;
+        position: fixed;
+        right: 30px;
+        text-align: center;
+        top: 90px;
+        width: 300px;
+        z-index: 9999;
+        display: none;
+    }
+    .success-product-added-block a {
+        color: #132D60;
+        font-size: 14px;
+    }
+    .success-product-added-block a:hover {
+        text-decoration: none;
+    }
+    @font-face {
+        font-family: 'Kelson Sans';
+
+        src: url("/css/kelson_sans_regular_ru.ttf");
+    }
+    @font-face{
+        font-family: 'Kelson Sans Bold';
+        src: url("/css/kelson_sans_bold_ru.ttf");
+    }
+    @font-face {
+        font-family: 'Kelson Sans Light';
+        src: url("/css/kelson_sans_light_ru.ttf");
+    }
+
+    .product-image{
+        max-width: 180px;
+        max-height: 220px;
+        margin: 10px 0px 0px 8px;
+    }
+    .product-image:hover{
+        cursor: pointer;
+    }
+    .menu-links{
+        color: #2588AD;
+        text-decoration: underline;
+    }
+    .menu-links:hover{
+        text-decoration: none;
+    }
+    .slide-class{
+        width: 892px;
+        height: 294px;
+        border: 3px solid #7BBC46;
+    }
+    .ajax-loader{
+        background: url(/css/image/ajax-loader.gif);
+        height: 32px;
+        width: 32px;
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 1003;
+    }
+    .ui-menu-item a{
+        font-size: 14px;
+        font-family: 'kelson sans';
+    }
+    .ui-menu{
+        z-index: 100 !important;
+    }
+
+    .scroll-basket .basket-count-block{
+        margin-left: 35px;
+        background-color: red;
+        border-radius: 10px;
+        width: 20px;
+        height: 20px;
+        top: -10px;
+        position: absolute;
+        text-align:center;
+    }
+    .scroll-basket .basket-count-block p{
+        color: #ffffff;
+    }
+    .scroll-basket .basket-icon-block{
+        width: 35px;
+        margin:4px 0px 0px 4px;
+    }
+    /*.fb-like-box span, .fb-like-box iframe {*/
+    /*width: 185px !important;*/
+    /*}*/
+
+    /* Layout End */
+
+    /* Product Info Begin */
+
+    .product-info-main-block{
+        float: right;
+        width: 850px;
+        border-radius: 10px;
+        margin: 20px 0px 0px 20px;
+        padding: 5px 15px 5px 15px;
+    }
+
+    .product-info-main-block .b-product-price{
+        margin-left: 102px;
+        margin-top: 33px;
+        text-align: center;
+    }
+
+    .product-info-main-block .pr-status1{
+        margin-left: 102px;
+        margin-top: 0px;
+    }
+
+    .product-info-main-block .pr-status2{
+        margin-left: 79px;
+        margin-top: 0px;
+    }
+
+    .product-info-main-block .product-info-img-block{
+        float: left;
+        width: 200px;
+        text-align: center;
+    }
+
+    .product-info-main-block .product-info-img-block img{
+        max-width: 180px;
+        max-height: 250px;
+        margin-top: 60px;
+    }
+
+    .product-info-main-block .product-info-img-block .button{
+        margin-top: 10px;
+    }
+
+    .product-info-main-block .product-description-block{
+        float: left;
+        width: 615px;
+        margin-top: 15px;
+        margin-left: 30px;
+    }
+
+    .product-info-main-block .product-description-block h1{
+        color: #4b86c2;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .product-info-main-block .social-repost-block{
+        margin-left: 230px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block1{
+        margin-top: 10px;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block1 .vk-b{
+        margin-top: 11px;
+        margin-right: 15px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2{
+        margin-top: 20px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2 .google-b{
+        margin-right: 5px;
+        margin-top: 2px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2 .moi-mir-b{
+        margin-right: 5px;
+        margin-top: 1px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2 .odnoklassniki-share-block{
+        margin-top: -2px;
+    }
+
+    .product-info-main-block .similar-popular-product-block .similar-popular-h2{
+        font-size: 28px;
+        color: #2588AD;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+        font-weight: bold;
+        margin: 50px 0px 30px;
+        width: 700px;
+    }
+
+    .product-info-main-block .similar-popular-product-block .product-item{
+        margin: 0px 10px 10px 0px;
+    }
+
+    .product-info-main-block .similar-popular-product-block .product-item .pr-s1{
+        margin-left: 135px;
+    }
+
+    .product-info-main-block .similar-popular-product-block .product-item .pr-s2{
+        margin-left: 115px;
+    }
+
+    .product-info-main-block .similar-popular-product-block .pr-inf-img{
+        height: 260px;
+        margin-bottom: 10px;
+    }
+
+    .product-info-main-block .similar-popular-product-block .pr-inf-img .product-image{
+        margin: 0px 35px;
+    }
+
+    .product-info-main-block .product-comment-block{
+        margin-top: 50px;
+    }
+
+    .product-info-main-block .product-comment-block .comment-block-title{
+        margin-bottom: 30px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Kelson Sans';
+    }
+
+    .product-info-main-block .product-comment-block .comment-item{
+        background: #fcfcfc;
+        border: 1px solid #f1f1f1;
+        padding: 10px;
+        margin-bottom: 10px;
+        min-height: 45px;
+    }
+
+    .product-info-main-block .product-comment-block .comment-item .comment-avatar{
+        float: left;
+        border-radius: 5px;
+    }
+
+    .product-info-main-block .product-comment-block .comment-item .comment-soc-img{
+        margin: 11px 0px 0px 10px;
+        float: left;
+    }
+
+    .product-info-main-block .product-comment-block .comment-item .comment-author{
+        float: left;
+        margin-top: 12px;
+        margin-left: 5px;
+        padding-right: 10px;
+        border-right: 1px solid #000000;
+        font-family: 'Kelson Sans';
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .mobile-comment-send-div{
+        margin-left: 332px;
+    }
+
+    .product-info-main-block .product-comment-block .comment-item .comment-author2{
+        float: left;
+        margin-top: 12px;
+        margin-left: 15px;
+        padding-right: 10px;
+        border-right: 1px solid #000000;
+        font-family: 'Kelson Sans';
+    }
+
+    .product-info-main-block .product-comment-block .comment-item .comment-date{
+        float: left;
+        font-size: 14px;
+        margin-left: 10px;
+        margin-top: 13px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1{
+        margin-top: 30px;
+        font-family: 'Kelson Sans';
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .new-comment-title{
+        margin-bottom: 10px;
+        font-size: 16px;
+        float: left;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .logout-btn-comment{
+        float: left;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 40px;
+        color: red;
+        text-decoration: underline;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .auth-type-block{
+        padding-bottom: 5px;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .auth-type-block .vk-a, .product-info-main-block .product-comment-block #comment_form .inner-div1 .auth-type-block .fb-a{
+        margin-left: 5px;
+        margin-top: 5px;
+        text-decoration: none;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .comment-email-label{
+        float: left;
+        width: 100px;
+        margin-bottom: 10px;
+        padding-top: 3px;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .comment-email-value{
+        float: left;
+        width: 390px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .comment-email-value p{
+        font-size:11px;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .new-comment-avatar{
+        border-radius: 5px;
+        float: left;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 #send_error{
+        color: red;
+        margin-left: 150px;
+    }
+
+    .comment-input, .comment-textarea{
+        border: 1px solid #58abc9;
+        padding: 5px;
+        width: 377px;
+    }
+    .comment-textarea{
+        resize: vertical;
+        min-height: 100px;
+        height: 100px;
+        max-height: 200px;
+    }
+    label.error{
+        color: red;
+        font-size: 14px;
+    }
+    .social-link{
+        color: #4884bb;
+        text-decoration: underline;
+    }
+    .social-link:hover{
+        text-decoration: no-underline;
+    }
+    .fb-share-button{
+        border: 1px solid #3B579D;
+        color: #ffffff !important;
+        padding: 0px 5px 5px 5px;
+        margin-right: 15px;
+        margin-top: 9px;
+        border-radius: 5px;
+    }
+
+    /* Product Info End */
+
+    .not-available-div{
+        padding: 1px 10px 0px 10px;
+        font-size: 20px;
+        font-family: 'PTSans-NarrowBold,Arial,sans-serif';
+        margin-top: 5px;
+        text-align: left;
+        color: red;
+        z-index: 7;
+        position: absolute;
+    }
+
+    .not-available-div-index{
+        /*padding: 1px 10px 0px 10px;*/
+        /*font-size: 20px;*/
+        /*font-family: 'PTSans-NarrowBold,Arial,sans-serif';*/
+        /*margin-top: 5px;*/
+        /*color: red;*/
+        /*z-index: 7;*/
+        /*text-align: left;*/
+        /*position: absolute;*/
+        width: 0px;
+        height: 0px;
+        float: left;
+        position: absolute;
+        border-style: solid;
+        border-color: rgb(244, 0, 0) transparent transparent;
+        font-family: PTSans-NarrowBold,Arial,sans-serif;
+        font-size: 14px;
+        border-width: 90px 90px 0px 0px;
+    }
+
+    .not-available-div-index p{
+        position: absolute;
+        transform: rotate(-45deg);
+        color: white;
+        font-weight: bold;
+        margin: -65px 0 0 -6px;
+    }
+
+    .new-product-div-index{
+        width: 0px;
+        height: 0px;
+        float: left;
+        border-width: 80px 80px 0px 0px;
+        position: absolute;
+        border-style: solid;
+        border-color: rgb(144, 186, 80) transparent transparent;
+        font-family: PTSans-NarrowBold,Arial,sans-serif;
+        font-size: 14px;
+    }
+
+    .new-product-div-index p{
+        position: absolute;
+        transform: rotate(-45deg);
+        color: white;
+        font-weight: bold;
+        margin: -60px 0px 0px -2px;
+    }
+
+    .brand-logo-icon-div {
+        /*height: 50px;*/
+        /*margin-top: 160px;*/
+        /*position: absolute;*/
+        /*transform: rotate(180deg);*/
+        /*margin-left: 20px;*/
+        height: 50px;
+        margin-top: 280px;
+        position: absolute;
+        transform: rotate(180deg);
+        margin-left: 196px;
+    }
+
+    .brand-logo-icon {
+        /*background-color: white;*/
+        /*border-bottom: medium none !important;*/
+        /*box-shadow: 0 0 3px 3px grey;*/
+        max-width: 60px;
+        padding: 3px;
+        transform: rotate(180deg);
+    }
+
+    .product-info-main-block .brand-logo-icon-div{
+        margin-left: 198px;
+    }
+
+    .product-info-brand-logo-icon-div{
+        margin-left: -10px !important;
+    }
+
+    .index-h2-links{
+        text-decoration: underline;
+        color: #2588AD;
+    }
+
+    .index-h2-links:hover{
+        text-decoration: none;
+    }
+
+    .one-page-product-list-block{
+        float: right;
+        width: 850px;
+        border-radius: 10px;
+        margin: 0px 0px 0px 20px;
+        padding: 5px 15px 5px 15px;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .one-page-product-list-block h1{
+        color: #2588ad;
+        text-align: center;
+        margin-top:20px;
+        margin-bottom: 30px;
+    }
+
+    .friend-invite-main-block .label-left-block{
+        float: left;
+        margin: 10px 0;
+        width: 100px;
+    }
+
+    .friend-invite-main-block .input-left-block{
+        float: left;
+        margin: 5px 0;
+        width: 220px;
+    }
+
+    .friend-invite-main-block .label-right-block{
+        float: left;
+        margin: 10px 0 10px 50px;
+        width: 150px;
+    }
+
+    .friend-invite-main-block .input-right-block {
+        float: left;
+        margin: 5px 0;
+        width: 220px;
+    }
+
+    .friend-invite-main-block label.error{
+        margin-left: 55px !important;
+    }
+
+    .friend-invite-main-block .input-left-block .city-select {
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        cursor: pointer;
+        font-family: Georgia;
+        font-size: 14px;
+        height: 32px;
+        padding: 5px;
+        width: 213px;
+    }
+
+    .friend-invite-main-block #myform{
+        font-family: 'Georgia';
+        font-size: 16px;
+    }
+    .invite-not-active-p{
+        font-family: 'Georgia';
+        font-size: 18px;
+        color: red;
+        text-align: center;
+        line-height: 28px;
+    }
+
+    .priglasi-druga-main-block .pr-dr1{
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 20px;
+    }
+
+    .priglasi-druga-main-block ul{
+        list-style-type: disc;
+        list-style-position: inherit;
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+
+    .priglasi-druga-main-block li {
+        margin: 10px;
+    }
+
+    .priglasi-druga-main-block .pr-dr-p1{
+        margin: 20px 0px 15px;
+        font-weight: bold;
+    }
+
+    .priglasi-druga-main-block .pr-dr-p2{
+        margin: 10px 0px 20px;
+    }
+
+    .priglasi-druga-main-block .pr-dr-p3{
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .priglasi-druga-main-block .pr-dr-p4{
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .category-group-description-h2{
+        font-family: 'Verdana';
+        font-size: medium;
+        font-weight: bold;
+        color: #000000;
+        margin: 30px 0px 10px;
+    }
+
+    .category-group-description-p{
+        font-family: 'Verdana';
+        font-size: medium;
+        margin-bottom: 10px;
+        text-indent: 30px;
+    }
+
+    .feedback-list-main-block{
+        float: right;
+        width: 850px;
+        border-radius: 10px;
+        margin: 0px 0px 0px 20px;
+        padding: 5px 15px 5px 15px;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .feedback-list-main-block .feedback-item{
+        width: 360px;
+        float: left;
+        margin: 0px 10px;
+        padding: 20px 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 3px;
+        margin-bottom: 30px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block{
+        float: left;
+        width: 250px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-author-p{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-product-p{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #2588ad;
+        text-decoration: underline;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-product-p:hover{
+        text-decoration: none;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-product-p2{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-author-p2{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-text-p{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        margin: 10px 0px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-right-block{
+        float: right;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-right-block .feedback-avatar{
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-date-p{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        text-align: right;
+    }
+
+    .feedback-comment-block{
+        float: none;
+        margin: 0;
+    }
+
+    .feedback-comment-block .feedback-product-select{
+        width: 390px;
+        margin-top: 10px;
+        padding: 5px 0px;
+        font-family: 'Kelson Sans';
+        font-size: 16px;
+    }
+
+    .cert-fancybox{
+        text-decoration: none;
+    }
+
+    .cert-fancybox img{
+        margin-right: 40px;
+        margin-bottom: 20px;
+        border: 1px solid darkgrey;
+    }
+    .add-link-by-brand{
+        color: #132d60;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 20px;
+    }
+
+    .selected-add-link-by-brand{
+        color: #3160bf !important;
+        font-style: italic !important;
+    }
+
+    .evening-courier-left{
+        float: left;
+    }
+
+    #is_evening_courier_check{
+        display: none;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 320px) {
+    .slide-block{
+        width: 95%;
+        display: block;
+        margin: 10px auto;
+        padding-left: 0 !important;
+        border: 3px solid #7bbc46;
+    }
+
+    .slide-block .inner-div{
+        margin: auto;
+        width: 100%;
+    }
+
+    .slide-block .inner-div .inner-div2{
+        margin: auto;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: none;
+    }
+
+    .slide-class{
+        width: 100%;
+        margin: auto !important;
+    }
+
+    .slide-block .info-slide-block{
+        display: none;
+    }
+
+    .inner-div2 img{
+        width: 20px;
+        float: right;
+        margin-left: 2px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+    .arrowLeft{
+        float: left;
+        margin-left: 2px;
+    }
+
+    .arrowRight{
+        float: right;
+        margin-right: 2px;
+    }
+
+    .slideControl2{
+        display: block;
+        margin-top: -110px;
+        position: absolute;
+        width: 10%;
+        right: 5px;
+    }
+
+    .slideControl1{
+        display: block;
+        margin-top: -110px;
+        position: absolute;
+        width: 10%;
+        left: 5px;
+    }
+
+
+
+    .brand-page-links{
+        color: #132d60;
+    }
+
+    .brand-page-links:hover{
+        text-decoration: none;
+    }
+
+    .brand-item-block{
+        text-align: center;
+        width: 150px;
+        float: left;
+        margin-bottom: 40px;
+    }
+
+    .brand-item-block p{
+        color: #132d60;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .brand-item-block .brand-img-not-exist, .brand-item-block .brand-img-exist{
+        max-width: 130px;
+        max-height: 80px;
+    }
+
+    .product-description-block img{
+        width: 97%;
+    }
+    .product-commment-count-icon-block{
+        position: absolute;
+        margin-top: 80px;
+        margin-left: 203px;
+        background-image: url('/css/image/reviews.png');
+        background-size: 32px 32px;
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        padding-top: 1px;
+    }
+
+    .product-commment-count-icon-block2{
+        position: absolute;
+        margin-left: 280px;
+        margin-top: 75px;
+        background-image: url('/css/image/reviews.png');
+        background-size: 32px 32px;
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        padding-top: 1px;
+    }
+
+    .product-commment-count-icon-block p, .product-commment-count-icon-block2 p{
+        color: white;
+        margin: 0px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .modal-basket-product-price-changes{
+        top: 30%;
+        position: fixed;
+        border-radius: 5px;
+        padding: 20px 10px 10px;
+        width: 94%;
+        background-color: #ececec;
+        z-index: 1002;
+        display: none;
+    }
+
+    .modal-basket-product-price-changes p{
+        font-family: 'Georgia';
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .product-info-main-block .brand-foto-img{
+        margin: 61px 0 0 44px !important;
+        z-index: 0 !important;
+    }
+
+    .discount-percent-p{
+        position: absolute;
+        color: white;
+        z-index: 10;
+        font-weight: bold;
+        font-size: 14px;
+        font-family: 'Helvetica';
+        transform: rotate(45deg);
+    }
+
+    .discount-percent-p2{
+        position: absolute;
+        color: white;
+        z-index: 10;
+        font-weight: bold;
+        font-size: 14px;
+        font-family: 'Helvetica';
+        transform: rotate(-45deg);
+    }
+
+    .discount-percent-p-margin1{
+        margin: 17px 0 0 186px;
+    }
+
+    .discount-percent-p-margin2{
+        margin: 19px 0 0 187px;
+    }
+
+    .discount-percent-product-margin1{
+        margin: 27px 0px 0px 19px;
+    }
+
+    .discount-percent-product-margin2{
+        margin: 27px 0px 0px 16px;
+    }
+
+    .discount-icon-img{
+        width: 100px;
+        position: absolute;
+        z-index: 10;
+        margin-top: -7px;
+        margin-left: 36px;
+    }
+
+    .discount-icon-img2{
+        margin-left: 12px;
+        margin-top: 0px;
+        position: absolute;
+        width: 130px;
+        z-index: 10;
+    }
+
+    .header .logo-city-block{
+        margin: 0px 0px 0px 24px;
+    }
+
+    .header .logo-city-block .city-select-div{
+        float: left;
+        padding-top: 11px;
+        margin-left: 7px;
+    }
+
+    .header .logo-city-block .city-select-div p{
+        font-size: 16px;
+        font-weight: normal;
+        color: #2588AD;
+        font-family: 'Kelson Sans Light';
+    }
+
+    .header .logo-city-block .selected-city-div{
+        float: left;
+        overflow: hidden;
+        margin-left: 10px;
+        padding-top: 11px;
+    }
+
+    .header .logo-city-block .selected-city-div p{
+        color: #2588AD;
+        font-size: 16px;
+        font-family: 'Kelson Sans';
+        cursor: pointer;
+        border-bottom: 2px dotted #2588ad;
+    }
+
+    .header .logo-city-block .city-block{
+        display: none;
+        position: absolute;
+        z-index: 100;
+        margin-left: 66px;
+        background-color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #2588AD;
+    }
+
+    .header .logo-city-block .city-block p{
+        color: #2588AD;
+        font-size: 16px;
+        font-family: 'Kelson Sans';
+        cursor: pointer;
+    }
+
+    .header .header-link-block{
+        margin: 10px 0px 0px 0px;
+        font-size: 16px;
+        color: #2588AD;
+    }
+
+    .header .header-link-block .search-block{
+        margin: 0px 0px 10px 24px;
+    }
+
+    .header .header-link-block .search-block #search_word{
+        font-family: 'Kelson Sans';
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 0px;
+        border: 2px solid #2588ad;
+    }
+
+    .header .header-link-block .search-block .search-btn{
+        cursor: pointer;
+        background-color: #2588ad;
+        border-radius: 5px;
+        color: white;
+        font-family: 'kelson sans';
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .header .header-link-block .search-block div{
+        margin-top: 5px;
+    }
+
+    .header .header-link-block .search-block div a{
+        color: #2588ad;
+        margin-right: 5px;
+    }
+
+    .header-main-links{
+        display: none;
+    }
+
+    /*.slide-block{*/
+        /*display: none;*/
+    /*}*/
+
+    .clearfloat{
+        clear: both;
+    }
+
+    .new-product-label{
+        float: left;
+        font-size: 10px;
+        color: red;
+        font-weight: bold;
+        margin-left: 3px;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block{
+        float: left;
+        font-size: 18px;
+        margin: 20px 0px 0px 22px;
+        font-family: bistro-script-web,Garamond,script;
+        color: #132D60;
+        font-weight: bold;
+    }
+
+    .product-item{
+        float: left;
+        width: 78%;
+        background-color: #ffffff;
+        border-radius: 3px;
+        padding: 0px 5px 5px 5px;
+        text-align: center;
+        border: 1px solid #E0E0E0;
+        margin-bottom: 10px;
+        margin-left: 25px;
+    }
+    .product-item:hover{
+        border: 1px solid #E0E0E0;
+        /*background-color: #F2EEE6;*/
+        -webkit-box-shadow: 0px 3px 8px 0px rgba(55, 51, 51, 1);
+        -moz-box-shadow:    0px 3px 8px 0px rgba(55, 51, 51, 1);
+        box-shadow:         0px 3px 8px 0px rgba(55, 51, 51, 1);
+    }
+
+    .b-product-price {
+        background: none repeat scroll 0 0 #4B86C2;
+        color: #FFFFFF;
+        font: 19px/28px PTSans-NarrowBold,Arial,sans-serif;
+        height: 27px;
+        padding: 0px 6px 0 8px;
+        z-index: 7;
+        width: 92px;
+        margin-left: 110px;
+        position: absolute;
+        margin-top: 35px;
+    }
+
+    .b-product-status {
+        background: none repeat scroll 0 0 #ffffff;
+        border: 3px solid #2588ad;
+        color: #2588ad;
+        font-family: PTSans-NarrowBold,Arial,sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.07em;
+        margin-top: 5px;
+        padding: 2px 10px;
+        position: absolute;
+        text-transform: uppercase;
+        right: 46px;
+    }
+
+    .new-product-title-h2 {
+        color: #2588ad;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 19px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+
+    .opt-prodazha-h2 {
+        color: #2588ad;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 19px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .index-h2-links {
+        color: #2588ad;
+        text-decoration: underline;
+    }
+
+    .b-product-price s {
+        background: url("../css/image/mr-sprite.svg") no-repeat scroll -10px 0 rgba(0, 0, 0, 0);
+        height: 30px;
+        position: absolute;
+        right: -9px;
+        top: 0;
+        width: 10px;
+    }
+
+    .black {
+        color: #000000 !important;
+    }
+    .text-decoration-none {
+        text-decoration: none;
+    }
+
+    .product-type-link {
+        color: #132d60;
+    }
+
+    @font-face {
+        font-family: 'Kelson Sans';
+
+        src: url("/css/kelson_sans_regular_ru.ttf");
+    }
+    @font-face{
+        font-family: 'Kelson Sans Bold';
+        src: url("/css/kelson_sans_bold_ru.ttf");
+    }
+    @font-face {
+        font-family: 'Kelson Sans Light';
+        src: url("/css/kelson_sans_light_ru.ttf");
+    }
+
+    .cabinet-link {
+        color: #7bbc46;
+        text-decoration: underline;
+    }
+
+    .search-block a{
+        font-size: 14px !important;
+        font-family: "Kelson Sans";
+    }
+
+    .dataTables_paginate{
+        text-align: center !important;
+    }
+
+    .product-list-form-main-block .product-list-info{
+        min-height: 180px;
+        margin-bottom: 10px;
+    }
+
+    .product-list-form-main-block .product-list-info .product-image{
+        margin: 20px 35px 0px;
+    }
+
+    .product-image{
+        max-height: 150px;
+        max-width: 150px;
+        margin: 10px 0px 0px 8px;
+    }
+    .product-image:hover{
+        cursor: pointer;
+    }
+
+    .button {
+        background-color: #4b86c2;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 14px;
+        margin: 50px 0 5px;
+        padding: 3px 11px;
+    }
+
+    .button:hover{
+        background-color: #58ABC9;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block{
+        background-color: #ECECEC;
+        border-radius: 10px;
+        padding: 15px;
+        width: 210px;
+    }
+
+    .category-group-description-h2, .category-group-description-p, .head-akcii-info-p, .footer, .connection-types-block, .job-time-block{
+        display: none;
+    }
+    .layout-main-block .layout-left-block .category-list-block .selected-category-p{
+        color: #3160BF;
+        font-weight: bold;
+    }
+
+    .index-main-block h1{
+        margin-top: 10px;
+    }
+
+    .index-main-block h1, .index-main-block .popular-title-h2 {
+        color: #2588ad;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 19px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        width: 86%;
+        margin-left: 20px;
+        text-align: center;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .category-group-name-p{
+        cursor: pointer;
+        color: #132d60;
+        text-decoration: underline;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .category-group-name-p:hover{
+        text-decoration: none;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .subcategory-block{
+        margin-left: 20px;
+    }
+
+    .header .basket-block {
+        float: left;
+        width: 50px;
+    }
+
+    .scroll-basket {
+        background-color: #f5f5f5;
+        border: 3px solid #ececec;
+        border-radius: 5px;
+        color: #000000;
+        cursor: pointer;
+        height: 43px;
+        padding: 5px;
+        position: fixed;
+        right: 10px !important;
+        top: 16px;
+        width: 40px;
+        z-index: 99;
+    }
+
+    .scroll-basket .basket-count-block {
+        background-color: red;
+        border-radius: 10px;
+        height: 20px;
+        margin-left: 35px;
+        position: absolute;
+        text-align: center;
+        top: -10px;
+        width: 20px;
+        color: white;
+    }
+
+    .success-product-added-block{
+        display: none;
+    }
+
+    .bread-block{
+        margin-bottom: 10px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    .bread-block .bread-links{
+        color: #000000;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+        font-size: 18px;
+    }
+
+    .bread-block .arrow-label{
+        color: #000000;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+        font-size: 14px;
+    }
+
+    .new-products-block-new .discount-icon-img{
+        margin-left: 31px !important;
+    }
+
+    .new-products-block-new .discount-percent-p-margin2{
+        margin: 21px 0 0 180px !important;
+    }
+
+    .not-available-div-index{
+        /*padding: 1px 10px 0px 10px;*/
+        /*font-size: 20px;*/
+        /*font-family: 'PTSans-NarrowBold,Arial,sans-serif';*/
+        /*margin-top: 5px;*/
+        /*color: red;*/
+        /*z-index: 7;*/
+        /*text-align: left;*/
+        /*position: absolute;*/
+        width: 0px;
+        height: 0px;
+        float: left;
+        position: absolute;
+        border-style: solid;
+        border-color: rgb(244, 0, 0) transparent transparent;
+        font-family: PTSans-NarrowBold,Arial,sans-serif;
+        font-size: 14px;
+        border-width: 90px 90px 0px 0px;
+        margin-left: -5px;
+    }
+
+    .not-available-div-index p{
+        position: absolute;
+        transform: rotate(-45deg);
+        color: white;
+        font-weight: bold;
+        margin: -65px 0 0 -6px;
+    }
+
+    .new-product-div-index{
+        width: 0px;
+        height: 0px;
+        float: left;
+        border-width: 80px 80px 0px 0px;
+        position: absolute;
+        border-style: solid;
+        border-color: rgb(144, 186, 80) transparent transparent;
+        font-family: PTSans-NarrowBold,Arial,sans-serif;
+        font-size: 14px;
+        margin-left: -5px;
+    }
+
+    .new-product-div-index p{
+        position: absolute;
+        transform: rotate(-45deg);
+        color: white;
+        font-weight: bold;
+        margin: -60px 0px 0px -2px;
+    }
+
+    .brand-logo-icon-div {
+        height: 50px;
+        margin-top: 110px;
+        position: absolute;
+        transform: rotate(180deg);
+        margin-left: 20px;
+    }
+
+    .brand-logo-icon {
+        background-color: white;
+        border-bottom: medium none !important;
+        box-shadow: 0 0 3px 3px grey;
+        max-width: 50px;
+        padding: 2px;
+        transform: rotate(180deg);
+    }
+
+    .scroll-basket .basket-icon-block {
+        margin: 4px 0 0 4px;
+        width: 35px;
+    }
+
+    .scroll-basket-items {
+        background-color: #ffffff;
+        border: 1px solid #bbbbbb;
+        border-radius: 3px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13);
+        color: #000000;
+        display: none;
+        font-family: Tahoma,sans-serif;
+        font-size: 13px;
+        line-height: normal;
+        padding: 15px;
+        position: fixed;
+        right: 11px !important;
+        top: 83px;
+        width: 207px;
+        z-index: 1000;
+    }
+
+    .basket-items-main-block {
+        border: 1px solid #d3d3d3;
+        padding: 2px;
+    }
+
+    .basket-items-main-block .item-photo-block {
+        float: left;
+        padding-left: 5px;
+        width: 40px;
+    }
+
+    .basket-items-main-block .item-photo-block img {
+        max-height: 45px;
+    }
+
+    .basket-items-main-block .basket-item-info-block {
+        float: left;
+        font-size: 12px;
+        width: 152px;
+    }
+
+    .nav-arrow-inner {
+        border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #ffffff;
+        border-style: solid;
+        border-width: 0 9px 9px;
+        font-size: 0;
+        height: 0;
+        line-height: 0;
+        position: absolute;
+        right: 17px;
+        top: -9px;
+        width: 0;
+    }
+
+    .band-title {
+        background-color: #2588ad;
+        height: 82px;
+        text-align: center;
+    }
+
+    .band-title .inner-div {
+        background-color: #2588ad;
+        height: 43px;
+        margin: auto;
+        padding-top: 13px;
+        width: 85%;
+    }
+
+    .band-title .inner-div p {
+        color: #ffffff;
+        font-family: "Kelson Sans";
+        font-size: 16px;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+
+    .header .header-link-block .authorized-user-info{
+        color: #7BBC46;
+        margin: 0px 0px 10px 0px;
+        padding-right: 7px;
+        text-align: center;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .category-all-product-p{
+        color: #132d60;
+        font-weight: normal;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .nonselected-category-name-p{
+        color: #132d60;
+        font-weight: normal;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .selected-category-name-p{
+        color: #3160BF;
+        font-style: italic;
+        font-weight: bold;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .brand-block-title{
+        margin-top: 15px; padding-top: 10px; border-top: 1px dashed black;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .brand-list-block{
+        margin-left:20px;
+        font-weight: normal;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .brand-list-block .selected-brand{
+        color: #3160BF;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    .layout-main-block .layout-left-block .category-other-city-links{
+        width: 240px;
+        margin: 20px 0px;
+    }
+
+    .menu-links:hover{
+        text-decoration: none;
+    }
+
+    .left-float{
+        float: left;
+    }
+
+    .right-float{
+        float: right;
+    }
+
+    .category-link-nav{
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 6px;
+        margin-top: 7px;
+    }
+
+    #nav-wrap {
+        margin: 0 14px 0 0;
+        position: fixed;
+        /*right: 0;*/
+        top: 15px;
+        z-index: 100;
+        left: 8px;
+    }
+
+    #menu-icon {
+        background: url("/css/image/menu-icon.png") no-repeat scroll 10px center #ecebeb;
+        border: 1px solid #666;
+        color: #000;
+        cursor: pointer;
+        display: block;
+        height: 30px;
+        padding: 7px 1px 0 42px;
+        width: 0;
+    }
+    #nav {
+        background: none repeat scroll 0 0 #f8f8f8;
+        border: 1px solid #999;
+        clear: both;
+        display: none;
+        padding: 5px;
+        /*right: 14px;*/
+        top: 59px;
+        width: 190px;
+        z-index: 100;
+        position: fixed;
+        margin-top: -6px !important;
+    }
+
+    #nav, #nav li {
+        margin: 0;
+        padding: 0;
+    }
+    #nav li {
+        margin: 5px 0 0px 10px;
+    }
+    #nav li {
+        list-style: outside none none;
+        margin-right: 5px;
+    }
+    #nav a, #nav ul a {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border: medium none;
+        color: #666;
+        display: inline;
+        font: inherit;
+        padding: 0;
+    }
+    #nav a {
+        background: none repeat scroll 0 0 #ecebeb;
+        color: #000;
+        display: block;
+        padding: 4px 15px;
+    }
+    #nav a p{
+        font-size: 14px;
+    }
+
+    .header .job-time-block-mobile{
+        float: left;
+        color: white;
+        padding: 10px 0px;
+        text-align:center;
+        background-color: #7BBC46;
+        width: 100%;
+        margin-top: -20px;
+    }
+
+    .header .job-time-block-mobile .job-time-label{
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .header .job-time-block-mobile .job-time-value{
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    .menu-links {
+        color: #2588ad;
+        text-decoration: underline;
+    }
+
+    .menu-links:hover{
+        text-decoration: none;
+    }
+
+    #jivo_top_wrap{
+        display: none;
+    }
+
+    .BloggerHowFB{
+        margin-bottom: 30px;
+    }
+
+    .BloggerHowFB {
+        width:235px;
+        height:440px;
+        margin-top: 20px;
+    }
+
+    .FBWrap{
+        height:440px;
+        overflow:hidden;
+    }
+
+    .BloggerHowFB #fb-likes-block{
+        float: left;
+        border: 3px solid #ececec;
+        border-radius: 10px;
+        background: #ececec;
+        height: 438px !important;
+    }
+
+    .fb_iframe_widget iframe{
+        height: 438px !important;
+    }
+
+    .scrollup {
+        background: url("/css/image/up_sign.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        bottom: 15px;
+        display: none;
+        height: 40px;
+        position: fixed;
+        right: 15px;
+        text-indent: -9999px;
+        width: 40px;
+        z-index: 1000;
+    }
+
+    .mobile-shop-info-block{
+        padding: 0px 10px;
+    }
+
+    .shop-main-block h1 {
+        color: #2588ad;
+        font-size: 20px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .shop-main-block .shop-title {
+        color: #2588ad;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .shop-main-block .shop-address-label {
+        float: left;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 10px 0 0px 5px;
+    }
+
+    .shop-main-block .shop-address-value {
+        float: left;
+        font-size: 15px;
+        margin: 0px 0 5px 5px;
+    }
+
+    .shop-main-block .shop-img {
+        border: 3px solid #d8d8d8;
+        width: 99.5%;
+    }
+
+    #YMapsID {
+        height: 200px;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .how-to-order-main-block {
+        border-radius: 10px;
+        float: right;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        width: 100%;
+    }
+
+    .how-to-order-main-block h1 {
+        color: #2588ad;
+        font-family: "Kelson Sans";
+        font-size: 20px;
+        font-weight: normal;
+        margin: 5px 0 20px;
+        text-align: center;
+    }
+
+    .how-to-order-main-block {
+        font-family: "URWAntiquaW01-2015Regul 923026";
+    }
+
+    .how-to-order-main-block .how-to-info-p {
+        font-size: 18px;
+        margin: 20px 0;
+        text-indent: 20px;
+        padding: 0px 10px;
+    }
+
+    .how-to-order-main-block .how-to-info-p2{
+        font-size: 18px;
+        margin: 10px 0px 20px;
+        text-indent: 20px;
+        padding: 0px 10px;
+    }
+
+    .how-to-order-main-block .how-to-info-img, .how-to-order-main-block .instruction-image-block{
+        width: 100%;
+    }
+
+    .how-to-order-main-block .how-to-info-img{
+        border-top: 2px dotted #0F6997;
+        padding-top:10px;
+    }
+
+    .how-to-order-main-block .how-to-info-img2{
+        border-bottom:2px dotted #0F6997;
+    }
+
+    .how-to-order-main-block .instruction-image-block2{
+        height: 35px;
+        width: 100%;
+    }
+
+    .center-align {
+        text-align: center !important;
+    }
+
+    .delivery-info-main-block {
+        width: 100%;
+    }
+
+    .delivery-info-main-block p{
+        font-size: 14px;
+    }
+
+    .delivery-info-main-block h1 {
+        color: #2588ad;
+        font-family: "Kelson Sans";
+        font-size: 18px;
+        font-weight: normal;
+        margin-top: 5px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .delivery-info-main-block .delivery-img-block img {
+        border: 3px solid #2588ad;
+        width: 98% !important;
+        height: 100% !important;
+    }
+
+    .delivery-info-main-block .delivery-info-block1 {
+        float: left;
+        width: 91%;
+        padding: 15px 10px 0px 20px;
+    }
+
+    .delivery-info-main-block .delivery-info-block1 .title1 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .delivery-info-main-block .delivery-info-block1 .title2 {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .delivery-info-main-block .delivery-info-block2{
+        padding: 15px 10px 0px 20px;
+    }
+
+    .delivery-info-main-block .delivery-info-block2 .delivery-add-info-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    .margin-bottom-20{
+        margin-bottom: 20px !important;
+    }
+
+    .offer-main-block {
+        font-family: "Tahoma,sans-serif";
+    }
+
+    .offer-main-block h1 {
+        color: #2588ad;
+        font-size: 20px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .offer-main-block .offer-item-block .offer-item-title {
+        color: #2588ad;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .offer-main-block .offer-item-block img {
+        width: 100%;
+    }
+
+    .offer-main-block .offer-item-block .offer-item-description {
+        font-size: 16px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: 0 10px;
+        text-indent: 20px;
+    }
+
+    .offer-main-block .offer-item-block .offer-status-label {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+
+    .offer-main-block .offer-item-block .offer-status-name {
+        float: left;
+        font-size: 16px;
+        margin-left: 5px;
+    }
+
+    .green {
+        color: green !important;
+    }
+
+    .offer-main-block .offer-item-block .offer-period-label {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 10px 0 0 10px;
+    }
+
+    .offer-main-block .offer-item-block .offer-period-name {
+        float: left;
+        font-size: 16px;
+        margin: 10px 0 10px 5px;
+    }
+
+    .offer-main-block .offer-item-block .offer-how-to-label {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+
+    .offer-main-block .offer-item-block .offer-how-to-name {
+        font-size: 16px;
+        padding: 0 10px;
+        margin-bottom: 10px;
+    }
+
+    .one-page-product-list-block {
+        border-radius: 10px;
+        float: right;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        margin: 0 0 0 20px;
+        padding: 5px 15px;
+        width: 95%;
+    }
+
+    .one-page-product-list-block h1 {
+        color: #2588ad;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .one-page-product-list-block .optovaya-telephone{
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 15px !important;
+        margin-bottom: 20px;
+        margin-left: 30px;
+        text-align: center;
+    }
+
+    .priglasi-druga-main-block .pr-dr1 {
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 16px;
+        padding: 0 15px;
+        width: 95%;
+    }
+
+    .priglasi-druga-main-block .pr-dr-p1 {
+        font-weight: bold;
+        margin: 20px 0 15px;
+
+    }
+
+    .priglasi-druga-main-block ul {
+        list-style-position: inherit;
+        list-style-type: disc;
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+
+    .priglasi-druga-main-block li {
+        margin: 10px;
+    }
+
+    .priglasi-druga-main-block .pr-dr-p2 {
+        margin: 10px 0 20px;
+    }
+
+    .priglasi-druga-main-block .pr-dr-p3 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .priglasi-druga-main-block .pr-dr-p4 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .basket-main-block {
+        border-radius: 10px;
+        float: right;
+        margin: 20px 0 0 25px;
+        width: 100%;
+    }
+
+    .basket-main-block .request-info-block {
+        font-family: Georgia;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .basket-main-block .request-info-block .label-left-block {
+        float: left;
+        margin: 10px 0 10px 10px;
+        width: 35%;
+    }
+
+    .required-asterix {
+        color: red;
+        float: left;
+        margin-left: 1px;
+    }
+
+    .basket-main-block .request-info-block .input-left-block {
+        float: left;
+        margin: 5px 0;
+        width: 60%;
+    }
+
+    .input-style {
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        font-size: 15px;
+        min-height: 30px;
+        padding: 0 0.4em;
+        width: 94%;
+    }
+
+    .basket-main-block .request-info-block .label-right-block {
+        float: left;
+        margin: 10px 0 10px 10px;
+        width: 35%;
+    }
+
+    .basket-main-block .request-info-block .input-right-block {
+        float: left;
+        margin: 5px 0;
+        width: 60%;
+    }
+
+    .basket-main-block .request-info-block .input-right-block #telephone, .basket-main-block .request-info-block .input-right-block #telephone_add {
+        width: 94%;
+    }
+
+    .basket-main-block .request-info-block .input-left-block .city-select, .basket-main-block .request-info-block .input-right-block .evening-courier-select {
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        cursor: pointer;
+        font-family: Georgia;
+        font-size: 14px;
+        height: 32px;
+        padding: 5px;
+        width: 100%;
+    }
+
+    .basket-main-block .request-info-block .input-left-block .address {
+        height: 100px;
+        max-height: 150px;
+        min-height: 100px;
+        padding: 5px;
+        resize: vertical;
+        width: 94%;
+    }
+
+    .basket-main-block .request-info-block .input-right-block .comment {
+        height: 100px;
+        max-height: 150px;
+        min-height: 100px;
+        padding: 5px;
+        resize: vertical;
+        width: 94%;
+    }
+
+    .basket-main-block .request-info-block .basket-btn-block {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .text-decoration-none {
+        text-decoration: none;
+    }
+
+    .button {
+        background-color: #4b86c2;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 15px;
+        margin: 10px;
+        padding: 5px;
+    }
+
+    .basket-main-block .request-info-block .basket-btn-block .return-btn, .basket-btn-block .purchase-btn {
+        margin: 5px 0px 0px 0px;
+    }
+
+    .dotted-div {
+        border: 2px dotted #eae5e5;
+        margin-top: 20px;
+    }
+
+    .basket-table {
+        background: none repeat scroll 0 0 #eaebec;
+        border: 1px solid #ccc;
+        border-collapse: separate;
+        border-radius: 3px;
+        box-shadow: 0 1px 2px #d1d1d1;
+        color: #000000;
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: 13px;
+        margin: 20px 0px 20px 0;
+        text-shadow: 1px 1px 0 #fff;
+        width: 100%;
+    }
+
+    .basket-table .basket-items-table-tr .photo-item-td img{
+        width: 40%;
+    }
+
+    .basket-table .basket-items-table-tr .count_text{
+        width: 19px;
+        height: 14px;
+        padding: 2px 2px 3px;
+        float: left;
+        text-align: center;
+    }
+
+    .basket-table tr {
+        padding-left: 20px;
+        text-align: center;
+    }
+
+    .basket-main-block .basket-table .summa {
+        text-align: right;
+    }
+
+    .basket-table tr td:first-child {
+        border-left: 0 none;
+        padding-left: 20px;
+        text-align: left;
+    }
+
+    .basket-table tr td {
+        background: -moz-linear-gradient(center top , #fbfbfb, #fafafa) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border-bottom: 1px solid #e0e0e0;
+        border-left: 1px solid #e0e0e0;
+        border-top: 1px solid #ffffff;
+        padding: 5px;
+    }
+
+    .basket-table tr:last-child td:last-child {
+        border-bottom-right-radius: 3px;
+    }
+
+    .basket-table tr:last-child td:first-child {
+        border-bottom-left-radius: 3px;
+    }
+
+    .basket-main-block .basket-table .bonus-td {
+        color: green;
+        text-align: right;
+    }
+
+    .basket-table tr:last-child td {
+        border-bottom: 0 none;
+    }
+
+    .icon-plus, .icon-minus {
+        cursor: pointer;
+        display: block;
+        float: left;
+        height: 19px;
+        top: 1px;
+        width: 16px;
+    }
+
+    .icon-minus {
+        margin-left: 2px;
+    }
+
+    .basket-items-table-tr .sum-td .inner-td-div {
+        background: url("/css/image/icons3.png") repeat scroll 112px 39px rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 20px;
+        width: 62px;
+    }
+
+    .basket-table tr .sum-td{
+        padding: 3px;
+    }
+
+    .basket-table tr .delete-td img{
+        width: 11px;
+        height: 12px;
+    }
+
+    .basket-table .basket-mobile-th th{
+        width: auto !important;
+    }
+
+    .basket-table .basket-mobile-th-photo{
+        display: none;
+    }
+
+    .basket-main-block .basket-btn-block-addit .return-btn, .basket-btn-block-addit .purchase-btn {
+        margin: 5px 0px 0px 0px;
+    }
+
+    .basket-main-block .basket-btn-block-addit {
+        text-align: center;
+    }
+
+    #data_form label {
+        color: red;
+        font-size: 14px;
+        margin-left: 57px;
+    }
+
+    .product-info-main-block {
+        border-radius: 10px;
+        float: right;
+        margin: 20px 0 0 20px;
+        padding: 5px 0px;
+        width: 100%;
+    }
+
+    .product-info-main-block .b-product-price {
+        margin-left: 0px;
+        margin-top: 33px;
+        text-align: center;
+        right: 60px;
+    }
+
+    .b-product-price {
+        background: none repeat scroll 0 0 #4b86c2;
+        color: #ffffff;
+        font: 24px/28px PTSans-NarrowBold,Arial,sans-serif;
+        height: 29px;
+        margin-left: 136px;
+        margin-top: 44px;
+        padding: 1px 6px 0 8px;
+        position: absolute;
+        width: 92px;
+        z-index: 7;
+    }
+
+    .product-info-main-block .product-info-img-block {
+        float: left;
+        text-align: center;
+        width: 200px;
+        margin-left: 45px;
+    }
+
+    .product-info-main-block .product-info-img-block img {
+        max-height: 250px;
+        max-width: 180px;
+    }
+
+    .product-info-main-block .product-info-img-block .button {
+        margin-top: 10px;
+    }
+
+    .product-info-main-block .product-description-block {
+        float: left;
+        margin-top: 15px;
+        padding: 0 10px;
+        width: 93%;
+    }
+
+    .product-info-main-block .product-description-block h1 {
+        color: #4b86c2;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .product-info-main-block .social-repost-block {
+        margin-left: 2%;
+    }
+
+    .product-info-main-block .social-repost-block .social-block1 {
+        float: left;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block1 .vk-b {
+        margin-right: 15px;
+        margin-top: 11px;
+    }
+
+    .fb_iframe_widget {
+        display: inline-block;
+        position: relative;
+    }
+    .fb-share-button {
+        border: 1px solid #3b579d;
+        border-radius: 5px;
+        color: #ffffff !important;
+        margin-right: 15px;
+        margin-top: 9px;
+        padding: 0 5px 5px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2 .google-b{
+        margin-right: 5px;
+        margin-top: 2px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2 .odnoklassniki-share-block {
+        margin-top: -2px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2 .moi-mir-b {
+        margin-right: 5px;
+        margin-top: 1px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2 .odnoklassniki-share-block {
+        margin-top: -2px;
+    }
+
+    .margin-top-12{
+        margin-top: 12px !important;
+    }
+
+    .product-comment-block{
+        padding: 0 0 0 20px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2 {
+        margin-top: 20px;
+    }
+
+    .product-info-main-block .similar-popular-product-block .similar-popular-h2 {
+        color: #2588ad;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-weight: bold;
+        margin: 50px 0 30px;
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .product-info-main-block .product-comment-block .comment-block-title {
+        font-family: "Kelson Sans";
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 {
+        font-family: "Kelson Sans";
+        margin-top: 10px;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .mobile-comment-author-avatar{
+        width: auto !important;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .mobile-comment-textarea{
+        width: auto !important;
+        margin-left: 20px;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .mobile-comment-send-div{
+        margin-left: 0px !important;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .new-comment-title {
+        float: left;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .logout-btn-comment {
+        color: red;
+        cursor: pointer;
+        float: right;
+        font-size: 16px;
+        margin-left: 40px;
+        text-decoration: underline;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .auth-type-block {
+        padding-bottom: 5px;
+    }
+
+    .comment-input, .comment-textarea {
+        border: 1px solid #58abc9;
+        padding: 5px;
+    }
+
+    .comment-textarea {
+        height: 100px;
+        max-height: 200px;
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 #send_error {
+        color: red;
+    }
+
+    .ui-menu-item a{
+        font-size: 14px;
+        font-family: 'kelson sans';
+    }
+    .ui-menu{
+        z-index: 100 !important;
+        width: 85% !important;
+    }
+
+    .success-main-block {
+        border-radius: 10px;
+        float: right;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        margin: 20px 0 0 20px;
+        padding: 5px 15px;
+        width: 90%;
+    }
+
+    .success-main-block h2 {
+        color: #132d60;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .success-main-block h3 {
+        color: #132d60;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .index-main-block .other-title-p {
+        color: #2588ad;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .invite-not-active-p {
+        color: red;
+        font-family: "Georgia";
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+    }
+
+    .invite-not-active-p {
+        color: red;
+        font-family: "Georgia";
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+    }
+
+    .friend-invite-main-block #myform {
+        font-family: "Georgia";
+        font-size: 16px;
+    }
+
+    .friend-invite-main-block .label-left-block {
+        float: left;
+        margin: 10px 0px 0px 20px;
+        width: 30%;
+    }
+
+    .friend-invite-main-block .input-left-block {
+        float: left;
+        margin: 5px 0;
+        width: 62%;
+    }
+
+    .friend-invite-main-block .label-right-block {
+        float: left;
+        margin: 10px 0 10px 20px;
+        width: 30%;
+    }
+
+    .friend-invite-main-block .input-right-block {
+        float: left;
+        margin: 5px 0;
+        width: 62%;
+    }
+
+    .friend-invite-main-block .input-left-block .city-select {
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        cursor: pointer;
+        font-family: Georgia;
+        font-size: 14px;
+        height: 32px;
+        padding: 5px;
+        width: 100%;
+    }
+
+    .friend-invite-main-block label.error {
+        margin-left: 30px !important;
+    }
+
+    label.error {
+        color: red;
+        font-size: 14px;
+    }
+
+    .index-main-block .popular-from-category-h2 {
+        color: #2588ad;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .feedback-list-main-block{
+        float: right;
+        width: 100%;
+        border-radius: 10px;
+        margin: 0px 0px 0px 20px;
+        padding: 5px 15px 5px 15px;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .feedback-list-main-block .feedback-item{
+        border: 1px solid #e0e0e0;
+        border-radius: 3px;
+        margin: 0 18px 30px;
+        padding: 20px 10px;
+        width: 90%;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block{
+        float: left;
+        width: 70%;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-author-p{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-product-p{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #2588ad;
+        text-decoration: underline;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-product-p2{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-author-p2{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-text-p{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        margin: 10px 0px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-right-block{
+        float: right;
+        width: 30%;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-right-block .feedback-avatar{
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-date-p{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        text-align: right;
+    }
+
+    .feedback-comment-block{
+        float: none;
+        margin: 0;
+        padding: 0px 5px;
+    }
+
+    .feedback-comment-block .feedback-product-select{
+        width: 100%;
+        margin-top: 10px;
+        padding: 5px 0px;
+        font-family: 'Kelson Sans';
+        font-size: 16px;
+    }
+
+    .feedback-comment-block .mobile-comment-textarea2{
+        width: 76% !important;
+        margin-left: 5px;
+    }
+
+    .feedback-comment-block .mobile-comment-textarea2 .comment-textarea{
+        width: 94%;
+    }
+
+    .cert-fancybox{
+        text-decoration: none;
+    }
+
+    .cert-fancybox img{
+        margin-left: 10%;
+        margin-top: 20px;
+        border: 1px solid darkgrey;
+    }
+    .add-link-by-brand{
+        color: #132d60;
+        font-family: bistro-script-web,Garamond,script;
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 20px;
+    }
+    .selected-add-link-by-brand{
+        color: #3160bf !important;
+        font-style: italic !important;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+    .slide-block{
+        width: 95%;
+        display: block;
+        margin: 10px auto;
+        padding-left: 0 !important;
+        border: 3px solid #7bbc46;
+    }
+
+    .slide-block .inner-div{
+        margin: auto;
+        width: 100%;
+    }
+
+    .slide-block .inner-div .inner-div2{
+        margin: auto;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: none;
+    }
+
+    .slide-class{
+        width: 100%;
+        margin: auto !important;
+    }
+
+    .slide-block .info-slide-block{
+        display: none;
+    }
+
+    .inner-div2 img{
+        width: 20px;
+        float: right;
+        margin-left: 2px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+    .arrowLeft{
+        float: left;
+        margin-left: 2px;
+    }
+
+    .arrowRight{
+        float: right;
+        margin-right: 2px;
+    }
+
+    .slideControl1{
+        display: block;
+        margin-top: -120px;
+        position: absolute;
+        width: 10%;
+        left: 5px;
+    }
+
+    .slideControl2{
+        display: block;
+        margin-top: -120px;
+        position: absolute;
+        width: 10%;
+        right: 5px;
+    }
+
+
+
+    .brand-page-links{
+        color: #132d60;
+    }
+
+    .brand-page-links:hover{
+        text-decoration: none;
+    }
+
+    .brand-item-block{
+        text-align: center;
+        width: 170px;
+        float: left;
+        margin-bottom: 40px;
+    }
+
+    .brand-item-block p{
+        color: #132d60;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .brand-item-block .brand-img-exist, .brand-item-block .brand-img-not-exist{
+        max-width: 130px;
+        max-height: 130px;
+    }
+
+    .product-description-block img{
+        width: 97%;
+    }
+    .product-commment-count-icon-block{
+        position: absolute;
+        margin-top: 80px;
+        margin-left: 243px;
+        background-image: url('/css/image/reviews.png');
+        background-size: 32px 32px;
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        padding-top: 1px;
+    }
+
+    .product-commment-count-icon-block2{
+        position: absolute;
+        margin-left: 280px;
+        margin-top: 75px;
+        background-image: url('/css/image/reviews.png');
+        background-size: 32px 32px;
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        padding-top: 1px;
+    }
+
+    .product-commment-count-icon-block p, .product-commment-count-icon-block2 p{
+        color: white;
+        margin: 0px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .modal-basket-product-price-changes{
+        top: 30%;
+        position: fixed;
+        border-radius: 5px;
+        padding: 20px 10px 10px;
+        width: 94%;
+        background-color: #ececec;
+        z-index: 1002;
+        display: none;
+    }
+
+    .modal-basket-product-price-changes p{
+        font-family: 'Georgia';
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .product-info-main-block .brand-foto-img{
+        margin: 61px 0 0 44px !important;
+        z-index: 0 !important;
+    }
+
+    .discount-percent-p{
+        position: absolute;
+        color: white;
+        z-index: 10;
+        font-weight: bold;
+        font-size: 14px;
+        font-family: 'Helvetica';
+        transform: rotate(45deg);
+    }
+
+    .discount-percent-p2{
+        position: absolute;
+        color: white;
+        z-index: 10;
+        font-weight: bold;
+        font-size: 14px;
+        font-family: 'Helvetica';
+        transform: rotate(-45deg);
+    }
+
+    .discount-percent-p-margin1{
+        margin: 17px 0 0 227px;
+    }
+
+    .discount-percent-p-margin2{
+        margin: 19px 0 0 226px;
+    }
+
+    .discount-percent-product-margin1{
+        margin: 27px 0px 0px 18px;
+    }
+
+    .discount-percent-product-margin2{
+        margin: 27px 0px 0px 17px;
+    }
+
+    .discount-icon-img{
+        width: 100px;
+        position: absolute;
+        z-index: 10;
+        margin-top: -7px;
+        margin-left: 58px;
+    }
+
+    .discount-icon-img2{
+        margin-left: 10px;
+        margin-top: 0px;
+        position: absolute;
+        width: 130px;
+        z-index: 10;
+    }
+
+    .header .logo-city-block{
+        margin: 0px 0px 0px 24px;
+    }
+
+    .category-link-nav{
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 6px;
+        margin-top: 7px;
+    }
+
+    .header .logo-city-block .city-select-div{
+        float: left;
+        padding-top: 11px;
+        margin-left: 7px;
+    }
+
+    .header .logo-city-block .city-select-div p{
+        font-size: 16px;
+        font-weight: normal;
+        color: #2588AD;
+        font-family: 'Kelson Sans Light';
+    }
+
+    .header .logo-city-block .selected-city-div{
+        float: left;
+        overflow: hidden;
+        margin-left: 10px;
+        padding-top: 11px;
+    }
+
+    .header .logo-city-block .selected-city-div p{
+        color: #2588AD;
+        font-size: 16px;
+        font-family: 'Kelson Sans';
+        cursor: pointer;
+        border-bottom: 2px dotted #2588ad;
+    }
+
+    .header .logo-city-block .city-block{
+        display: none;
+        position: absolute;
+        z-index: 100;
+        margin-left: 66px;
+        background-color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #2588AD;
+    }
+
+    .header .logo-city-block .city-block p{
+        color: #2588AD;
+        font-size: 16px;
+        font-family: 'Kelson Sans';
+        cursor: pointer;
+    }
+
+    .header .header-link-block{
+        margin: 10px 0px 0px 0px;
+        font-size: 16px;
+        color: #2588AD;
+    }
+
+    .header .header-link-block .search-block{
+        margin: 0px 0px 10px 24px;
+    }
+
+    .header .header-link-block .search-block #search_word{
+        font-family: 'Kelson Sans';
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 0px;
+        border: 2px solid #2588ad;
+        width: 63%;
+    }
+
+    .header .header-link-block .search-block .search-btn{
+        cursor: pointer;
+        background-color: #2588ad;
+        border-radius: 5px;
+        color: white;
+        font-family: 'kelson sans';
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .header .header-link-block .search-block div{
+        margin-top: 5px;
+    }
+
+    .header .header-link-block .search-block div a{
+        color: #2588ad;
+        margin-right: 5px;
+    }
+
+    .header-main-links{
+        display: none;
+    }
+
+    /*.slide-block{*/
+        /*display: none;*/
+    /*}*/
+
+    .clearfloat{
+        clear: both;
+    }
+
+    .new-product-label{
+        float: left;
+        font-size: 10px;
+        color: red;
+        font-weight: bold;
+        margin-left: 3px;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block{
+        float: left;
+        font-size: 18px;
+        margin: 20px 0px 0px 17%;
+        font-family: bistro-script-web,Garamond,script;
+        color: #132D60;
+        font-weight: bold;
+    }
+
+    .header .job-time-block-mobile{
+        float: left;
+        color: white;
+        padding: 10px 0px;
+        text-align:center;
+        background-color: #7BBC46;
+        width: 100%;
+        margin-top: -20px;
+    }
+
+    .header .job-time-block-mobile .job-time-label{
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .header .job-time-block-mobile .job-time-value{
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    .product-item{
+        float: left;
+        width: 78%;
+        background-color: #ffffff;
+        border-radius: 3px;
+        padding: 0px 5px 5px 5px;
+        text-align: center;
+        border: 1px solid #E0E0E0;
+        margin-bottom: 10px;
+        margin-left: 9%;
+    }
+
+    .menu-links {
+        color: #2588ad;
+        text-decoration: underline;
+    }
+
+    .menu-links:hover{
+        text-decoration: none;
+    }
+
+    .left-float{
+        float: left;
+    }
+
+    .right-float{
+        float: right;
+    }
+
+    #nav-wrap {
+        left: 10px;
+        margin: 0 30px 0 0;
+        position: fixed;
+        /*right: 0;*/
+        top: 10px;
+        z-index: 100;
+    }
+
+    #menu-icon {
+        background: url("/css/image/menu-icon.png") no-repeat scroll 10px center #ecebeb;
+        border: 1px solid #666;
+        color: #000;
+        cursor: pointer;
+        display: block;
+        height: 30px;
+        padding: 7px 1px 0 42px;
+        width: 0;
+    }
+    #nav {
+        background: none repeat scroll 0 0 #f8f8f8;
+        border: 1px solid #999;
+        clear: both;
+        display: none;
+        padding: 5px;
+        position: fixed;
+        margin-top: -6px !important;
+        /*right: 30px;*/
+        top: 54px;
+        width: 160px;
+        z-index: 100;
+    }
+
+    .category-link-nav{
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    #nav, #nav li {
+        margin: 0;
+        padding: 0;
+    }
+    #nav li {
+        margin: 5px 0 0px 10px;
+    }
+    #nav li {
+        list-style: outside none none;
+        margin-right: 5px;
+    }
+    #nav a, #nav ul a {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border: medium none;
+        color: #666;
+        display: inline;
+        font: inherit;
+        padding: 0;
+    }
+    #nav a {
+        background: none repeat scroll 0 0 #ecebeb;
+        color: #000;
+        display: block;
+        padding: 4px 15px;
+    }
+    #nav a p{
+        font-size: 14px;
+    }
+
+    .product-item:hover{
+        border: 1px solid #E0E0E0;
+        /*background-color: #F2EEE6;*/
+        -webkit-box-shadow: 0px 3px 8px 0px rgba(55, 51, 51, 1);
+        -moz-box-shadow:    0px 3px 8px 0px rgba(55, 51, 51, 1);
+        box-shadow:         0px 3px 8px 0px rgba(55, 51, 51, 1);
+    }
+
+    .b-product-price {
+        background: none repeat scroll 0 0 #4B86C2;
+        color: #FFFFFF;
+        font: 19px/28px PTSans-NarrowBold,Arial,sans-serif;
+        height: 27px;
+        padding: 0px 6px 0 8px;
+        z-index: 7;
+        width: 92px;
+        margin-left: 45%;
+        position: absolute;
+        margin-top: 35px;
+    }
+
+    .b-product-status {
+        background: none repeat scroll 0 0 #ffffff;
+        border: 3px solid #2588ad;
+        color: #2588ad;
+        font-family: PTSans-NarrowBold,Arial,sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.07em;
+        margin-top: 5px;
+        padding: 2px 10px;
+        position: absolute;
+        text-transform: uppercase;
+        right: 59px;
+    }
+
+    .new-product-title-h2 {
+        color: #2588ad;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 19px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+
+    .opt-prodazha-h2 {
+        color: #2588ad;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 19px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .index-h2-links {
+        color: #2588ad;
+        text-decoration: underline;
+    }
+
+    .b-product-price s {
+        background: url("../css/image/mr-sprite.svg") no-repeat scroll -10px 0 rgba(0, 0, 0, 0);
+        height: 27px;
+        position: absolute;
+        right: -9px;
+        top: 0;
+        width: 10px;
+    }
+
+    .black {
+        color: #000000 !important;
+    }
+    .text-decoration-none {
+        text-decoration: none;
+    }
+
+    .product-type-link {
+        color: #132d60;
+    }
+
+    @font-face {
+        font-family: 'Kelson Sans';
+
+        src: url("/css/kelson_sans_regular_ru.ttf");
+    }
+    @font-face{
+        font-family: 'Kelson Sans Bold';
+        src: url("/css/kelson_sans_bold_ru.ttf");
+    }
+    @font-face {
+        font-family: 'Kelson Sans Light';
+        src: url("/css/kelson_sans_light_ru.ttf");
+    }
+
+    .cabinet-link {
+        color: #7bbc46;
+        text-decoration: underline;
+    }
+
+    .search-block a{
+        font-size: 14px !important;
+        font-family: "Kelson Sans";
+    }
+
+    .dataTables_paginate{
+        text-align: center !important;
+    }
+
+    .product-list-form-main-block .product-list-info{
+        min-height: 180px;
+        margin-bottom: 10px;
+    }
+
+    .product-list-form-main-block .product-list-info .product-image{
+        margin: 20px 35px 0px;
+    }
+
+    .product-image{
+        max-height: 150px;
+        max-width: 150px;
+        margin: 10px 0px 0px 8px;
+    }
+    .product-image:hover{
+        cursor: pointer;
+    }
+
+    .button {
+        background-color: #4b86c2;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 14px;
+        margin: 50px 0 5px;
+        padding: 3px 11px;
+    }
+
+    .button:hover{
+        background-color: #58ABC9;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block{
+        background-color: #ECECEC;
+        border-radius: 10px;
+        padding: 15px;
+        width: 210px;
+    }
+
+    .category-group-description-h2, .category-group-description-p, .head-akcii-info-p, .footer, .connection-types-block, .job-time-block{
+        display: none;
+    }
+    .category-group-description-h2{
+        font-family: 'Verdana';
+        font-size: medium;
+        font-weight: bold;
+        color: #000000;
+        margin: 30px 0px 10px;
+    }
+
+    .category-group-description-p{
+        font-family: 'Verdana';
+        font-size: medium;
+        margin-bottom: 10px;
+        text-indent: 30px;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .selected-category-p{
+        color: #3160BF;
+        font-weight: bold;
+    }
+
+    .index-main-block h1{
+        margin-top: 10px;
+    }
+
+    .index-main-block h1, .index-main-block .popular-title-h2 {
+        color: #2588ad;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 19px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        width: 86%;
+        margin-left: 20px;
+        text-align: center;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .category-group-name-p{
+        cursor: pointer;
+        color: #132d60;
+        text-decoration: underline;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .category-group-name-p:hover{
+        text-decoration: none;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .subcategory-block{
+        margin-left: 20px;
+    }
+
+    .header .basket-block {
+        float: left;
+        width: 50px;
+    }
+
+    .scroll-basket {
+        background-color: #f5f5f5;
+        border: 3px solid #ececec;
+        border-radius: 5px;
+        color: #000000;
+        cursor: pointer;
+        height: 43px;
+        padding: 5px;
+        position: fixed;
+        right: 27px !important;
+        top: 13px;
+        width: 40px;
+        z-index: 99;
+    }
+
+    .scroll-basket .basket-count-block {
+        background-color: red;
+        border-radius: 10px;
+        height: 20px;
+        margin-left: 35px;
+        position: absolute;
+        text-align: center;
+        top: -10px;
+        width: 20px;
+        color: white;
+    }
+
+    .success-product-added-block{
+        display: none;
+    }
+
+    .bread-block{
+        margin-bottom: 10px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    .bread-block .bread-links{
+        color: #000000;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+        font-size: 18px;
+    }
+
+    .bread-block .arrow-label{
+        color: #000000;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+        font-size: 14px;
+    }
+
+    .new-products-block-new .discount-icon-img{
+        margin-left: 50px !important;
+    }
+
+    .new-products-block-new .discount-percent-p-margin2{
+        margin: 20px 0 0 210px !important;
+    }
+
+    .not-available-div-index{
+        /*padding: 1px 10px 0px 10px;*/
+        /*font-size: 20px;*/
+        /*font-family: 'PTSans-NarrowBold,Arial,sans-serif';*/
+        /*margin-top: 5px;*/
+        /*color: red;*/
+        /*z-index: 7;*/
+        /*text-align: left;*/
+        /*position: absolute;*/
+        width: 0px;
+        height: 0px;
+        float: left;
+        position: absolute;
+        border-style: solid;
+        border-color: rgb(244, 0, 0) transparent transparent;
+        font-family: PTSans-NarrowBold,Arial,sans-serif;
+        font-size: 14px;
+        border-width: 90px 90px 0px 0px;
+        margin-left: -5px;
+    }
+
+    .not-available-div-index p{
+        position: absolute;
+        transform: rotate(-45deg);
+        color: white;
+        font-weight: bold;
+        margin: -65px 0 0 -6px;
+    }
+
+    .new-product-div-index{
+        width: 0px;
+        height: 0px;
+        float: left;
+        border-width: 80px 80px 0px 0px;
+        position: absolute;
+        border-style: solid;
+        border-color: rgb(144, 186, 80) transparent transparent;
+        font-family: PTSans-NarrowBold,Arial,sans-serif;
+        font-size: 14px;
+        margin-left: -5px;
+    }
+
+    .new-product-div-index p{
+        position: absolute;
+        transform: rotate(-45deg);
+        color: white;
+        font-weight: bold;
+        margin: -60px 0px 0px -2px;
+    }
+
+    .brand-logo-icon-div {
+        height: 50px;
+        margin-top: 110px;
+        position: absolute;
+        transform: rotate(180deg);
+        margin-left: 20px;
+    }
+
+    .brand-logo-icon {
+        background-color: white;
+        border-bottom: medium none !important;
+        box-shadow: 0 0 3px 3px grey;
+        max-width: 50px;
+        padding: 2px;
+        transform: rotate(180deg);
+    }
+
+    .scroll-basket .basket-icon-block {
+        margin: 4px 0 0 4px;
+        width: 35px;
+    }
+
+    .scroll-basket-items {
+        background-color: #ffffff;
+        border: 1px solid #bbbbbb;
+        border-radius: 3px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13);
+        color: #000000;
+        display: none;
+        font-family: Tahoma,sans-serif;
+        font-size: 13px;
+        line-height: normal;
+        padding: 15px;
+        position: fixed;
+        right: 28px !important;
+        top: 80px;
+        width: 207px;
+        z-index: 1000;
+    }
+
+    .basket-items-main-block {
+        border: 1px solid #d3d3d3;
+        padding: 2px;
+    }
+
+    .basket-items-main-block .item-photo-block {
+        float: left;
+        padding-left: 5px;
+        width: 40px;
+    }
+
+    .basket-items-main-block .item-photo-block img {
+        max-height: 45px;
+    }
+
+    .basket-items-main-block .basket-item-info-block {
+        float: left;
+        font-size: 12px;
+        width: 152px;
+    }
+
+    .nav-arrow-inner {
+        border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #ffffff;
+        border-style: solid;
+        border-width: 0 9px 9px;
+        font-size: 0;
+        height: 0;
+        line-height: 0;
+        position: absolute;
+        right: 17px;
+        top: -9px;
+        width: 0;
+    }
+
+    .band-title {
+        background-color: #2588ad;
+        height: 66px;
+        text-align: center;
+    }
+
+    .band-title .inner-div {
+        background-color: #2588ad;
+        height: 43px;
+        margin: auto;
+        padding-top: 13px;
+        width: 80%;
+    }
+
+    .band-title .inner-div p {
+        color: #ffffff;
+        font-family: "Kelson Sans";
+        font-size: 16px;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+
+    .header .header-link-block .authorized-user-info{
+        color: #7BBC46;
+        margin: 0px 0px 10px 0px;
+        padding-right: 7px;
+        text-align: center;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .category-all-product-p{
+        color: #132d60;
+        font-weight: normal;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .nonselected-category-name-p{
+        color: #132d60;
+        font-weight: normal;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .selected-category-name-p{
+        color: #3160BF;
+        font-style: italic;
+        font-weight: bold;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .brand-block-title{
+        margin-top: 15px; padding-top: 10px; border-top: 1px dashed black;
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .brand-list-block{
+        margin-left:20px;
+        font-weight: normal;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .layout-main-block .layout-left-block .category-list-block .brand-list-block .selected-brand{
+        color: #3160BF;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    .layout-main-block .layout-left-block .category-other-city-links{
+        width: 240px;
+        margin: 20px 0px;
+    }
+
+    #jivo_top_wrap{
+        display: none;
+    }
+
+    .BloggerHowFB{
+        margin-bottom: 30px;
+    }
+
+    .BloggerHowFB {
+        width:235px;
+        height:440px;
+        margin-top: 20px;
+    }
+
+    .FBWrap{
+        height:440px;
+        overflow:hidden;
+    }
+
+    .BloggerHowFB #fb-likes-block{
+        float: left;
+        border: 3px solid #ececec;
+        border-radius: 10px;
+        background: #ececec;
+        height: 438px !important;
+    }
+
+    .fb_iframe_widget iframe{
+        height: 438px !important;
+    }
+
+    .scrollup {
+        background: url("/css/image/up_sign.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        bottom: 15px;
+        display: none;
+        height: 40px;
+        position: fixed;
+        right: 15px;
+        text-indent: -9999px;
+        width: 40px;
+        z-index: 1000;
+    }
+
+    .mobile-shop-info-block{
+        padding: 0px 10px;
+    }
+
+    .shop-main-block h1 {
+        color: #2588ad;
+        font-size: 20px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .shop-main-block .shop-title {
+        color: #2588ad;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .shop-main-block .shop-address-label {
+        float: left;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 10px 0 0px 5px;
+    }
+
+    .shop-main-block .shop-address-value {
+        float: left;
+        font-size: 15px;
+        margin: 0px 0 5px 5px;
+    }
+
+    .shop-main-block .shop-img {
+        border: 3px solid #d8d8d8;
+        width: 99.5%;
+    }
+
+    #YMapsID {
+        height: 200px;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .how-to-order-main-block {
+        border-radius: 10px;
+        float: right;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        width: 100%;
+    }
+
+    .how-to-order-main-block h1 {
+        color: #2588ad;
+        font-family: "Kelson Sans";
+        font-size: 20px;
+        font-weight: normal;
+        margin: 5px 0 20px;
+        text-align: center;
+    }
+
+    .how-to-order-main-block {
+        font-family: "URWAntiquaW01-2015Regul 923026";
+    }
+
+    .how-to-order-main-block .how-to-info-p {
+        font-size: 18px;
+        margin: 20px 0;
+        text-indent: 20px;
+        padding: 0px 10px;
+    }
+
+    .how-to-order-main-block .how-to-info-p2{
+        font-size: 18px;
+        margin: 10px 0px 20px;
+        text-indent: 20px;
+        padding: 0px 10px;
+    }
+
+    .how-to-order-main-block .how-to-info-img, .how-to-order-main-block .instruction-image-block{
+        width: 100%;
+    }
+
+    .how-to-order-main-block .how-to-info-img{
+        border-top: 2px dotted #0F6997;
+        padding-top:10px;
+    }
+
+    .how-to-order-main-block .how-to-info-img2{
+        border-bottom:2px dotted #0F6997;
+    }
+
+    .how-to-order-main-block .instruction-image-block2{
+        height: 35px;
+        width: 100%;
+    }
+
+    .center-align {
+        text-align: center !important;
+    }
+
+    .delivery-info-main-block {
+        width: 100%;
+    }
+
+    .delivery-info-main-block p{
+        font-size: 14px;
+    }
+
+    .delivery-info-main-block h1 {
+        color: #2588ad;
+        font-family: "Kelson Sans";
+        font-size: 18px;
+        font-weight: normal;
+        margin-top: 5px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .delivery-info-main-block .delivery-img-block img {
+        border: 3px solid #2588ad;
+        width: 98% !important;
+        height: 100% !important;
+    }
+
+    .delivery-info-main-block .delivery-info-block1 {
+        float: left;
+        width: 91%;
+        padding: 15px 10px 0px 20px;
+    }
+
+    .delivery-info-main-block .delivery-info-block1 .title1 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .delivery-info-main-block .delivery-info-block1 .title2 {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .delivery-info-main-block .delivery-info-block2{
+        padding: 15px 10px 0px 20px;
+    }
+
+    .delivery-info-main-block .delivery-info-block2 .delivery-add-info-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    .margin-bottom-20{
+        margin-bottom: 20px !important;
+    }
+
+    .offer-main-block {
+        font-family: "Tahoma,sans-serif";
+    }
+
+    .offer-main-block h1 {
+        color: #2588ad;
+        font-size: 20px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .offer-main-block .offer-item-block .offer-item-title {
+        color: #2588ad;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .offer-main-block .offer-item-block img {
+        width: 100%;
+    }
+
+    .ui-menu-item a{
+        font-size: 14px;
+        font-family: 'kelson sans';
+    }
+    .ui-menu{
+        width: 85% !important;
+        z-index: 100 !important;
+    }
+
+    .offer-main-block .offer-item-block .offer-item-description {
+        font-size: 16px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: 0 10px;
+        text-indent: 20px;
+    }
+
+    .offer-main-block .offer-item-block .offer-status-label {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+
+    .offer-main-block .offer-item-block .offer-status-name {
+        float: left;
+        font-size: 16px;
+        margin-left: 5px;
+    }
+
+    .green {
+        color: green !important;
+    }
+
+    .offer-main-block .offer-item-block .offer-period-label {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 10px 0 0 10px;
+    }
+
+    .offer-main-block .offer-item-block .offer-period-name {
+        float: left;
+        font-size: 16px;
+        margin: 10px 0 10px 5px;
+    }
+
+    .offer-main-block .offer-item-block .offer-how-to-label {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+
+    .offer-main-block .offer-item-block .offer-how-to-name {
+        font-size: 16px;
+        padding: 0 10px;
+        margin-bottom: 10px;
+    }
+
+    .one-page-product-list-block {
+        border-radius: 10px;
+        float: right;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        margin: 0 0 0 20px;
+        padding: 5px 15px;
+        width: 95%;
+    }
+
+    .one-page-product-list-block h1 {
+        color: #2588ad;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .one-page-product-list-block .optovaya-telephone{
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 15px !important;
+        margin-bottom: 20px;
+        margin-left: 30px;
+        text-align: center;
+    }
+
+    .priglasi-druga-main-block .pr-dr1 {
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 16px;
+        padding: 0 15px;
+        width: 95%;
+    }
+
+    .priglasi-druga-main-block .pr-dr-p1 {
+        font-weight: bold;
+        margin: 20px 0 15px;
+
+    }
+
+    .priglasi-druga-main-block ul {
+        list-style-position: inherit;
+        list-style-type: disc;
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+
+    .priglasi-druga-main-block li {
+        margin: 10px;
+    }
+
+    .priglasi-druga-main-block .pr-dr-p2 {
+        margin: 10px 0 20px;
+    }
+
+    .priglasi-druga-main-block .pr-dr-p3 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .priglasi-druga-main-block .pr-dr-p4 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+
+    .basket-main-block {
+        border-radius: 10px;
+        float: right;
+        margin: 20px 0 0 25px;
+        width: 100%;
+    }
+
+    .basket-main-block .request-info-block {
+        font-family: Georgia;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .basket-main-block .request-info-block .label-left-block {
+        float: left;
+        margin: 10px 0 10px 10px;
+        width: 35%;
+    }
+
+    .required-asterix {
+        color: red;
+        float: left;
+        margin-left: 1px;
+    }
+
+    .basket-main-block .request-info-block .input-left-block {
+        float: left;
+        margin: 5px 0;
+        width: 60%;
+    }
+
+    .input-style {
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        font-size: 15px;
+        min-height: 30px;
+        padding: 0 0.4em;
+        width: 94%;
+    }
+
+    .basket-main-block .request-info-block .label-right-block {
+        float: left;
+        margin: 10px 0 10px 10px;
+        width: 35%;
+    }
+
+    .basket-main-block .request-info-block .input-right-block {
+        float: left;
+        margin: 5px 0;
+        width: 60%;
+    }
+
+    .basket-main-block .request-info-block .input-right-block #telephone, .basket-main-block .request-info-block .input-right-block #telephone_add {
+        width: 94%;
+    }
+
+    .basket-main-block .request-info-block .input-left-block .city-select, .basket-main-block .request-info-block .input-right-block .evening-courier-select {
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        cursor: pointer;
+        font-family: Georgia;
+        font-size: 14px;
+        height: 32px;
+        padding: 5px;
+        width: 100%;
+    }
+
+    .basket-main-block .request-info-block .input-left-block .address {
+        height: 100px;
+        max-height: 150px;
+        min-height: 100px;
+        padding: 5px;
+        resize: vertical;
+        width: 94%;
+    }
+
+    .basket-main-block .request-info-block .input-right-block .comment {
+        height: 100px;
+        max-height: 150px;
+        min-height: 100px;
+        padding: 5px;
+        resize: vertical;
+        width: 94%;
+    }
+
+    .basket-main-block .request-info-block .basket-btn-block {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .text-decoration-none {
+        text-decoration: none;
+    }
+
+    .basket-main-block .request-info-block .basket-btn-block .return-btn, .basket-btn-block .purchase-btn {
+        margin: 5px 0px 0px 0px;
+    }
+
+    .button {
+        background-color: #4b86c2;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 15px;
+        margin: 10px;
+        padding: 5px;
+    }
+
+    .dotted-div {
+        border: 2px dotted #eae5e5;
+        margin-top: 20px;
+    }
+
+    .basket-table {
+        background: none repeat scroll 0 0 #eaebec;
+        border: 1px solid #ccc;
+        border-collapse: separate;
+        border-radius: 3px;
+        box-shadow: 0 1px 2px #d1d1d1;
+        color: #000000;
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: 13px;
+        margin: 20px 0px 20px 0;
+        text-shadow: 1px 1px 0 #fff;
+        width: 100%;
+    }
+
+    .basket-table .basket-items-table-tr .photo-item-td img{
+        width: 40%;
+    }
+
+    .basket-table .basket-items-table-tr .count_text{
+        width: 19px;
+        height: 14px;
+        padding: 2px 2px 3px;
+        float: left;
+        text-align: center;
+    }
+
+    .basket-table tr {
+        padding-left: 20px;
+        text-align: center;
+    }
+
+    .basket-main-block .basket-table .summa {
+        text-align: right;
+    }
+
+    .basket-table tr td:first-child {
+        border-left: 0 none;
+        padding-left: 20px;
+        text-align: left;
+    }
+
+    .basket-table tr td {
+        background: -moz-linear-gradient(center top , #fbfbfb, #fafafa) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border-bottom: 1px solid #e0e0e0;
+        border-left: 1px solid #e0e0e0;
+        border-top: 1px solid #ffffff;
+        padding: 5px;
+    }
+
+    .basket-table tr:last-child td:last-child {
+        border-bottom-right-radius: 3px;
+    }
+
+    .basket-table tr:last-child td:first-child {
+        border-bottom-left-radius: 3px;
+    }
+
+    .basket-main-block .basket-table .bonus-td {
+        color: green;
+        text-align: right;
+    }
+
+    .basket-table tr:last-child td {
+        border-bottom: 0 none;
+    }
+
+    .icon-plus, .icon-minus {
+        cursor: pointer;
+        display: block;
+        float: left;
+        height: 19px;
+        top: 1px;
+        width: 16px;
+    }
+
+    .icon-minus {
+        margin-left: 2px;
+    }
+
+    .basket-items-table-tr .sum-td .inner-td-div {
+        background: url("/css/image/icons3.png") repeat scroll 112px 39px rgba(0, 0, 0, 0);
+        display: inline-block;
+        height: 20px;
+        width: 62px;
+    }
+
+    .basket-table tr .sum-td{
+        padding: 8px;
+    }
+
+    .basket-table tr .delete-td img{
+        width: 20px;
+        height: 20px;
+    }
+
+    .basket-table .basket-mobile-th th{
+        width: auto !important;
+    }
+
+    .basket-table .basket-mobile-th-photo{
+        display: none;
+    }
+
+    .basket-main-block .basket-btn-block-addit .return-btn, .basket-btn-block-addit .purchase-btn {
+        margin: 5px 0px 0px 0px;
+    }
+
+    .basket-main-block .basket-btn-block-addit {
+        text-align: center;
+    }
+
+    #data_form label {
+        color: red;
+        font-size: 14px;
+        margin-left: 57px;
+    }
+
+
+    .product-info-main-block {
+        border-radius: 10px;
+        float: right;
+        margin: 20px 0 0 20px;
+        padding: 5px 0px;
+        width: 100%;
+    }
+
+    .product-info-main-block .b-product-price {
+        margin-left: 0px;
+        margin-top: 33px;
+        text-align: center;
+        right: 60px;
+    }
+
+    .b-product-price {
+        background: none repeat scroll 0 0 #4b86c2;
+        color: #ffffff;
+        font: 24px/28px PTSans-NarrowBold,Arial,sans-serif;
+        height: 29px;
+        margin-left: 136px;
+        margin-top: 44px;
+        padding: 1px 6px 0 8px;
+        position: absolute;
+        width: 92px;
+        z-index: 7;
+    }
+
+    .product-info-main-block .product-info-img-block {
+        float: left;
+        text-align: center;
+        width: 200px;
+        margin-left: 65px;
+    }
+
+    .product-info-main-block .product-info-img-block img {
+        max-height: 250px;
+        max-width: 180px;
+    }
+
+    .product-info-main-block .product-info-img-block .button {
+        margin-top: 10px;
+    }
+
+    .product-info-main-block .product-description-block {
+        float: left;
+        margin-top: 15px;
+        padding: 0 10px;
+        width: 93%;
+    }
+
+    .product-info-main-block .product-description-block h1 {
+        color: #4b86c2;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .product-info-main-block .social-repost-block {
+        margin-left: 10%;
+    }
+
+    .product-info-main-block .social-repost-block .social-block1 {
+        float: left;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block1 .vk-b {
+        margin-right: 15px;
+        margin-top: 11px;
+    }
+
+    .fb_iframe_widget {
+        display: inline-block;
+        position: relative;
+    }
+    .fb-share-button {
+        border: 1px solid #3b579d;
+        border-radius: 5px;
+        color: #ffffff !important;
+        margin-right: 15px;
+        margin-top: 9px;
+        padding: 0 5px 5px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2 .google-b{
+        margin-right: 5px;
+        margin-top: 2px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2 .odnoklassniki-share-block {
+        margin-top: -2px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2 .moi-mir-b {
+        margin-right: 5px;
+        margin-top: 1px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2 .odnoklassniki-share-block {
+        margin-top: -2px;
+    }
+
+    .margin-top-12{
+        margin-top: 12px !important;
+    }
+
+    .product-comment-block{
+        padding: 0px 20px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .product-info-main-block .social-repost-block .social-block2 {
+        margin-top: 20px;
+    }
+
+    .product-info-main-block .similar-popular-product-block .similar-popular-h2 {
+        color: #2588ad;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-weight: bold;
+        margin: 50px 0 30px;
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .product-info-main-block .product-comment-block .comment-block-title {
+        font-family: "Kelson Sans";
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 {
+        font-family: "Kelson Sans";
+        margin-top: 10px;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .mobile-comment-author-avatar{
+        width: auto !important;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .mobile-comment-textarea{
+        width: auto !important;
+        margin-left: 20px;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .mobile-comment-send-div{
+        margin-left: 0px !important;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .new-comment-title {
+        float: left;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .logout-btn-comment {
+        color: red;
+        cursor: pointer;
+        float: right;
+        font-size: 16px;
+        margin-left: 40px;
+        text-decoration: underline;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 .auth-type-block {
+        padding-bottom: 5px;
+    }
+
+    .comment-input, .comment-textarea {
+        border: 1px solid #58abc9;
+        padding: 5px;
+    }
+
+    .comment-textarea {
+        height: 100px;
+        max-height: 200px;
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    .product-info-main-block .product-comment-block #comment_form .inner-div1 #send_error {
+        color: red;
+    }
+
+    .success-main-block {
+        border-radius: 10px;
+        float: right;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        margin: 20px 0 0 20px;
+        padding: 5px 15px;
+        width: 90%;
+    }
+
+    .success-main-block h2 {
+        color: #132d60;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .success-main-block h3 {
+        color: #132d60;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .index-main-block .other-title-p {
+        color: #2588ad;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .invite-not-active-p {
+        color: red;
+        font-family: "Georgia";
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+    }
+
+    .friend-invite-main-block #myform {
+        font-family: "Georgia";
+        font-size: 16px;
+    }
+
+    .friend-invite-main-block .label-left-block {
+        float: left;
+        margin: 10px 0px 0px 20px;
+        width: 30%;
+    }
+
+    .friend-invite-main-block .input-left-block {
+        float: left;
+        margin: 5px 0;
+        width: 63%;
+    }
+
+    .friend-invite-main-block .label-right-block {
+        float: left;
+        margin: 10px 0 10px 20px;
+        width: 30%;
+    }
+
+    .friend-invite-main-block .input-right-block {
+        float: left;
+        margin: 5px 0;
+        width: 63%;
+    }
+
+    .friend-invite-main-block .input-left-block .city-select {
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        cursor: pointer;
+        font-family: Georgia;
+        font-size: 14px;
+        height: 32px;
+        padding: 5px;
+        width: 100%;
+    }
+
+    .friend-invite-main-block label.error {
+        margin-left: 50px !important;
+    }
+
+    label.error {
+        color: red;
+        font-size: 14px;
+    }
+
+    .index-main-block .popular-from-category-h2 {
+        color: #2588ad;
+        font-family: "URWAntiquaW01-2015Regul 923026";
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .feedback-list-main-block{
+        float: right;
+        width: 100%;
+        border-radius: 10px;
+        margin: 0px 0px 0px 20px;
+        padding: 5px 15px 5px 15px;
+        font-family: 'URWAntiquaW01-2015Regul 923026';
+    }
+
+    .feedback-list-main-block .feedback-item{
+        border: 1px solid #e0e0e0;
+        border-radius: 3px;
+        margin: 0 22px 30px;
+        padding: 20px 10px;
+        width: 90%;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block{
+        float: left;
+        width: 70%;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-author-p{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-product-p{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #2588ad;
+        text-decoration: underline;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-product-p2{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-author-p2{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-left-block .feedback-text-p{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        margin: 10px 0px;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-right-block{
+        float: right;
+        width: 30%;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-right-block .feedback-avatar{
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .feedback-list-main-block .feedback-item .feedback-date-p{
+        font-family: 'Tahoma,sans-serif';
+        font-size: 16px;
+        text-align: right;
+    }
+
+    .feedback-comment-block{
+        float: none;
+        margin: 0;
+        padding: 0px 5px;
+    }
+
+    .feedback-comment-block .feedback-product-select{
+        width: 100%;
+        margin-top: 10px;
+        padding: 5px 0px;
+        font-family: 'Kelson Sans';
+        font-size: 16px;
+    }
+
+    .feedback-comment-block .mobile-comment-textarea2{
+        width: 73% !important;
+        margin-left: 20px;
+    }
+
+    .feedback-comment-block .mobile-comment-textarea2 .comment-textarea{
+        width: 100%;
+    }
+
+    .cert-fancybox{
+        text-decoration: none;
+    }
+
+    .cert-fancybox img{
+        margin-left: 17%;
+        margin-top: 20px;
+        border: 1px solid darkgrey;
+    }
+    .add-link-by-brand{
+        color: #132d60;
+        font-family: bistro-script-web,Garamond,script;
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 20px;
+    }
+    .selected-add-link-by-brand{
+        color: #3160bf !important;
+        font-style: italic !important;
+    }
+}
+

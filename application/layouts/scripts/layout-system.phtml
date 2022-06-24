@@ -1,0 +1,125 @@
+<?=$this->partial('top-system.phtml');?>
+<?
+$controller_name = Zend_Controller_Front::getInstance()->getRequest()->getControllerName();
+$action_name = Zend_Controller_Front::getInstance()->getRequest()->getActionName();
+
+$ob = new Application_Model_DbTable_System();
+$row = $ob->get_employee(getCurEmployee());
+$row = $row['value'];
+?>
+<body class="no-skin">
+<div id="notifies" class="notifies"></div>
+<div id="navbar" class="navbar navbar-default ace-save-state navbar-fixed-top">
+    <div class="navbar-container ace-save-state" id="navbar-container">
+        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+            <span class="sr-only">Toggle sidebar</span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="navbar-header pull-left">
+            <div class="navbar-brand system-logo">
+                <small>
+                    <i class="ace-icon fa fa-cloud"></i> Поставщик.kz v1.0
+                </small>
+            </div>
+        </div>
+
+        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+                <li class="light-blue dropdown-modal">
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <img class="nav-user-photo" src="/version_2.0/ace_admin/assets/images/avatars/default-user.png" alt="Jason's Photo" />
+                        <span class="user-info">
+									<small>Добро пожаловать,</small>
+                            <?=$row['fio']?>
+								</span>
+
+                        <i class="ace-icon fa fa-caret-down"></i>
+                    </a>
+
+                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li class="dropdown-header hidden"><?=$row['fio']?></li>
+                        <li>
+                            <a href="/system/change-password/">
+                                <i class="ace-icon fa fa-key"></i>
+                                Смена пароля
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="/system/logout">
+                                <i class="ace-icon fa fa-power-off"></i>
+                                Выход
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.navbar-container -->
+</div>
+
+<div class="main-container ace-save-state" id="main-container">
+    <script type="text/javascript">
+        try{ace.settings.loadState('main-container')}catch(e){}
+    </script>
+
+    <div id="sidebar" class="sidebar responsive ace-save-state sidebar-fixed sidebar-scroll">
+        <script type="text/javascript">
+            try{ace.settings.loadState('sidebar')}catch(e){}
+        </script>
+        <ul class="nav nav-list">
+            <?
+            echo $this->partial('system/menu.phtml',
+                array (
+                    'menu_global_id' => $this->menu_global_id,
+                    'action_name' => $action_name,
+                    'controller_name' => $controller_name
+                )
+            );
+            ?>
+        </ul><!-- /.nav-list -->
+
+        <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+            <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <?=$this->layout()->content;?>
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="footer-content">
+                <span class="bigger-120">
+                    <span class="blue bolder"><a href="https://iitu.kz/ru/">IITU</a></span>
+                    &copy; 2020
+                </span>
+            </div>
+        </div>
+    </div>
+</div><!-- /.main-container -->
+<script>
+    $(document).ready(function(){
+
+    });
+</script>
+</body>
+</html>

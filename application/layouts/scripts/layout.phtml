@@ -1,0 +1,1096 @@
+<?=$this->partial('top.phtml');?>
+<div class="blur"></div>
+<button type="button" class="open-overlay">
+    <img src="/css/images/vectorpaint-white.svg" class="outgoing-call">
+</button>
+<script src="/js/layout.js?v=3"></script>
+<?php
+$controller_name = Zend_Controller_Front::getInstance()->getRequest()->getControllerName();
+$action_name = Zend_Controller_Front::getInstance()->getRequest()->getActionName();
+$admin = new Application_Model_DbTable_Admin();
+$request = new Zend_Controller_Request_Http();
+$url = $request->getRequestUri();
+    if(substr($url, -1) == "/"){
+        $url = substr($url,0,-1);
+    }
+$pos1 = strpos($url,'page-');
+    if ($pos1 !== false) {
+        $page_num = substr($url,0,$pos1-1);
+        $page_num = substr($page_num,-4);
+        $page = substr($url,$pos1+5);
+    }
+    else{
+        $page_num = substr($url,-4);
+        $page = null;
+    }
+
+$dataLayer_product_id = "";
+$page_name = "";
+if($page_num == "p100"){
+    $page_name = "home";
+}
+else if($page_num == "p101" || $page_num == "p102"){
+    $page_name = "productsbycategory";
+}
+else if($page_num == "p103" || $page_num == "p104"){
+    $page_name = "productsbysubcategory";
+}
+else if($page_num == "p105"){
+    $page_name = "productdetail";
+    $parts = explode("/",$url);
+    if(isset($parts[2])){
+        $product_info = $admin->getProductByUrlName(clearParam($parts[2]));
+        if(count($product_info) > 0){
+            $dataLayer_product_id = $product_info['product_id'];
+        }
+    }
+}
+else if($page_num == "p106" || $page_num == "p111"){
+    $page_name = "allproducts";
+}
+else if($page_num == "p107" || $page_num == "p113"){
+    $page_name = "productsbybrand";
+}
+else if($page_num == "p114"){
+    $page_name = "productsbycategorybrand";
+}
+else if($url == "/detskie-tovary-so-skidkoi"){
+    $page_name = "discountproducts";
+}
+else if($url == "/novye-detskie-tovary"){
+    $page_name = "newproducts";
+}
+else if($url == "/priglasi-druga"){
+    $page_name = "friendinvite";
+}
+else if($url == "/prodazha-podguznikov-optom"){
+    $page_name = "wholesaletrade";
+}
+else if($url == "/warranty"){
+    $page_name = "warranty";
+}
+else if($url == "/feedback-list"){
+    $page_name = "feedbacklist";
+}
+else if($url == "/delivery-info"){
+    $page_name = "deliveryinfo";
+}
+else if($url == "/how-to-order"){
+    $page_name = "howtoorder";
+}
+else if($url == "/shop"){
+    $page_name = "shops";
+}
+else if($url == "/offer"){
+    $page_name = "offers";
+}
+else if($url == "/index/success-order"){
+    $page_name = "successorder";
+}
+else if($url == "/index/basket"){
+    $page_name = "basket";
+}
+else if($url == ""){
+    $page_name = "home";
+}
+else if($url == "/contact"){
+    $page_name = "contact";
+}
+else if($controller_name == "index" && $action_name == "send-for-waiting-good"){
+    $page_name = "sendforwaitinggood";
+}
+else if($controller_name == "index" && $action_name == "success-sended-waiting"){
+    $page_name = "successsendedwaitingrequest";
+}
+else if($controller_name == "index" && $action_name == "invite"){
+    $page_name = "invite";
+}
+else if($controller_name == "index" && $action_name == "pay-by-card"){
+    $page_name = "paybycard";
+}
+
+else if($controller_name == "index" && $action_name == "express-delivery"){
+    $page_name = "expressdelivery";
+}
+else if($controller_name == "index" && $action_name == "sweety-pockets"){
+    $page_name = "sweetypockets";
+}
+$res = checkForMobile();
+if (isDevelop()){
+    $res = true;
+}else{
+    $res = true;
+}
+$this->user_id = 0;
+$this->name = "";
+?>
+
+<body>
+<div class="blur"></div>
+    <div class="ajax-loader" style="display: none;">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+    </div>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6FH46"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Yandex.Metrika informer -->
+<!--    <a href="https://metrika.yandex.ru/stat/?id=25750880&amp;from=informer" target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/25750880/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style="display: none; border:0;" width="88" height="31" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:25750880,lang:'ru'});return false}catch(e){}"/></a>-->
+    <!-- /Yandex.Metrika informer -->
+
+    <!-- Yandex.Metrika counter -->
+<!--    <script type="text/javascript">-->
+<!--        (function (d, w, c) {-->
+<!--            (w[c] = w[c] || []).push(function() {-->
+<!--                try {-->
+<!--                    w.yaCounter25750880 = new Ya.Metrika({id:25750880,-->
+<!--                        clickmap:true,-->
+<!--                        trackLinks:true,-->
+<!--                        accurateTrackBounce:true});-->
+<!--                } catch(e) { }-->
+<!--            });-->
+<!---->
+<!--            var n = d.getElementsByTagName("script")[0],-->
+<!--                s = d.createElement("script"),-->
+<!--                f = function () { n.parentNode.insertBefore(s, n); };-->
+<!--            s.type = "text/javascript";-->
+<!--            s.async = true;-->
+<!--            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";-->
+<!---->
+<!--            if (w.opera == "[object Opera]") {-->
+<!--                d.addEventListener("DOMContentLoaded", f, false);-->
+<!--            } else { f(); }-->
+<!--        })(document, window, "yandex_metrika_callbacks");-->
+<!--    </script>-->
+<!--    <noscript><div><img src="//mc.yandex.ru/watch/25750880" style="position:absolute; left:-9999px;" alt="" /></div></noscript>-->
+    <!-- /Yandex.Metrika counter -->
+
+    <?
+        if(isset($this->cityy)){
+            $city_id_cookie = $this->cityy;
+        }
+        else if(isset($_COOKIE['city'])){
+            $city_id_cookie = $_COOKIE['city'];
+        }
+        else{
+            $city_id_cookie = $admin->cityByIp();
+        }
+        setcookie('city', '', time()-3600);
+        setcookie('city',$city_id_cookie,time() + 100*7*24*60*60,'/');
+//        setcookie('city',$city_id_cookie,time() + 100*7*24*60*60);
+        $city_detail = $admin->getCityById($city_id_cookie);
+
+        $ob = new Application_Model_DbTable_Admin();
+        $api = $ob->get_api('INSTAGRAM', $city_id_cookie)['value'];
+        $api = json_decode($api, true);
+    ?>
+
+    <section class="overlay" aria-hidden="true">
+        <div class="phone-numbers-block-inner">
+            <div class="phone-numbers-block-inner-child">
+<!--                <span class="icon-Phone_grey"></span>-->
+                <img src="/css/images/vectorpaint.svg" class="outgoing-call-big">
+                <div class="clearfix"></div>
+                <p class="phone-numbers-block-text">Работаем без выходных</p>
+                <div class="clearfix"></div>
+                <?  if($city_id_cookie == 1){ ?>
+                    <div class="phone-number-block">
+                        <a href="callto:+77172642550">+7 7172 642550</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="phone-number-block">
+                        <a href="callto:+ 77470941950">+ 7 747 0941950</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <p class="phone-numbers-block-text">Оптовые продажи</p>
+                    <div class="clearfix"></div>
+                    <div class="phone-number-block">
+                        <a href="callto:+77470941951">+7747 0941951</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="phone-number-block">
+                        <a href="callto:+77172266429">+7 7172 266429</a>
+                    </div>
+                <? }
+                else if($city_id_cookie == 2){ ?>
+                    <div class="phone-number-block">
+                        <a href="callto:+77162330502">+7 7162 330502</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="phone-number-block">
+                        <a href="callto:+77022434752">+7 702 2434752</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <p class="phone-numbers-block-text">Оптовые продажи</p>
+                    <div class="clearfix"></div>
+                    <div class="phone-number-block">
+                        <a href="callto:+77472885548">+7 747 2885548</a>
+                    </div>
+                <? }
+                else if($city_id_cookie == 4){ ?>
+                    <div class="phone-number-block">
+                        <a href="callto:+77072500050">+7 707 2500050</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <p class="phone-numbers-block-text">Оптовые продажи</p>
+                    <div class="clearfix"></div>
+                    <div class="phone-number-block">
+                        <a href="callto:+77472885548">+7 747 2885548</a>
+                    </div>
+                <? }
+                else if ($city_id_cookie == 93){ ?>
+                    <div class="phone-number-block">
+                        <a href="callto:+77470941952">+7 747 0941952</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="phone-number-block">
+                        <a href="callto:+77273466550">+7 727 3466550</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <p class="phone-numbers-block-text">Оптовые продажи</p>
+                    <div class="clearfix"></div>
+                    <div class="phone-number-block">
+                        <a href="callto:+77021004750">+7 747 0941953</a>
+                    </div>
+                <? }
+                else if($city_id_cookie == 101){ ?>
+                    <div class="phone-number-block">
+                        <a href=""></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <p class="phone-numbers-block-text">Оптовые продажи</p>
+                    <div class="clearfix"></div>
+                    <div class="phone-number-block">
+                        <a href="callto:+77472885548">+7 747 2885548</a>
+                    </div>
+                <? }
+                else { ?>
+                    <div class="phone-number-block">
+                        <a href="callto:+77021004104">+7 702 1004104</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="phone-number-block">
+                        <a href="callto:+77775007999">+7 777 5007999</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <p class="phone-numbers-block-text">Оптовые продажи</p>
+                    <div class="clearfix"></div>
+                    <div class="phone-number-block">
+                        <a href="callto:+77470941951">+7747 0941951</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="phone-number-block">
+                        <a href="callto:+77172266429">+7 7172 266429</a>
+                    </div>
+                <?  } ?>
+                <button type="button" class="close-overlay"><span class="icon-Close_white"></span></button>
+            </div>
+        </div>
+    </section>
+
+    <div class="mobile-blur" style="display: none;"></div>
+    <div class="mobile-blur-white" style="display: none;"></div>
+
+
+    <nav class="navbar-mobile hidden-lg hidden-md hidden-sm">
+        <div class="navbar-mobile-search" style="display: none;">
+            <div class="navbar-mobile-search-inner">
+                <input type="text" id="mobile_search_text" value="<?=$this->search_word?>">
+                <span class="icon-Search2" onclick="searchByWordMobile()"></span>
+            </div>
+        </div>
+        <div class="col-xs-10 mobile-menu" style="display: none;">
+            <div class="row">
+                <div class="mobile-phone-number-icon-block pull-left">
+                    <span class="icon-Phone_grey"></span>
+                </div>
+                <div class="mobile-phone-number-text-block pull-left">
+                    <?  if($city_id_cookie == 1){ ?>
+                        <a href="callto:+77172642550" class="number-op">+7 7172 642550</a>
+                        <div class="clearfix"></div>
+                        <a href="callto:+ 77470941950" class="number-op">+ 7 747 0941950</a>
+                        <div class="clearfix"></div>
+                        <p class="text-op">Оптовые продажи</p>
+                        <a href="callto:+77470941951" class="number-op">+7 747 0941951</a>
+                        <div class="clearfix"></div>
+                        <a href="callto:+77172266429" class="number-op">+7 7172 266429</a>
+                        <div class="clearfix"></div>
+                    <?  }
+                    else if($city_id_cookie == 2) { ?>
+                        <a href="callto:+77162330502" class="number-op">+7 7162 330502</a>
+                        <div class="clearfix"></div>
+                        <a href="callto:+77022434752" class="number-op">+7 702 2434752</a>
+                        <div class="clearfix"></div>
+                        <p class="text-op">Оптовые продажи</p>
+                        <a href="callto:+77470941951" class="number-op">+7 747 0941951</a>
+                        <div class="clearfix"></div>
+                        <a href="callto:+77172266429" class="number-op">+7 7172 266429</a>
+                        <div class="clearfix"></div>
+                    <?  }
+                    else if($city_id_cookie == 4){ ?>
+                        <a href="callto:+77072500050" class="number-op">+7 707 2500050</a>
+                        <div class="clearfix"></div>
+                        <p class="text-op">Оптовые продажи</p>
+                        <a href="callto:+77470941951" class="number-op">+7 747 0941951</a>
+                        <div class="clearfix"></div>
+                        <a href="callto:+77172266429" class="number-op">+7 7172 266429</a>
+                        <div class="clearfix"></div>
+                    <?  }
+                    else if($city_id_cookie == 93){ ?>
+                        <a href="callto:+77470941952" class="number-op">+7 747 0941952</a>
+                        <div class="clearfix"></div>
+                        <a href="callto:+77273466550" class="number-op">+7 727 3466550</a>
+                        <div class="clearfix"></div>
+                        <p class="text-op">Оптовые продажи</p>
+                        <a href="callto:+77021004750" class="number-op">+7 747 0941953</a>
+                        <div class="clearfix"></div>
+                    <?  }
+                    else if($city_id_cookie == 101){ ?>
+                        <a href="" class="number-op"></a>
+                        <div class="clearfix"></div>
+                        <p class="text-op">Оптовые продажи</p>
+                        <a href="callto:+77470941951" class="number-op">+7 747 0941951</a>
+                        <div class="clearfix"></div>
+                        <a href="callto:+77172266429" class="number-op">+7 7172 266429</a>
+                        <div class="clearfix"></div>
+                    <?  }
+                    else { ?>
+                        <a href="callto:+77021004104" class="number-op">+7 702 1004104</a>
+                        <div class="clearfix"></div>
+                        <a href="callto:+77775007999" class="number-op">+7 777 5007999</a>
+                        <div class="clearfix"></div>
+                        <p class="text-op">Оптовые продажи</p>
+                        <a href="callto:+77470941951" class="number-op">+7 747 0941951</a>
+                        <div class="clearfix"></div>
+                        <a href="callto:+77172266429" class="number-op">+7 7172 266429</a>
+                        <div class="clearfix"></div>
+                    <?  } ?>
+                </div>
+                <div class="clearfix"></div>
+                <p class="mobile-my-city-p">Мой город</p>
+                <ul class="nav navbar-nav city-dropdown">
+                    <li class="dropdown">
+                        <a id="drop1" href="#" class="dropdown-toggle mobile-cities" data-toggle="dropdown">
+                            <?=$city_detail['city_name']?>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu mobile-dropdown-cities">
+                            <?
+                                $admin = new Application_Model_DbTable_Admin();
+                                $cities = $admin->getMainCities();
+                                foreach($cities as $key => $city){
+                                    if($city['city_id'] != $city_id_cookie){ ?>
+                                        <li><a rel="nofollow" href="<?=getHttpHost()?>/<?=$city['city_url_name']?>-p100/"><?=$city['city_name']?></a></li>
+                            <?      }
+                                }
+                            ?>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="list-group mobile-menu-list-group">
+                <?  if (Zend_Auth::getInstance()->hasIdentity()){
+                        $identity = Zend_Auth::getInstance()->getStorage()->read();
+                        $this->user_id = $identity->user_id;
+                        $this->name = $identity->name;
+                    ?>
+                        <li class="list-group-item"><a rel="nofollow" href="/index/login/"><img src="/css/img/user.jpg" class="user-ava" alt=""> <?=$this->name?> <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                <?  }
+                    else{ ?>
+                        <li class="list-group-item"><a rel="nofollow" href="/index/login/"><img src="/css/img/user.jpg" class="user-ava" alt=""> Личный кабинет <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                <?  } ?>
+
+                    <li class="list-group-item"><a onclick="goToCatalog()" style="cursor: pointer;">Каталог <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <li class="list-group-item"><a rel="nofollow" href="/detskie-tovary-so-skidkoi/">Товары по акции <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <li class="list-group-item"><a rel="nofollow" href="/novye-detskie-tovary/">Новые товары <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <li class="list-group-item hidden"><a rel="nofollow" href="/offer/">Новости и предложения <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <li class="list-group-item"><a rel="nofollow" href="/shop/">Магазины <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <li class="list-group-item"><a rel="nofollow" href="/delivery-info/">Доставка и оплата <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <li class="list-group-item"><a rel="nofollow" href="/how-to-order/">Как сделать заказ<i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <li class="list-group-item"><a rel="nofollow" href="/feedback-list/">Отзыв <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <li class="list-group-item"><a rel="nofollow" href="/prodazha-podguznikov-optom/">Оптовая продажа <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <li class="list-group-item"><a rel="nofollow" href="/priglasi-druga/">Пригласи друга <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <li class="list-group-item"><a rel="nofollow" href="/brands/">Бренды <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <li class="list-group-item"><a rel="nofollow" href="/warranty/">Сертификаты <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <li class="list-group-item"><a rel="nofollow" href="/contact/">Контакты <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <li class="list-group-item"><a rel="nofollow" href="/sweety-pockets/">Заказы по подписке <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                    <?
+                    if($city_id_cookie == 1){?>
+                        <li class="list-group-item hidden"><a rel="nofollow" href="/express-delivery/">Экспресс-доставка <i class="glyphicon glyphicon-chevron-right text-right"></i></a></li>
+                        <?
+                    }?>
+                </ul>
+            </div>
+        </div>
+
+        <div class="navbar-header" itemscope itemtype="http://schema.org/Organization">
+            <span class="icon-menu_black mobile-menu-btn hidden-lg hidden-md hidden-sm"></span>
+        <?  if($city_id_cookie == 1){ ?>
+                <div class="mobile-logo-block">
+                    <a rel="nofollow" href="/" itemprop="url">
+                        <img src="/css/img/logo.png" itemprop="logo" class="img-responsive center-block hidden-lg hidden-md hidden-sm mobile-logo" alt="" style="width: 100px;">
+                    </a>
+                </div>
+                <span hashstring="23642e39b937198b4151e23d8d5a5426" hashtype="content">&nbsp;</span>
+                <i class="glyphicon glyphicon-search pull-right mobile-search-btn hidden-lg hidden-md hidden-sm"></i>
+        <?  }
+            else{ ?>
+                <div class="mobile-logo-block">
+                    <a rel="nofollow" href="/<?=$city_detail['city_url_name']?>-p100/" itemprop="url">
+                        <img src="/css/img/logo.png" itemprop="logo" class="img-responsive center-block hidden-lg hidden-md hidden-sm mobile-logo" alt="" style="width: 100px;">
+                    </a>
+                </div>
+                <span hashstring="23642e39b937198b4151e23d8d5a5426" hashtype="content">&nbsp;</span>
+                <i class="glyphicon glyphicon-search pull-right mobile-search-btn hidden-lg hidden-md hidden-sm"></i>
+        <?  } ?>
+        </div>
+    </nav>
+
+    <nav class="navbar-desktop hidden-xs">
+        <div class="container">
+            <div class="main-desktop-navbar" itemscope itemtype="http://schema.org/Organization">
+                <div class="logo-block">
+                <?  if($city_id_cookie == 1){ ?>
+                        <a href="/" itemprop="url">
+                            <img src="/css/img/logo.png" class="img-responsive" alt="">
+                        </a>
+                <?  }
+                    else{ ?>
+                        <a href="/<?=$city_detail['city_url_name']?>-p100/" itemprop="url">
+                            <img src="/css/img/logo.png" class="img-responsive" alt="">
+                        </a>
+                <?  } ?>
+                </div>
+                <div class="city-block-main">
+                    <p class="city-block-my-city">Мой город</p>
+                    <div class="city-block">
+                        <div class="btn-group">
+                            <a class="btn dropdown-toggle btn-select2" data-toggle="dropdown" href="#"><?=$city_detail['city_name']?> <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <?
+                                $admin = new Application_Model_DbTable_Admin();
+                                $cities = $admin->getMainCities();
+                                foreach($cities as $key => $city){
+                                    if($city['city_id'] != $city_id_cookie){ ?>
+                                        <li><a href="<?=getHttpHost()?>/<?=$city['city_url_name']?>-p100/" id="<?=$city['city_id']?>"><?=$city['city_name']?></a></li>
+                            <?      }
+                                }
+                                ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="phone-block-main">
+                    <div class="phone-block">
+                        <span class="icon-Phone_grey show-phones"></span>
+                        <?  if($city_id_cookie == 1){ ?>
+                            <p class="phone-block-number phone1">+7 7172 642550</p>
+                            <p class="phone-block-number phone2">+ 7 747 0941950</p>
+                            <p class="phone-block-number phone3"><span>Оптовые продажи:</span> +7 747 0941951 | +7 7172 266429</p>
+                            <div class="clearfix"></div>
+                        <?  }
+                        else if($city_id_cookie == 2) { ?>
+                            <p class="phone-block-number phone1">+7 7162 330502</p>
+                            <p class="phone-block-number phone2">+7 702 2434752</p>
+                            <p class="phone-block-number phone3"><span>Оптовые продажи:</span> +7 747 2885548</p>
+                            <div class="clearfix"></div>
+                        <?  }
+                        else if($city_id_cookie == 4){ ?>
+                            <p class="phone-block-number phone1">+7 707 2500050</p>
+                            <p class="phone-block-number phone3"><span>Оптовые продажи:</span> +7 747 2885548</p>
+                            <div class="clearfix"></div>
+                        <?  }
+                        else if($city_id_cookie == 93){ ?>
+                            <p class="phone-block-number phone1">+7 747 0941952</p>
+                            <p class="phone-block-number phone1">+7 727 3466550</p>
+                            <p class="phone-block-number phone3"><span>Оптовые продажи:</span> +7 747 0941953</p>
+                            <div class="clearfix"></div>
+                        <?  }
+                        else if($city_id_cookie == 101){ ?>
+                            <p class="phone-block-number phone1"></p>
+                            <p class="phone-block-number phone3"><span>Оптовые продажи:</span> +7 747 2885548</p>
+                            <div class="clearfix"></div>
+                        <?  }
+                        else { ?>
+                            <p class="phone-block-number phone1">+7 702 1004104</p>
+                            <p class="phone-block-number phone2">+7 777 5007999</p>
+                            <p class="phone-block-number phone3"><span>Оптовые продажи:</span> +7 747 2885548</p>
+                            <div class="clearfix"></div>
+                        <?  } ?>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-child hidden-xs overflow-hide">
+<!--        <div class="snowContainer">-->
+<!--            <div id="snow"></div>-->
+<!--        </div>-->
+        <div class="container">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="row">
+                            <ul class="nav navbar-nav search-ul">
+                                <div class="input-group">
+<!--                                    <div class="new-year-hat"></div>-->
+                                    <input type="hidden" value="<?=$city_id_cookie?>" id="hidden_city_id">
+                                    <input type="text" class="form-control search-input" placeholder="Поиск по сайту" name="search_word" id="search_word" value="<?=$this->search_word?>">
+                                    <span class="input-group-btn" onclick="searchByWord()">
+                                        <button class="btn btn-search" type="button"><span class="icon-Search2"></span></i></button>
+                                    </span>
+                                </div><!-- /input-group -->
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right user-menu">
+                        <li>
+                            <span hashstring="23642e39b937198b4151e23d8d5a5425" hashtype="content">&nbsp;</span>
+<!--                            <a href="/index/basket" class="basket-block"><img src="/css/img/basket2x.png" class="basket-icon" alt="">-->
+<!--                                <div class="basket-count">-->
+<!--                                    <p id="basket_item_count"></p>-->
+<!--                                </div>-->
+<!--                                Корзина-->
+<!--                            </a>-->
+                        </li>
+                        <li>
+                            <span hashstring="23642e39b937198b4151e23d8d5a5424" hashtype="content">&nbsp;</span>
+<!--                            <a href="/index/login/"><img src="/css/img/user.jpg" class="user-ava" alt="">Личный кабинет</a>-->
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                    <?  if (Zend_Auth::getInstance()->hasIdentity()){
+                            $user_bonus = $admin->getUserBonus($this->user_id);
+                    ?>
+                            <p style="text-align: right; color: white; margin-bottom: 0">Добро пожаловать <b><?=$this->name?></b>, Ваш бонус <b><?=$user_bonus?></b> тг.</p>
+                    <?  }   ?>
+
+                        <ul class="nav navbar-nav navbar-child-ul">
+                            <li><a onclick="goToCatalog()" style="cursor: pointer;">Каталог</a></li>
+                            <li><a href="/detskie-tovary-so-skidkoi/">Скидки и акции</a></li>
+                            <li><a href="/novye-detskie-tovary/">Новинки</a></li>
+                            <li class="hidden"><a href="/offer/">Новости и предложения</a></li>
+                            <li><a href="/shop/">Магазины</a></li>
+                            <li><a href="/delivery-info/">Доставка и Оплата</a></li>
+                            <li><a href="/how-to-order/">Как сделать заказ</a></li>
+                            <li><a href="/feedback-list/">Отзывы</a></li>
+                            <li><a href="/prodazha-podguznikov-optom/">Оптовая продажа</a></li>
+                            <li><a href="/priglasi-druga/">Пригласи друга</a></li>
+                            <li><a href="/brands/">Бренды</a></li>
+                            <li><a href="/warranty/">Сертификаты</a></li>
+                            <li><a href="/contact/">Контакты</a></li>
+                            <li><a href="/sweety-pockets/">Заказы по подписке</a></li>
+                            <?
+                            if($city_id_cookie == 1){?>
+                                <li class="hidden"><a href="/express-delivery/">Экспресс-доставка</a></li>
+                                <?
+                            }?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="santa"><img src="/css/images/christmas-sled-source_ulp.gif" alt="" style="width: 170px;"></div>
+        </div>
+<!--        <div class="snow-block"></div>-->
+    </nav>
+
+    <?
+    $marquee = $admin->get_active_marquee($city_id_cookie);
+    if(count($marquee['value']) > 0){
+        foreach($marquee['value'] as $key => $marquee_item){
+        ?>
+            <marquee scrollamount="<?=$marquee_item['scrollamount']?>" direction="<?=$marquee_item['direction']?>" behavior="<?=$marquee_item['behavior']?>" class="marquee" data-id="<?=$marquee_item['marquee_id']?>" data-city-id="<?=$city_id_cookie?>"><?=$marquee_item['marquee_text']?></marquee>
+        <?
+        }
+    }?>
+
+    <div class="added-to-cart-block">
+        <div class="added-to-cart-inner-block user-select-none">
+            <div class="success-added user-select-none">
+                <i class="glyphicon glyphicon-ok user-select-none"></i>
+            </div>
+            <p class="success-added-text user-select-none"></p>
+            <a href="/index/basket">
+                <input type="button" class="center-block btn btn-to-cart user-select-none" value="Перейти в корзину">
+            </a>
+    <!--        <span class="icon-Close_white"></span>-->
+        </div>
+    </div>
+    <?=$this->layout()->content;?>
+    
+    <div class="container soc-widgets-block">
+        <div class="clearfix hidden-lg hidden-md hidden-sm"></div>
+		<iframe src='/inwidget/index.php?skin=modern-blue&login=<?=$api['login']?>' data-inwidget scrolling='no' frameborder='no' style='border:none;width:260px;height:315px;overflow:hidden;'></iframe>
+    </div>
+
+    <p id="coockies"></p>
+    <footer class="text-center snow-footer">
+<!--        <div class="snowContainer">-->
+<!--            <div id="snow2"></div>-->
+<!--        </div>-->
+        <div class="container">
+            <div class="row">
+                <img src="/css/img/logo.png" class="img-responsive center-block" alt="">
+                <p class="copyright center-block">©<span id="span_year"></span> bebek.kz — продажа подгузников и детских товаров<br>с доставкой</p>
+                <div class="payment-icons-block">
+                    <span class="icon-Visa"></span>
+                    <span class="icon-masrecard_white"></span>
+                    <i class="fa fa-cc-amex" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div class="snow-block"></div>
+    </footer>
+
+    <?
+    $session_id = $this->session_id;
+    $admin = new Application_Model_DbTable_Admin();
+    $user_products = $admin->getUserProducts2($session_id);
+    ?>
+    <input type="hidden" id="count_hidden" value="<?=count($user_products)?>">
+	<?
+        if($res == false){
+    ?>
+			<!-- BEGIN JIVOSITE CODE {literal} -->
+			<script type='text/javascript'>
+				(function(){ var widget_id = '161770';
+					var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();</script>
+			<!-- {/literal} END JIVOSITE CODE -->
+	<?  } ?>
+
+
+<?
+if($city_id_cookie == 93){?>
+    <!-- BEGIN JIVOSITE CODE {literal} -->
+    <script type='text/javascript'>
+        (function(){ var widget_id = 'ooiGExNCVF';var d=document;var w=window;function l(){
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+            s.src = '//code3.jivosite.com/script/widget/'+widget_id
+            ; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
+            if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}
+            else{w.addEventListener('load',l,false);}}})();
+    </script>
+    <!-- {/literal} END JIVOSITE CODE -->
+    <script type="text/javascript" src="https://asterisco.kz/js/cb/core.js?id=B6DA4F00"></script>
+<?
+}elseif ($city_id_cookie == 1){?>
+    <!-- BEGIN JIVOSITE CODE {literal} -->
+    <script type='text/javascript'>
+        (function(){ var widget_id = 'NMiRX6Yj5S';var d=document;var w=window;function l(){
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+            s.src = '//code.jivosite.com/script/widget/'+widget_id
+            ; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
+            if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}
+            else{w.addEventListener('load',l,false);}}})();
+    </script>
+    <!-- {/literal} END JIVOSITE CODE -->
+    <script type="text/javascript" src="https://asterisco.kz/js/cb/core.js?id=69A2B318"></script>
+<?
+}else{?>
+<?}?>
+</body>
+</html>
+<? if (isDevelop() == false){?>
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&appId=776695622382689&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<?}?>
+<script>
+    var characteristic_arr = [];
+    function setFilterVal(characteristic_value_url,characteristic_id,order_num,ob){
+        if($(ob).prop("checked") == true){
+            var obj = {};
+            obj['order_num'] = order_num;
+            obj['characteristic_value_url'] = characteristic_value_url;
+            obj['characteristic_id'] = characteristic_id;
+            characteristic_arr.push(obj);
+        }
+        else{
+            characteristic_arr.forEach(function(item, i, arr) {
+                if(item['characteristic_value_url'] == characteristic_value_url && item['characteristic_id'] == characteristic_id){
+                    characteristic_arr.splice(i, 1);
+                }
+            });
+        }
+    }
+    function setFilterValReady(characteristic_value_url,characteristic_id,order_num){
+        var obj = {};
+        obj['order_num'] = order_num;
+        obj['characteristic_value_url'] = characteristic_value_url;
+        obj['characteristic_id'] = characteristic_id;
+        characteristic_arr.push(obj);
+    }
+
+    function searchByFilter(){
+        if(characteristic_arr.length > 0){
+            characteristic_arr.sort(dynamicSort("order_num"));
+            str1 = "";
+            str2 = "";
+            b = 0;
+            characteristic_arr.forEach(function(item, i, arr) {
+                b++;
+                if(item['characteristic_value_url'].length > 0 && item['characteristic_id'] > 0){
+                    str1 += item['characteristic_value_url'];
+                    if(b != characteristic_arr.length){
+                        str1 += "--";
+                    }
+                    else{
+                        str1 += "-";
+                    }
+                    str2 += "-" + item['characteristic_id'];
+                }
+            });
+
+            if($("#hidden_city_id").val() > 1){
+                if($("#filter_url_parts_count").val() == 2){
+                    window.location.href = "/<?=$city_detail['city_url_name']?>" + $("#filter_url_part1").val() + str1 + "f" + str2 + "-p204/";
+                }
+                else{
+                    window.location.href = "/<?=$city_detail['city_url_name']?>" + $("#filter_url_part1").val() + str1 + "f" + str2 + "-p203/";
+                }
+            }
+            else{
+                if($("#filter_url_parts_count").val() == 2){
+                    window.location.href = $("#filter_url_part1").val() + str1 + "f" + str2 + "-p202/";
+                }
+                else{
+                    window.location.href = $("#filter_url_part1").val() + str1 + "f" + str2 + "-p201/";
+                }
+            }
+        }
+        else{
+            alert("Фильтр не выбран");
+            return false;
+        }
+    }
+
+    function dynamicSort(property) {
+        var sortOrder = 1;
+        if(property[0] === "-") {
+            sortOrder = -1;
+            property = property.substr(1);
+        }
+        return function (a,b) {
+            var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+            return result * sortOrder;
+        }
+    }
+
+    $(document).ready(function(){
+        $("#mobile_search_text").keypress(function(e){
+            if(e.keyCode==13){
+                searchByWordMobile();
+            }
+        });
+
+        $('.open-overlay').click(function () {
+            $('.overlay').toggleAttrVal('aria-hidden', "true", "false");
+        });
+
+        $('.close-overlay').click(function () {
+            $('.overlay').toggleAttrVal('aria-hidden', "true", "false");
+        });
+
+        setInterval(function(){
+            if($('div').is('.aml-start') == false){
+                $('.open-overlay').css('bottom', '100px');
+            }else{
+                $('.open-overlay').removeAttr('style');
+            }
+        }, 3000);
+    });
+
+    // jquery toggle just the attribute value
+    $.fn.toggleAttrVal = function(attr, val1, val2) {
+        var test = $(this).attr(attr);
+        if ( test === val1) {
+            $(this).attr(attr, val2);
+            return this;
+        }
+        if ( test === val2) {
+            $(this).attr(attr, val1);
+            return this;
+        }
+        // default to val1 if neither
+        $(this).attr(attr, val1);
+        return this;
+    };
+
+    function searchByWordMobile(){
+        search_word = encodeURIComponent($("#mobile_search_text").val());
+        window.location.href = "/?search_word=" + search_word;
+    }
+
+    /*var body = document.body,
+        overlay = document.querySelector('.overlay'),
+        phonebtn = document.querySelector('.open-overlay'),
+        overlayBtts = document.querySelectorAll('button[class$="overlay"]');
+
+    [].forEach.call(overlayBtts, function(btt) {
+
+        btt.addEventListener('click', function() {
+            var overlayOpen = this.className === 'open-overlay';
+
+            overlay.setAttribute('aria-hidden', !overlayOpen);
+            body.classList.toggle('noscroll', overlayOpen);
+            phonebtn.classList.toggle('phonebtn', overlayOpen);
+           setTimeout(function() {
+               overlay.scrollTop = 0;
+           }, 1000)
+
+        }, false);
+
+    });*/
+
+
+    window.onload=function(){
+        <? if (isDevelop() == false){?>
+        <?}?>
+    }
+
+    function instagramWidget() {
+        return false;
+        city = getCookie("city");
+        if(city == 93){
+            var userID = '1420545281';
+            var accessToken = '1420545281.1677ed0.4d02a16d6ec44035bd136eb561a54d7c';
+        }else{
+            var userID = '1420545281';
+            var accessToken = '1420545281.1677ed0.4d02a16d6ec44035bd136eb561a54d7c';
+        }
+        var link = 'https://www.instagram.com/';
+        var $url = 'https://api.instagram.com/v1/users/' + userID + '/?access_token='+  accessToken +'';
+        var $url2 = 'https://api.instagram.com/v1/users/' + userID + '/media/recent/?access_token='+  accessToken +'';
+        jQuery.ajax({
+            method : "GET",
+            url : $url,
+            dataType : "jsonp",
+            async:false,
+            jsonp : "callback",
+            success : function(data) {
+                if(data.meta.code != 200){
+                    jQuery('#instagram_error_block').show();
+                    jQuery('#code').append(data.meta.code);
+                    jQuery('#error_message').append(data.meta.error_message);
+                    jQuery('#error_type').append(data.meta.error_type);
+                }
+                jQuery('#followers').append(data.data.counts.followed_by);
+                jQuery('#follows').append(data.data.counts.follows);
+                jQuery('#media').append(data.data.counts.media);
+                jQuery('#insta_full_name').append(data.data.full_name);
+                jQuery('#insta_user_name').append(data.data.username);
+                jQuery('#insta_profile_picture').attr('src', data.data.profile_picture);
+                jQuery('.instagram-link').attr('href', link + data.data.username + '/');
+            }
+        });
+
+        jQuery.ajax({
+            type: "GET",
+            dataType: "jsonp",
+            async:false,
+            cache: false,
+            url: $url2,
+            success: function(data) {
+                for (var i = 0; i < 6; i++) {
+                    if((data.data[i].type) == "carousel") {
+                     var instavar = 'carousel';
+                    }
+                    else if((data.data[i].type) == "video"){
+                        var instavar = 'video';
+                    }else{
+                        var instavar = '';
+                    }
+                    jQuery(".popular").append("<li><a target='_blank' href='" + data.data[i].link + "'><img class='insta' src='" + data.data[i].images.low_resolution.url + "' data-toggle='tooltip' data-placement='top' title='♥ " + data.data[i].likes.count + "'></a><span class='tag " + instavar + "' aria-hidden='true'></span></li>");
+                    $('[data-toggle="tooltip"]').tooltip();
+                }
+            }
+        });
+        setTimeout(function() {
+            $('.instagram-widget').css('display', 'block');
+        }, 2000);
+    }
+
+    function getCookie(name) {
+        var cookie = " " + document.cookie;
+        var search = " " + name + "=";
+        var setStr = null;
+        var offset = 0;
+        var end = 0;
+        if (cookie.length > 0) {
+            offset = cookie.indexOf(search);
+            if (offset != -1) {
+                offset += search.length;
+                end = cookie.indexOf(";", offset)
+                if (end == -1) {
+                    end = cookie.length;
+                }
+                setStr = unescape(cookie.substring(offset, end));
+            }
+        }
+        return(setStr);
+    }
+
+    function goToCatalog(){
+        var expires = "";
+        document.cookie = "is_show_category=1" +expires+"; path=/";
+        window.location.href = $(".logo-block").find("a").attr("href");
+    }
+
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+        $('#span_year').html(new Date().getFullYear());
+    });
+
+    function setCookieLocal(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    $(function(){
+        $(".dropdown-menu").on("click", "li", function(event){
+            var city = $(this).find('a').attr('id');
+//            setCookieLocal('city', city, 1);
+        });
+    });
+</script>
+<!-- Скроллы-->
+
+<script>
+    // функция проверки полной видимости элемента
+    function checkPosition(){
+        // проскроллено сверху
+        var top_scroll = $(document).scrollTop();
+        // проскроллено слева
+        var left_scroll = $(document).scrollLeft();
+        // ширина видимой страницы
+        var screen_width = $(window).width();
+        // высота видимой страницы
+        var screen_height = $(window).height();
+
+        // координаты углов видимой области
+        var see_x1 = left_scroll;
+        var see_x2 = screen_width + left_scroll;
+        var see_y1 = top_scroll;
+        var see_y2 = screen_height + top_scroll;
+
+        $(".filter-product-form, .product-form").each(function(i, item){
+            // координаты дива
+            var div_position = $(item).offset();
+            // отступ сверху
+            var div_top = div_position.top;
+            // отступ слева
+            var div_left = div_position.left;
+            // ширина
+            var div_width = $(item).width();
+            // высота
+            var div_height = $(item).height();
+
+
+            // координаты углов искомого элемента
+            var div_x1 = div_left;
+            var div_x2 = div_left + div_height;
+            var div_y1 = div_top;
+            var div_y2 = div_top + div_width;
+
+            // проверка - виден див полностью или нет
+            if( div_x1 >= see_x1 && div_x2 <= see_x2 && div_y1 >= see_y1 && div_y2 <= see_y2 ){
+                // если виден
+                if ($(item).hasClass("is_showing") == false){
+                    //$(item).css({'background-color': 'green'});
+                    $(item).addClass("is_showing");
+                }
+            }else{
+                // если не виден
+                if ($(item).hasClass("is_showing") == false){
+                   //$(item).css({'background-color': 'red'});
+                }
+            }
+        });
+        if($('.popular-products-slick div').hasClass('slick-track')){
+            var data_commerce_id = $('.is_showing').map( function () {
+                if($(this).hasClass('is_commerce') == false && $(this).hasClass('slick-active') && $(this).hasClass('slick-cloned') == false){
+                    return $(this).addClass('is_commerce').attr('data-commerce-id');
+                }
+            }).get().join(';');
+
+        }else{
+            var data_commerce_id = $('.is_showing').map( function () {
+                if($(this).hasClass('is_commerce') == false){
+                    return $(this).addClass('is_commerce').attr('data-commerce-id');
+                }
+            }).get().join(';');
+        }
+
+        if(data_commerce_id.length > 0){
+            console.log(data_commerce_id);
+            analytic.productImpression(data_commerce_id);
+        }
+    }
+
+    $(document).ready(function(){
+        $(document).scroll(function(){
+            checkPosition();
+        });
+
+        // после загрузки страницы сразу проверяем
+        checkPosition();
+
+        // проверка при масштабировании и изменении размера страницы
+        $(window).resize(function(){
+            checkPosition();
+        });
+
+    });
+
+    $('.popular-products-slick').on('afterChange', function(event, slick, currentSlide){
+        checkPosition();
+    });
+
+    function upd_click_count(ob) {
+        var marquee_id = $(ob).closest('marquee').data('id');
+        var city_id = $(ob).closest('marquee').data('city-id');
+
+        $.ajax({
+            type: 'POST',
+            url: "/index/index-json/mode/upd_click_count/",
+            data: {"marquee_id" : marquee_id, "city_id" : city_id},
+            async: true,
+            success: function(data){
+            }
+        });
+    }
+
+
+    /*$(document).ready(function() {
+
+        var windowWidth = $(document).innerWidth();
+        var santa = $('.santa');
+        santa_right_pos = windowWidth + santa.width();
+        santa.right = santa_right_pos;
+
+
+        function movesanta(){
+            santa.animate({right : windowWidth +  santa.width()},25000, function(){
+                santa.css("right","-500px");
+                setTimeout(function(){
+                    movesanta();
+                },10000);
+            });
+        }
+        movesanta();
+    });*/
+</script>
+<!-- Конец Скроллы-->

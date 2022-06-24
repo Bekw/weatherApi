@@ -1,0 +1,131 @@
+/*body{*/
+/*background-image: url("/css/images/sweety-bkg35.png");*/
+/*background-size: contain;*/
+/*background-repeat: repeat-x;*/
+/*background-attachment: fixed;*/
+/*background-position-y: 200px;*/
+/*}*/
+
+body, h1, h2, h3, h4, li, p, ul {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+}
+
+@font-face {
+    font-family: 'Kelson Sans';
+
+    src: url("/css/kelson_sans_regular_ru.ttf");
+}
+@font-face{
+    font-family: 'Kelson Sans Bold';
+    src: url("/css/kelson_sans_bold_ru.ttf");
+}
+@font-face {
+    font-family: 'Kelson Sans Light';
+    src: url("/css/kelson_sans_light_ru.ttf");
+}
+
+.header .header-link-block{
+    font-size: 16px;
+}
+
+.cabinet-link p, .connection-types-block img{
+    font-size: 15px;
+}
+
+/*.sweety-prod-img{*/
+    /*margin-bottom: 15px;*/
+/*}*/
+
+
+.sweety-pagination-block{
+    float: right;
+    margin-right: 7.7%;
+}
+
+.scroll-basket-items{
+    width: auto !important;
+}
+
+
+.sweety-reviews-block .col-lg-3{
+    padding: 0;
+}
+
+/* the slides */
+.slick-slide {
+    margin: 0 10px;
+}
+/* the parent */
+.slick-list {
+    margin: 0 -10px;
+}
+
+.basket-block *, .product-item, .header *{
+    box-sizing: unset !important;
+}
+
+.sweety-block-title{
+    text-align: center;
+    font-family: "Kelson Sans Bold";
+    color: rgb(37,136,173);
+    text-shadow: 1px 1px 2px #ffffff;
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+.sweety-reviews-body{
+    padding: 10px 15px;
+    font-size: 14px;
+    font-family: 'Kelson Sans';
+    /*text-shadow: 1px 1px 2px black;*/
+    line-height: 22px !important;
+}
+
+.sweety-address .glyphicon{
+    padding: 10px;
+    background-color: #ffffff;
+    color: #7BBC46;
+    border: 2px solid #2588AD;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.sweety-address{
+    padding: 10px;
+    border: 2px dashed #2588AD;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.sweety-city{
+    margin-bottom: 20px;
+}
+
+
+.sweety-pag .pag-arr-left, .sweety-pag .pag-arr-right{
+    height: 30px !important;
+    padding: 0 16px 0 15px;
+}
+
+.selectpicker{
+    background-image: none;
+    border: 2px solid rgb(37,136,173);
+    padding: 5px;
+    border-radius: 10px;
+    color: rgb(37,136,173);
+    font-family: "Kelson Sans";
+    font-weight: bold;
+}
+
+#fancybox-close{
+    margin-right: -20px;
+}
+
+@media (max-width: 578px) {
+    .sweety-reviews-block{
+        margin: 0 !important;
+    }
+}

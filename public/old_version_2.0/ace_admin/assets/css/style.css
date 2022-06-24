@@ -1,0 +1,180 @@
+body{
+    font-family: 'Calibri','Open Sans' !important;
+}
+.user-select-none {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}
+
+.margin-right-5::before{
+    margin-right: 5px !important;
+}
+
+.margin-right-10{
+    margin-right: 10px !important;
+}
+
+.notifies .alert{
+    position: fixed;
+    top: 50px;
+    right: 15px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.notifies .alert p{
+    margin-right: 20px;
+}
+
+.checkbox-style{
+    display: block;
+    margin: auto !important;
+    transform: scale(1.5);
+}
+
+.checkbox-style2{
+    display: block;
+    margin-right: 10px !important;
+    transform: scale(1.5);
+}
+
+.del-td{
+    width: 37px !important;
+}
+
+.cnt-td{
+    width: 150px !important;
+}
+
+.price-td{
+    width: 100px !important;
+}
+
+.child-option{
+    margin-left: 10px !important;
+}
+
+.parent-option{
+    font-weight: bold !important;
+}
+
+.selected-td{
+    background-color: orange !important;
+}
+
+.hover-table tbody tr:hover{
+    cursor: pointer;
+    background-color: yellow;
+}
+
+.hover-table thead tr th{
+    text-align: center !important;
+}
+
+#product_table thead th, #product_table tbody td{
+    vertical-align: middle;
+}
+
+.btns-block{
+    display: block;
+    padding-bottom: 15px !important;
+}
+
+.small-caps {
+    font-variant: small-caps;
+}
+
+.btn-height{
+    height: 34px !important;
+}
+
+.blur{
+    filter: blur(10px) grayscale(100%);
+}
+
+.chosen-container-single .chosen-single{
+    border-radius: 0px !important;
+    color: #000000!important;
+}
+
+.for-with-label{
+    margin-top: 26px;
+}
+
+.search-input-local{
+    min-width: 310px !important;
+}
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+}
+
+.ajax-loader-new{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
+.table-loader{
+    min-height: 100px !important;
+}
+
+/* Clearable text inputs */
+.clearable__clear{
+    display: none;
+    position: absolute;
+    right:0; top:0;
+    padding: 0 8px;
+    font-style: normal;
+    font-size: 1.2em;
+    user-select: none;
+    cursor: pointer;
+}
+.clearable input::-ms-clear {  /* Remove IE default X */
+    display: none;
+}
+
+.clearable .ace-icon{
+    display: none;
+}
+
+.clearable .fa-spin{
+    right: 20px !important;
+}
+
+.mini-loader{
+    position: absolute;
+    top: 8px;
+    right: 20px;
+}
+
+.ui-autocomplete {
+    max-height: 500px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+}
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete {
+    height: 500px;
+}
+
+.ui-state-focus {
+    color: #fff !important;
+    text-decoration: none !important;
+    background-color: #08c !important;
+    border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    background-image: none !important;
+}
+

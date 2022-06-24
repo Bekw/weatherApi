@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<!--<html prefix="og: http://ogp.me/ns#" prefix="ya: http://webmaster.yandex.ru/vocabularies/">-->
+<html>
+  <head>
+        <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <?  $request = new Zend_Controller_Request_Http();
+          $url = $request->getRequestUri();
+         $admin = new Application_Model_DbTable_Admin();
+		  $pos_get = strpos($url,"?");
+          if($pos_get !== false){
+              $url = substr($url, 0, $pos_get);
+          }
+
+		  if(substr($url, -1) == "/"){
+              $url = substr($url,0,-1);
+          }
+          $pos1 = strpos($url,'page-');
+          if ($pos1 !== false) {
+              $page_num = substr($url,0,$pos1-1);
+              $page_num = substr($page_num,-4);
+              $page = substr($url,$pos1+5);
+          }
+          else{
+              $page_num = substr($url,-4);
+              $page = null;
+          }
+
+          if(isset($this->cityy)){
+              $city_id_cookie = $this->cityy;
+          }
+          else if(isset($_COOKIE['city'])){
+              $city_id_cookie = $_COOKIE['city'];
+          }
+          else{
+              $city_id_cookie = $admin->cityByIp();
+          }
+
+          $pagination_str = "";
+          $pagination_str2 = "";
+          if($page > 1){
+              $pagination_str = "Страница " . $page . " | ";
+              $pagination_str2 = "Страница " . $page . " , ";
+          }
+
+          if($url == "/" || $url == ""){
+              $city_info = $admin->getCityById($city_id_cookie);
+      ?>
+              <title>Bebek.kz — интернет-магазин товаров для новорожденных в Астане</title>
+              <meta name="description" content="Bebek.kz — интернет-магазин товаров для новорожденных с бесплатной и быстрой доставкой по Астане. Большой выбор товаров для маленьких детей в Астане.">
+              <meta name="keywords" content="Bebek, онлайн, интернет, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($page_num == "p100"){
+              $parts = explode("/",$url);
+              $city_info = $admin->getCityIdByUrlName(clearParam($parts[1]));
+      ?>
+              <title>Bebek.kz <?=$city_info['city_name']?> — интернет-магазин товаров для новорожденных в <?=$city_info['city_pred_padezh']?></title>
+              <meta name="description" content="Bebek.kz — интернет-магазин товаров для новорожденных с бесплатной и быстрой доставкой по <?=$city_info['city_pred_padezh']?>. Большой выбор товаров для маленьких детей в <?=$city_info['city_pred_padezh']?>.">
+              <meta name="keywords" content="<?=$pagination_str2?> Bebek, онлайн, интернет, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($page_num == "p101"){
+              $parts = explode("/",$url);
+              $category_group_info = $admin->getCategoryGroupByUrlName(clearParam($parts[1]));
+              $city_info = $admin->getCityById($city_id_cookie);
+              $category_title = str_replace("city_",$city_info['city_pred_padezh'],$category_group_info['category_group_title']);
+              $category_description = str_replace("city_",$city_info['city_pred_padezh'],$category_group_info['category_group_description2']);
+      ?>
+              <title><?=$pagination_str?><?=$category_title?></title>
+              <meta name="description" content="<?=$pagination_str?><?=$category_description?>">
+              <meta name="keywords" content="<?=$pagination_str2?><?=$category_group_info['keywords']?>, <?=$city_info['city_name']?>">
+      <?  }
+          else if($page_num == "p102"){
+              $parts = explode("/",$url);
+              $category_group_info = $admin->getCategoryGroupByUrlName(clearParam($parts[2]));
+              $city_inf = $admin->getCityIdByUrlName(clearParam($parts[1]));
+              $city_info = $admin->getCityById($city_inf['city_id']);
+              $category_title = str_replace("city_",$city_info['city_pred_padezh'],$category_group_info['category_group_title']);
+              $category_description = str_replace("city_",$city_info['city_pred_padezh'],$category_group_info['category_group_description2']);
+      ?>
+              <title><?=$pagination_str?><?=$category_title?></title>
+              <meta name="description" content="<?=$pagination_str?><?=$category_description?>">
+              <meta name="keywords" content="<?=$pagination_str2?><?=$category_group_info['keywords']?>, <?=$city_info['city_name']?>">
+      <?  }
+          else if($page_num == "p103"){
+              $parts = explode("/",$url);
+              $category_info = $admin->getCategoryByUrlName(clearParam($parts[2]));
+              $city_info = $admin->getCityById($city_id_cookie);
+              $category_title = str_replace("city_",$city_info['city_pred_padezh'],$category_info['category_title']);
+              $category_description = str_replace("city_",$city_info['city_pred_padezh'],$category_info['category_description2']);
+
+              $category_title = str_replace("brand_",$category_info['category_name'],$category_title);
+              $category_description = str_replace("brand_",$category_info['category_name'],$category_description);
+      ?>
+              <title><?=$pagination_str?><?=$category_title?></title>
+              <meta name="description" content="<?=$pagination_str?><?=$category_description?>">
+              <meta name="keywords" content="<?=$pagination_str2?><?=$category_info['keywords']?>, <?=$city_info['city_name']?>">
+      <?
+          }
+          else if($page_num == "p104"){
+          $parts = explode("/",$url);
+          $city_inf = $admin->getCityIdByUrlName(clearParam($parts[1]));
+          $category_info = $admin->getCategoryByUrlName(clearParam($parts[3]));
+          $city_info = $admin->getCityById($city_inf['city_id']);
+          $category_title2 = str_replace("city_",$city_info['city_pred_padezh'],$category_info['category_title']);
+          $category_description2 = str_replace("city_",$city_info['city_pred_padezh'],$category_info['category_description2']);
+          $category_title = str_replace("brand_",$category_info['category_name'],$category_title2);
+          $category_description = str_replace("brand_",$category_info['category_name'],$category_description2);
+      ?>
+              <title><?=$pagination_str?><?=$category_title?></title>
+              <meta name="description" content="<?=$pagination_str?><?=$category_description?>">
+              <meta name="keywords" content="<?=$pagination_str2?> <?=$category_info['keywords']?>, <?=$city_info['city_name']?>">
+      <?  }
+          else if($page_num == "p105"){
+              $parts = explode("/",$url);
+              $product_info = $admin->getProductByUrlName(clearParam($parts[2]));
+              $city_info = $admin->getCityById($city_id_cookie);
+              $city_list = $admin->getMainCities();
+              $city_arr = array();
+              if(count($city_list) > 0){
+                  foreach($city_list as $key => $city2){
+                      $check_product_by_city = $admin->checkProductByCity($product_info['product_id'],$city2['city_id']);
+                      if(count($check_product_by_city) > 0){
+                          array_push($city_arr, $city2['city_pred_padezh']);
+                      }
+                  }
+              }
+
+              $city_string = "";
+              if(count($city_arr) > 0){
+                  $i = 0;
+                  foreach($city_arr as $key => $city_arr_item){
+                      $i++;
+                      $city_string .= $city_arr_item;
+                      if($i != count($city_arr)){
+                          $city_string .= ", ";
+                      }
+                  }
+              }
+              $category_title = $product_info['name'] . " — купить в " . $city_string . " — Bebek.kz";
+              $category_description = $product_info['name'] . " — купить " . $product_info['category_name'] . " в " . $city_string ." на Bebek.kz. Лучшие товары для детей и мам в интернет-магазине с бесплатной доставкой!";
+      ?>
+              <title><?=$pagination_str?><?=$category_title?></title>
+              <meta name="description" content="<?=$pagination_str?><?=$category_description?>">
+              <meta name="keywords" content="<?=$pagination_str2?> Bebek, онлайн, интернет, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+              <meta property="og:title" content="<?=$pagination_str?><?=$category_title?>"/>
+              <meta property="og:description" content="<?=$pagination_str?><?=$category_description?>"/>
+              <meta property="og:site_name" content="bebek.kz" />
+              <meta property="og:type" content="website">
+              <meta property="og:url" content="<?=getHttpHost()?><?=$this->url()?>">
+              <meta property="og:image" content="<?=getHttpHost()?>/photo/<?=$product_info['image']?>">
+      <?  }
+          else if($page_num == "p107"){
+              $parts = explode("/",$url);
+              $brand_info = $admin->getBrandByUrlName(clearParam($parts[1]));
+              $city_info = $admin->getCityById($city_id_cookie);
+      ?>
+              <title><?=$pagination_str?> <?=$brand_info['brand_name']?> в <?=$city_info['city_pred_padezh']?> — купить детские товары <?=$brand_info['brand_name']?> в интернет-магазине Bebek.kz</title>
+              <meta name="description" content="<?=$pagination_str?>Купить товары для детей от известного бренда <?=$brand_info['brand_name']?> с бесплатной доставкой по <?=$city_info['city_pred_padezh']?>. Большой выбор и лучшие цены в Казахстане!">
+              <meta name="keywords" content="<?=$pagination_str2?><?=$brand_info['brand_name']?>, Bebek, онлайн, интернет, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($page_num == "p113"){
+              $parts = explode("/",$url);
+              $city_inf = $admin->getCityIdByUrlName(clearParam($parts[1]));
+              $brand_info = $admin->getBrandByUrlName(clearParam($parts[2]));
+              $city_info = $admin->getCityById($city_inf['city_id']);
+      ?>
+              <title><?=$pagination_str?> <?=$brand_info['brand_name']?> в <?=$city_info['city_pred_padezh']?> — купить детские товары <?=$brand_info['brand_name']?> в интернет-магазине Bebek.kz</title>
+              <meta name="description" content="<?=$pagination_str?>Купить товары для детей от известного бренда <?=$brand_info['brand_name']?> с бесплатной доставкой по <?=$city_info['city_pred_padezh']?>. Большой выбор и лучшие цены в Казахстане!">
+              <meta name="keywords" content="<?=$pagination_str2?><?=$brand_info['brand_name']?>, Bebek, онлайн, интернет, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($page_num == "p106"){
+              $admin = new Application_Model_DbTable_Admin();
+              $city_info = $admin->getCityById(1);
+              ?>
+              <title><?=$pagination_str?> Bebek.kz — каталог всех товаров в интернет-магазине товаров для новорожденных в <?=$city_info['city_pred_padezh']?></title>
+              <meta name="description" content="<?=$pagination_str?>Bebek.kz — каталог всех товаров в интернет-магазине товаров для новорожденных с бесплатной и быстрой доставкой по <?=$city_info['city_pred_padezh']?>. Большой выбор товаров для маленьких детей в <?=$city_info['city_pred_padezh']?>.">
+              <meta name="keywords" content="<?=$pagination_str2?>Bebek, онлайн, интернет, магазин, каталог, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($page_num == "p111"){
+              $admin = new Application_Model_DbTable_Admin();
+              $parts = explode("/",$url);
+              $city_info = $admin->getCityIdByUrlName(clearParam($parts[2]));
+              ?>
+              <title><?=$pagination_str?> Bebek.kz — каталог всех товаров в интернет-магазине товаров для новорожденных в <?=$city_info['city_pred_padezh']?></title>
+              <meta name="description" content="<?=$pagination_str?>Bebek.kz — каталог всех товаров в интернет-магазине товаров для новорожденных с бесплатной и быстрой доставкой по <?=$city_info['city_pred_padezh']?>. Большой выбор товаров для маленьких детей в <?=$city_info['city_pred_padezh']?>.">
+              <meta name="keywords" content="<?=$pagination_str2?>Bebek, онлайн, интернет, магазин, каталог, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($page_num == "p114" || $page_num == "p115"){
+              $parts = explode("/",$url);
+              if($page_num == "p114"){
+                  $category_group_info = $admin->getCategoryGroupByUrlName(clearParam($parts[1]));
+                  $category_info = $admin->getCategoryByUrlName(clearParam($parts[2]));
+                  $brand_info = $admin->getBrandByUrlName(clearParam($parts[3]));
+                  $city_info = $admin->getCityById($city_id_cookie);
+              }
+              else{
+                  $city_info = $admin->getCityIdByUrlName(clearParam($parts[1]));
+                  $category_group_info = $admin->getCategoryGroupByUrlName(clearParam($parts[2]));
+                  $category_info = $admin->getCategoryByUrlName(clearParam($parts[3]));
+                  $brand_info = $admin->getBrandByUrlName(clearParam($parts[4]));
+              }
+
+              $category_title = $category_info['category_name'] . " " . $brand_info['brand_name'] . " в " . $city_info['city_pred_padezh'] . " — купить " . $category_group_info['category_group_title2'] . " на Bebek.kz";
+              $category_description = "Купить " . $category_info['category_name'] . " " . $brand_info['brand_name'] . " с бесплатной доставкой по " . $city_info['city_pred_padezh'] . ". Большой выбор и продажа " . $category_info['category_name'] . " " . $brand_info['brand_name'] . " оптом и в розницу в " . $city_info['city_pred_padezh'] . "!";
+
+              ?>
+              <title><?=$pagination_str?><?=$category_title?></title>
+              <meta name="description" content="<?=$pagination_str?><?=$category_description?>">
+              <meta name="keywords" content="<?=$pagination_str2?><?=$category_info['keywords']?>, <?=$city_info['city_name']?>">
+      <?  }
+          else if($page_num == "p201" || $page_num == "p203"){
+              $parts = explode("/",$url);
+              if($page_num == "p201"){
+                  $city_info = $admin->getCityById($city_id_cookie);
+                  $filter_str = $admin->getFilterMetaTag(clearParam($parts[1]), null, $city_info['city_pred_padezh'], $city_info['city_id'], $parts[2]);
+      ?>
+      <?      }
+              else{
+                  $city_info = $admin->getCityIdByUrlName(clearParam($parts[1]));
+                  $filter_str = $admin->getFilterMetaTag(clearParam($parts[2]), null, $city_info['city_pred_padezh'], $city_info['city_id'], $parts[3]);
+              }
+              ?>
+
+              <? if($filter_str == null){
+                      if($page_num == "p201"){
+                          $parts = explode("/",$url);
+                          $category_group_info = $admin->getCategoryGroupByUrlName(clearParam($parts[1]));
+                          $city_info = $admin->getCityById($city_id_cookie);
+                          $category_title = str_replace("city_",$city_info['city_pred_padezh'],$category_group_info['category_group_title']);
+                          $category_description = str_replace("city_",$city_info['city_pred_padezh'],$category_group_info['category_group_description2']); ?>
+                          <title><?=$pagination_str?><?=$category_title?></title>
+                          <meta name="description" content="<?=$pagination_str?><?=$category_description?>">
+                          <meta name="keywords" content="<?=$pagination_str2?><?=$category_group_info['keywords']?>, <?=$city_info['city_name']?>">
+              <?      }
+                      else{
+                          $parts = explode("/",$url);
+                          $category_group_info = $admin->getCategoryGroupByUrlName(clearParam($parts[2]));
+                          $city_inf = $admin->getCityIdByUrlName(clearParam($parts[1]));
+                          $city_info = $admin->getCityById($city_inf['city_id']);
+                          $category_title = str_replace("city_",$city_info['city_pred_padezh'],$category_group_info['category_group_title']);
+                          $category_description = str_replace("city_",$city_info['city_pred_padezh'],$category_group_info['category_group_description2']);
+                          ?>
+                          <title><?=$pagination_str?><?=$category_title?></title>
+                          <meta name="description" content="<?=$pagination_str?><?=$category_description?>">
+                          <meta name="keywords" content="<?=$pagination_str2?><?=$category_group_info['keywords']?>, <?=$city_info['city_name']?>">
+              <?      }
+                      ?>
+                    <meta name="robots" content="noindex, follow"/>
+          <?    }
+                else{
+      ?>
+                      <title><?=$pagination_str?><?=$filter_str['title']?></title>
+                      <meta name="description" content="<?=$pagination_str?><?=$filter_str['description']?>">
+                    <?  if($filter_str['double_filter_bool'] == true){ ?>
+                            <meta name="robots" content="noindex, follow"/>
+                    <?  } ?>
+            <?  }   ?>
+          <?
+          }
+          else if($page_num == "p202" || $page_num == "p204"){
+              $parts = explode("/",$url);
+              if($page_num == "p202"){
+                  $city_info = $admin->getCityById($city_id_cookie);
+                  $filter_str = $admin->getFilterMetaTag(clearParam($parts[1]), clearParam($parts[2]), $city_info['city_pred_padezh'], $city_info['city_id'], $parts[3]);
+              }
+              else{
+                  $city_info = $admin->getCityIdByUrlName(clearParam($parts[1]));
+                  $filter_str = $admin->getFilterMetaTag(clearParam($parts[2]), clearParam($parts[3]), $city_info['city_pred_padezh'], $city_info['city_id'], $parts[4]);
+              } ?>
+
+      <?        if($filter_str == null){
+                      if($page_num == "p202") {
+                          $parts = explode("/", $url);
+                          $category_info = $admin->getCategoryByUrlName(clearParam($parts[2]));
+                          $city_info = $admin->getCityById($city_id_cookie);
+                          $category_title = str_replace("city_", $city_info['city_pred_padezh'], $category_info['category_title']);
+                          $category_description = str_replace("city_", $city_info['city_pred_padezh'], $category_info['category_description2']);
+
+                          $category_title = str_replace("brand_", $category_info['category_name'], $category_title);
+                          $category_description = str_replace("brand_", $category_info['category_name'], $category_description); ?>
+                          <title><?=$pagination_str?><?=$category_title?></title>
+                          <meta name="description" content="<?=$pagination_str?><?=$category_description?>">
+                          <meta name="keywords" content="<?=$pagination_str2?><?=$category_info['keywords']?>, <?=$city_info['city_name']?>">
+      <?              }
+                      else{
+                          $parts = explode("/",$url);
+                          $city_inf = $admin->getCityIdByUrlName(clearParam($parts[1]));
+                          $category_info = $admin->getCategoryByUrlName(clearParam($parts[3]));
+                          $city_info = $admin->getCityById($city_inf['city_id']);
+                          $category_title2 = str_replace("city_",$city_info['city_pred_padezh'],$category_info['category_title']);
+                          $category_description2 = str_replace("city_",$city_info['city_pred_padezh'],$category_info['category_description2']);
+                          $category_title = str_replace("brand_",$category_info['category_name'],$category_title2);
+                          $category_description = str_replace("brand_",$category_info['category_name'],$category_description2);
+                          ?>
+                          <title><?=$pagination_str?><?=$category_title?></title>
+                          <meta name="description" content="<?=$pagination_str?><?=$category_description?>">
+                          <meta name="keywords" content="<?=$pagination_str2?> <?=$category_info['keywords']?>, <?=$city_info['city_name']?>">
+                  <?  } ?>
+                  <meta name="robots" content="noindex, follow"/>
+          <?    }
+                else{ ?>
+                    <title><?=$pagination_str?><?=$filter_str['title']?></title>
+                    <meta name="description" content="<?=$pagination_str?><?=$filter_str['description']?>">
+                    <?  if($filter_str['double_filter_bool'] == true){ ?>
+                            <meta name="robots" content="noindex, follow"/>
+                    <?  } ?>
+          <?    }
+              ?>
+          <?
+          }
+          else if($url == "/offer" || $url == "/offer/"){
+              $admin = new Application_Model_DbTable_Admin();
+              $city_info = $admin->getCityById($city_id_cookie);
+      ?>
+              <title>Акции и новости интернет-магазина товаров для детей — Bebek.kz</title>
+              <meta name="description" content="Актуальные акционные предложения и новости интернет-магазина товаров для новорожденных и мам — Bebek.kz. Будьте в курсе всех акций магазина Bebek.kz!">
+              <meta name="keywords" content="Bebek, онлайн, интернет, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($url == "/shop" || $url == "/shop/"){
+              $admin = new Application_Model_DbTable_Admin();
+              $city_info = $admin->getCityById($city_id_cookie);
+      ?>
+              <title>Контактные данные и адреса магазинов Bebek.kz в Казахстане</title>
+              <meta name="description" content="Контактные телефоны и адреса магазинов детских товаров Bebek.kz в Казахстане. Карты проезда и время работы офлайн магазинов Bebek.kz в Казахстане.">
+              <meta name="keywords" content="Bebek, онлайн, интернет, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($url == "/how-to-order" || $url == "/how-to-order/"){
+              $admin = new Application_Model_DbTable_Admin();
+              $city_info = $admin->getCityById($city_id_cookie);
+      ?>
+              <title>Инструкция по оформлению заказа на товар на сайте Bebek.kz</title>
+              <meta name="description" content="Подробная инструкция по оформлению заказа в интернет-магазине товаров для новорожденных и мам — Bebek.kz. Научитесь быстро и правильно оформлять покупки на Bebek.kz!">
+              <meta name="keywords" content="Bebek, онлайн, интернет, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($url == "/delivery-info" || $url == "/delivery-info/"){
+              $admin = new Application_Model_DbTable_Admin();
+              $city_info = $admin->getCityById($city_id_cookie);
+      ?>
+              <title>Условия доставки и оплаты заказов в интернет-магазине Bebek.kz</title>
+              <meta name="description" content="Подробные условия оплаты и доставки заказов по Казахстану интернет-магазина товаров для новорожденных и мам — Bebek.kz. Условия бесплатной доставки на Bebek.kz!">
+              <meta name="keywords" content="Bebek, онлайн, интернет, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($url == "/prodazha-podguznikov-optom" || $url == "/prodazha-podguznikov-optom/"){
+              $admin = new Application_Model_DbTable_Admin();
+              $city_info = $admin->getCityById($city_id_cookie);
+      ?>
+              <title>Оптовая продажа подгузников и детских товаров — купить оптом товары для новорожденных на Bebek.kz</title>
+              <meta name="description" content="Оптовая продажа качественных подгузников и детских товаров с бесплатной доставкой от интернет-магазина Bebek.kz. Лучшие предложения по продаже детских товаров оптом в Казахстане.">
+              <meta name="keywords" content="Bebek, онлайн, оптовая, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($url == "/detskie-tovary-so-skidkoi" || $url == "/detskie-tovary-so-skidkoi/"){
+              $admin = new Application_Model_DbTable_Admin();
+              $city_info = $admin->getCityById($city_id_cookie);
+      ?>
+              <title>Продажа детские товары по акции — купить со скидкой товары для новорожденных на Bebek.kz</title>
+              <meta name="description" content="Продажа качественные детские товары по акции с бесплатной доставкой от интернет-магазина Bebek.kz. Лучшие предложения по продаже детских товаров оптом в Казахстане.">
+              <meta name="keywords" content="Bebek, онлайн, акция, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($url == "/novye-detskie-tovary" || $url == "/novye-detskie-tovary/"){
+              $admin = new Application_Model_DbTable_Admin();
+              $city_info = $admin->getCityById($city_id_cookie);
+      ?>
+              <title>Продажа новых детских товаров — купить новые детские товары для новорожденных на Bebek.kz</title>
+              <meta name="description" content="Продажа новых детских товаров с бесплатной доставкой от интернет-магазина Bebek.kz. Лучшие предложения по продаже детских товаров оптом в Казахстане.">
+              <meta name="keywords" content="Bebek, онлайн, новинки, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($url == "/feedback-list" || $url == "/feedback-list/"){
+              $admin = new Application_Model_DbTable_Admin();
+              $city_info = $admin->getCityById($city_id_cookie);
+      ?>
+              <title>Отзывы о детских товарах на Bebek.kz</title>
+              <meta name="description" content="Отзывы о детских товарах в интернет-магазине товаров для новорожденных и мам — Bebek.kz.">
+              <meta name="keywords" content="Bebek, онлайн, отзывы, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($url == "/priglasi-druga" || $url == "/priglasi-druga/"){
+              $admin = new Application_Model_DbTable_Admin();
+              $city_info = $admin->getCityById($city_id_cookie);
+          ?>
+              <title>Приглашение друга на покупку в Bebek.kz</title>
+              <meta name="description" content="Приглашай друзей на покупки в Bebek.kz.">
+              <meta name="keywords" content="Bebek, онлайн, приглашение, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($url == "/warranty" || $url == "/warranty/"){
+              $admin = new Application_Model_DbTable_Admin();
+              $city_info = $admin->getCityById($city_id_cookie);
+      ?>
+              <title>Гарантия качества товаров на Bebek.kz</title>
+              <meta name="description" content="Гарантийные документы подтверждающие качество товаров в Bebek.kz.">
+              <meta name="keywords" content="Bebek, онлайн, гарантия, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($url == "/brands" || $url == "/brands/"){
+              $admin = new Application_Model_DbTable_Admin();
+              $city_info = $admin->getCityById($city_id_cookie);
+      ?>
+              <title>Список брендов на Bebek.kz</title>
+              <meta name="description" content="Список брендов всех товаров в Bebek.kz.">
+              <meta name="keywords" content="Bebek, онлайн, бренды, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  }
+          else if($url == "/sweety-p127" || $url == "/sweety-p127/"){
+      ?>
+              <title>Индонезийские подгузники и трусики-подгузники высокого качества Sweety Gold</title>
+              <meta name="description" content="Отзывы, описание, все размеры для оптовой и розничной продажи подгузников Sweety Gold">
+              <meta name="keywords" content="Индонезийский, подгузники, трусики, Sweety, Pantz, Gold, Comfort, купить, розница, оптом, Bebek.kz">
+      <?  }
+		  else{
+              $admin = new Application_Model_DbTable_Admin();
+              $city_info = $admin->getCityById($city_id_cookie);
+      ?>
+              <title>Bebek.kz — интернет-магазин товаров для новорожденных в <?=$city_info['city_pred_padezh']?></title>
+              <meta name="description" content="Bebek.kz — интернет-магазин товаров для новорожденных с бесплатной и быстрой доставкой по <?=$city_info['city_pred_padezh']?>. Большой выбор товаров для маленьких детей в <?=$city_info['city_pred_padezh']?>.">
+              <meta name="keywords" content="Bebek, онлайн, интернет, магазин, товары, Казахстан, <?=$city_info['city_name']?>">
+      <?  } ?>
+
+      <?php
+          $controller_name = Zend_Controller_Front::getInstance()->getRequest()->getControllerName();
+          $action_name = Zend_Controller_Front::getInstance()->getRequest()->getActionName();
+      ?>
+
+    <link rel="icon" href="/css/image/bebek_logo.png" type="image/x-icon">
+<!--    <meta name="google-site-verification" content="aRZXSJZobta3_RWEXd0dVaqdRBpjWP0P19VBy0HXc8I"/>-->
+      <meta name="google-site-verification" content="gZCHUP5BWJDW75xm5MaiDAcz-vA50WOIMpTiygyYsu8" />
+
+      <?
+        if(isset($_GET['gclid']) || isset($_GET['utm_medium']) || isset($_GET['utm_source']) || isset($_GET['utm_campaign']) || isset($_GET['utm_content']) || isset($_GET['utm_term']) || isset($_GET['_openstat'])){
+            setcookie("gclid",$_GET['gclid'],time()+86400);
+            setcookie("utm_medium",$_GET['utm_medium'],time()+86400);
+            setcookie("utm_source",$_GET['utm_source'],time()+86400);
+            setcookie("utm_campaign",$_GET['utm_campaign'],time()+86400);
+            setcookie("utm_term",$_GET['utm_term'],time()+86400);
+            setcookie("_openstat",$_GET['_openstat'],time()+86400);
+            ?>
+            <link rel="canonical" href="<?=getHttpHost()?><?=$this->url()?>/">
+    <? }
+        else if(isset($_GET) && count($_GET) > 0){ ?>
+            <link rel="canonical" href="<?=getHttpHost()?><?=$this->url()?>/">
+    <?  }
+        else if($page_num == "p106" || $page_num == "p111"){ ?>
+
+    <? }
+        else if($url == ""){ ?>
+            <link rel="canonical" href="<?=getHttpHost()?><?=$this->url()?>">
+    <?  }
+       else if($page < 2){
+    ?>
+           <link rel="canonical" href="<?=getHttpHost()?><?=$this->url()?>/" id="canonical_rel">
+    <? } ?>
+
+    <?
+      if(isset($_GET['search_word']) || ($controller_name == "index" && $action_name == "send-for-waiting-good") || ($controller_name == "index" && $action_name == "basket") || ($controller_name == "index" && $action_name == "success-order") || ($controller_name == "index" && $action_name == "success-sended-waiting") || ($controller_name == "index" && $action_name == "permission")){ ?>
+          <meta name="robots" content="noindex, follow"/>
+  <?  } ?>
+
+      <?    if($page > 1){ ?>
+                <meta name="yandex" content="noindex, follow" />,
+      <?    }   ?>
+
+<!--  New design  Begin  -->
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/css/style.css?v=17">
+      <link rel="stylesheet" href="/css/bootstrap-select.css">
+      <link rel="stylesheet" href="/css/slick/slick.css">
+      <link rel="stylesheet" href="/css/slick/slick-theme.css">
+      <link rel="stylesheet" href="/css/font_awesome/css/font-awesome.min.css">
+<!--      <link rel="stylesheet" href="/new-year/newyear.css">-->
+<!--  New Design End  -->
+
+    <link href="/css/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css"/>
+
+<!-- New design Begin -->
+<!--      <script src="/js/jquery-3.2.1.min.js"></script>-->
+      <script src="/js/jquery-1.9.1.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+<!--      <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>-->
+        <? if (isDevelop() == false){?>
+      <?}?>
+      <script src="/js/bootstrap-select.js"></script>
+      <script src="/js/jquery-ui.min.js"></script>
+      <script src="/js/slick/slick.min.js"></script>
+<!--      <script src="/new-year/newyear.js"></script>-->
+<!-- New design End -->
+
+    <script src="/jquery/js/jquery.validate.js"></script>
+    <script src="/js/utils.js?v=3"></script>
+  	<script src="/js/jquery.mousewheel-3.0.4.pack.js"></script>
+    <script src="/js/jquery.fancybox-1.3.4.js"></script>
+    <script src="/js/base64.js"></script>
+    <script src="/js/content.js"></script>
+      <? if (isDevelop() == false){?>
+          <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+          <script src="//yastatic.net/share2/share.js"></script>
+      <?}?>
+      <script type="text/javascript" src="/js/noty-master/js/noty/jquery.noty.js"></script>
+      <script type="text/javascript" src="/js/noty-master/js/noty/layouts/topRight.js"></script>
+      <script type="text/javascript" src="/js/noty-master/js/noty/themes/default.js"></script>
+
+      <!-- input mask -->
+      <script src="/css/assets/js/jquery.maskedinput.js"></script>
+
+      <script src="/js/analytic.js?v=11"></script>
+
+      <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-T6FH46');</script>
+      <!-- End Google Tag Manager -->
+
+
+      <? echo $this->headLink(); ?>
+      <!-- Timer-->
+
+      <?php
+            if($controller_name == "index" && $action_name == "success-order"){ ?>
+                <script>
+                    function getCookie(name) {
+                        var matches = document.cookie.match(new RegExp(
+                            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+                        ));
+                        return matches ? decodeURIComponent(matches[1]) : undefined;
+                    }
+
+                    $(document).ready(function(){
+                        var request_id = getCookie('r_id');
+                        if(request_id > 0){
+                            $.ajax({
+                                type: 'POST',
+                                url: "/admin/index-json/mode/get-user-products-by-request-id/request_id/" + request_id + "/",
+                                success: function(data){
+                                    if(data.result == false){
+                                    }
+                                    else{
+                                        dataLayer = dataLayer || [];
+                                        var arrayProducts = new Array();
+                                        var total = 0;
+                                        if(data.result != null){
+                                            $(data.result).each(function(){
+                                                var obj = new Object();
+                                                obj['product_id'] = this['product_id'];
+                                                obj['name'] = this['name'];
+                                                obj['category'] = this['category_name'];
+                                                obj['price'] = this['price'];
+                                                obj['quantity'] = this['unit'];
+                                                total += parseInt(this['price']) * parseInt(this['unit']);
+                                                arrayProducts.push(obj);
+                                            });
+                                            var v = new Object();
+                                            v['transactionId'] = request_id;
+                                            v['transactionTotal'] = total;
+                                            v['transactionProducts'] = arrayProducts;
+                                            v['event'] = 'trackTrans';
+                                            dataLayer.push(v);
+                                            console.log(dataLayer);
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                        document.cookie = 'r_id=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                        document.cookie = 'session_products=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                    });
+                </script>
+      <?    } ?>
+<!--      <script>-->
+<!--          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+<!--              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+<!--              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+<!--          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');-->
+<!---->
+<!--          ga('create', 'UA-40709183-2', 'bebek.kz');-->
+<!--          ga('require', 'displayfeatures');-->
+<!--          ga('send', 'pageview');-->
+<!--          ga('require', 'ecommerce', 'ecommerce.js');-->
+<!--      </script>-->
+
+      <script type="text/javascript">
+          /* <![CDATA[ */
+          var google_conversion_id = 986802108;
+          var google_custom_params = window.google_tag_params;
+          var google_remarketing_only = true;
+          /* ]]> */
+      </script>
+      <? if (isDevelop() == false){?>
+          <script type="text/javascript" src="https://vk.com/js/api/share.js?90" charset="windows-1251"></script>
+          <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+      <?}?>
+      <script type="text/javascript">
+//          var _kmq = _kmq || [];
+          /*var _kmk = _kmk || '0630307bdae4327d04e67673610dce4a0ee0684c';
+          function _kms(u){
+              setTimeout(function(){
+                  var d = document, f = d.getElementsByTagName('script')[0],
+                      s = d.createElement('script');
+                  s.type = 'text/javascript'; s.async = true; s.src = u;
+                  f.parentNode.insertBefore(s, f);
+              }, 1);
+          }
+          _kms('//i.kissmetrics.com/i.js');
+          _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');*/
+      </script>
+      <? if (isDevelop() == false){?>
+          <noscript>
+              <div style="display:inline;">
+                  <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/986802108/?value=0&amp;guid=ON&amp;script=0"/>
+              </div>
+          </noscript>
+      <?}?>
+
+      <!-- start Mixpanel--> <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+              for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+          mixpanel.init("b912147fcd072e6d45c0e9079a333acb");</script> <!--end Mixpanel -->
+
+            <!-- Facebook Pixel Code-->
+            <script>
+                !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+                    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+                    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                        document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+                fbq('init', '930996543663937');
+                fbq('track', "PageView");</script>
+            <noscript><img height="1" width="1" style="display:none"
+                           src="https://www.facebook.com/tr?id=930996543663937&ev=PageView&noscript=1"
+                    /></noscript>
+        <!-- End Facebook Pixel Code -->
+
+
+    <script src="https://widget.cloudpayments.kz/bundles/cloudpayments"></script>
+      <!-- Global site tag (gtag.js) - Google Ads: 961362377 -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-961362377"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'AW-961362377');
+      </script>
+
+      <?
+      if($action_name == 'index' && is_null($_GET['search_word'])){?>
+          <script>
+              $(document).ready(function () {
+                  var data_id = $('.product-form, .filter-product-form').map( function () {
+                      return $(this).attr('data-commerce-id');
+                  }).get();
+                  const promise = analytic.gtagFunc(data_id);
+                  promise.then(function(value) {
+                      console.log(value); // Успех!
+                      gtag('event', 'page_view', {
+                          'send_to': 'AW-961362377',
+                          'dynx_itemid': value['result']['value']['products_id'].split(','),
+                          'dynx_pagetype': 'home',
+                          'dynx_totalvalue': value['result']['value']['prices'].split(',')
+                      });
+
+                      window.dataLayer = window.dataLayer || [];
+                      dataLayer.push({
+                          'event': 'pageview_fb',
+                          'dynx_itemid': value['result']['value']['products_id'].split(','),
+                          'dynx_pagetype': 'home',
+                          'dynx_totalvalue': value['result']['value']['prices'].split(',')
+                      });
+
+                  }, function(reason) {
+                      console.log(reason); // Ошибка!
+                  });
+              });
+          </script>
+          <?
+      }elseif(isset($_GET['search_word'])){?>
+          <script>
+              $(document).ready(function () {
+                  var data_id = $('.product-form, .filter-product-form').map( function () {
+                      return $(this).attr('data-commerce-id');
+                  }).get();
+                  const promise = analytic.gtagFunc(data_id);
+                  promise.then(function(value) {
+                      console.log(value); // Успех!
+                      gtag('event', 'page_view', {
+                          'send_to': 'AW-961362377',
+                          'dynx_itemid': value['result']['value']['products_id'].split(','),
+                          'dynx_pagetype': 'searchresults',
+                          'dynx_totalvalue': value['result']['value']['prices'].split(',')
+                      });
+
+                      window.dataLayer = window.dataLayer || [];
+                      dataLayer.push({
+                          'event': 'pageview_fb',
+                          'dynx_itemid': value['result']['value']['products_id'].split(','),
+                          'dynx_pagetype': 'searchresults',
+                          'dynx_totalvalue': value['result']['value']['prices'].split(',')
+                      });
+
+                  }, function(reason) {
+                      console.log(reason); // Ошибка!
+                  });
+              });
+          </script>
+          <?
+      }elseif ($action_name == 'product-info'){?>
+          <script>
+              $(document).ready(function () {
+                  var data_id = $('.product-info-product-img').map( function () {
+                      return $(this).attr('data-commerce-id');
+                  }).get();
+                  const promise = analytic.gtagFunc(data_id);
+                  promise.then(function(value) {
+                      console.log(value); // Успех!
+                      gtag('event', 'page_view', {
+                          'send_to': 'AW-961362377',
+                          'dynx_itemid': value['result']['value']['products_id'].split(','),
+                          'dynx_pagetype': 'offerdetail',
+                          'dynx_totalvalue': value['result']['value']['prices'].split(',')
+                      });
+
+                      window.dataLayer = window.dataLayer || [];
+                      dataLayer.push({
+                          'event': 'pageview_fb',
+                          'dynx_itemid': value['result']['value']['products_id'].split(','),
+                          'dynx_pagetype': 'offerdetail',
+                          'dynx_totalvalue': value['result']['value']['prices'].split(',')
+                      });
+
+                  }, function(reason) {
+                      console.log(reason); // Ошибка!
+                  });
+              });
+          </script>
+          <?
+      }elseif ($action_name == 'basket'){?>
+          <script>
+              function gtag_basket(){
+                  const promise = analytic.gtagConversion();
+                  promise.then(function(value) {
+                      console.log(value); // Успех!
+                      if(value['result']['value']['products_id'] != null){
+                          gtag('event', 'page_view', {
+                              'send_to': 'AW-961362377',
+                              'dynx_itemid': value['result']['value']['products_id'].split(','),
+                              'dynx_pagetype': 'conversionintent',
+                              'dynx_totalvalue': eval(value['result']['value']['prices'].split(',').join("+"))
+                          });
+
+                          window.dataLayer = window.dataLayer || [];
+                          dataLayer.push({
+                              'event': 'pageview_fb',
+                              'dynx_itemid': value['result']['value']['products_id'].split(','),
+                              'dynx_pagetype': 'conversionintent',
+                              'dynx_totalvalue': eval(value['result']['value']['prices'].split(',').join("+"))
+                          });
+                      }
+
+                  }, function(reason) {
+                      console.log(reason); // Ошибка!
+                  });
+              }
+          </script>
+          <script>
+              $(document).ready(function () {
+                  const promise = analytic.gtagConversion();
+                  promise.then(function(value) {
+                      console.log(value); // Успех!
+                      if(value['result']['value']['products_id'] != null){
+                          gtag('event', 'page_view', {
+                              'send_to': 'AW-961362377',
+                              'dynx_itemid': value['result']['value']['products_id'].split(','),
+                              'dynx_pagetype': 'conversionintent',
+                              'dynx_totalvalue': eval(value['result']['value']['prices'].split(',').join("+"))
+                          });
+
+                          window.dataLayer = window.dataLayer || [];
+                          dataLayer.push({
+                              'event': 'pageview_fb',
+                              'dynx_itemid': value['result']['value']['products_id'].split(','),
+                              'dynx_pagetype': 'conversionintent',
+                              'dynx_totalvalue': eval(value['result']['value']['prices'].split(',').join("+"))
+                          });
+                      }
+
+                  }, function(reason) {
+                      console.log(reason); // Ошибка!
+                  });
+              });
+          </script>
+          <?
+      }elseif ($action_name == 'make-request' || $action_name == 'pay-by-card'){?>
+          <script>
+              $(document).ready(function () {
+                  const promise = analytic.gtagConversion();
+                  promise.then(function(value) {
+                      console.log(value); // Успех!
+                      if(value['result']['value']['products_id'] != null){
+                          gtag('event', 'page_view', {
+                              'send_to': 'AW-961362377',
+                              'dynx_itemid': value['result']['value']['products_id'].split(','),
+                              'dynx_pagetype': 'conversionintent',
+                              'dynx_totalvalue': eval(value['result']['value']['prices'].split(',').join("+"))
+                          });
+
+                          window.dataLayer = window.dataLayer || [];
+                          dataLayer.push({
+                              'event': 'pageview_fb',
+                              'dynx_itemid': value['result']['value']['products_id'].split(','),
+                              'dynx_pagetype': 'conversionintent',
+                              'dynx_totalvalue': eval(value['result']['value']['prices'].split(',').join("+"))
+                          });
+                      }
+
+                  }, function(reason) {
+                      console.log(reason); // Ошибка!
+                  });
+              });
+          </script>
+              <?
+      } elseif ($action_name == 'success-order'){?>
+          <script>
+              $(document).ready(function () {
+                  const promise = analytic.gtagConversion();
+                  promise.then(function(value) {
+                      console.log(value); // Успех!
+                      if(value['result']['value']['products_id'] != null){
+                          gtag('event', 'page_view', {
+                              'send_to': 'AW-961362377',
+                              'dynx_itemid': value['result']['value']['products_id'].split(','),
+                              'dynx_pagetype': 'conversion',
+                              'dynx_totalvalue': eval(value['result']['value']['prices'].split(',').join("+"))
+                          });
+
+                          window.dataLayer = window.dataLayer || [];
+                          dataLayer.push({
+                              'event': 'pageview_fb',
+                              'dynx_itemid': value['result']['value']['products_id'].split(','),
+                              'dynx_pagetype': 'conversion',
+                              'dynx_totalvalue': eval(value['result']['value']['prices'].split(',').join("+"))
+                          });
+                      }
+
+                  }, function(reason) {
+                      console.log(reason); // Ошибка!
+                  });
+              });
+          </script>
+          <?
+      }else{?>
+          <script>
+              $(document).ready(function () {
+                  var data_id = $('.product-form, .filter-product-form, .another-form').map( function () {
+                      return $(this).attr('data-commerce-id');
+                  }).get();
+                  const promise = analytic.gtagFunc(data_id);
+                  promise.then(function(value) {
+                      console.log(value); // Успех!
+                      if(value['result']['value']['products_id'] != null){
+                          gtag('event', 'page_view', {
+                              'send_to': 'AW-961362377',
+                              'dynx_itemid': value['result']['value']['products_id'].split(','),
+                              'dynx_pagetype': 'other',
+                              'dynx_totalvalue': value['result']['value']['prices'].split(',')
+                          });
+
+                          window.dataLayer = window.dataLayer || [];
+                          dataLayer.push({
+                              'event': 'pageview_fb',
+                              'dynx_itemid': value['result']['value']['products_id'].split(','),
+                              'dynx_pagetype': 'other',
+                              'dynx_totalvalue': value['result']['value']['prices'].split(',')
+                          });
+                      }
+
+                  }, function(reason) {
+                      console.log(reason); // Ошибка!
+                  });
+              });
+          </script>
+          <?
+      }?>
+
+  </head>
+
+
+
+

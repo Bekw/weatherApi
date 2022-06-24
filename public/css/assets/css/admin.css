@@ -1,0 +1,241 @@
+.clearfloat{
+    clear: both;
+}
+
+.tree .tree-item, .tree .tree-folder{
+    border: none !important;
+}
+
+.icon-add{
+    background-image: url("../images/icon16.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 16px;
+    text-decoration: none !important;
+    text-indent: -9999px;
+    width: 16px;
+    background-position: -64px -16px;
+    text-decoration: none !important;
+    vertical-align: top;
+    margin-right: 0;
+    margin-top: 2px;
+}
+
+.tree-item a{
+    text-decoration: none;
+}
+
+.blur {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.modal{
+    top: 20% !important;
+}
+
+.my-modal{
+    display: block;
+    height: auto;
+    left: 600px;
+    position: absolute;
+    top: 219px;
+    width: 300px;
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    z-index: 1050 !important;
+}
+
+.my-modal form{
+    margin: 0;
+}
+.my-modal-header{
+    padding: 0;
+}
+
+.my-modal-header span{
+    padding: 0;
+    line-height: 0;
+}
+
+.my-modal-header span .header-title{
+    border-width: 0 0 1px;
+    min-height: 15px;
+    padding-left: 10px;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: linear-gradient(to bottom, #FFFFFF, #EEEEEE) repeat-x scroll 0 0 #F8F8F8;
+    border-color: #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-style: solid;
+    color: #669FC7;
+    position: relative;
+}
+
+.my-modal-header span .header-title h4{
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 10px;
+}
+
+.my-dialog-message{
+    display: block;
+    height: auto;
+    max-height: none;
+    min-height: 39px;
+    width: auto;
+    background: none repeat scroll 0 center rgba(0, 0, 0, 0);
+    border: 0 none;
+    overflow: auto;
+    padding: 0.5em 1em;
+    position: relative;
+}
+
+.my-dialog-message p{
+    color: #393939;
+    font-family: 'Open Sans' !important;
+    font-size: 16px;
+}
+
+.my-modal-footer{
+    background-color: #EFF3F8;
+    border-top: 1px solid #E4E9EE;
+    margin-top: 0.5em;
+    padding: 0.5em 1em 0.5em 0.4em;
+    clear: both;
+}
+
+.my-modal-buttons{
+    float: right;
+}
+
+.left-block{
+    width: 200px;
+    float: left;
+    margin-top: 10px;
+}
+
+.left-block p{
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.right-block{
+    width: 300px;
+    float: left;
+    margin-top: 10px;
+}
+
+.right-block input{
+    width: 244px;
+}
+.right-block select{
+    width: 258px;
+}
+
+.icon-remove,.icon-add,.icon-edit{
+    cursor: pointer;
+}
+
+.hidden-product{
+    display: none;
+}
+
+.product_table_list {
+    margin-bottom: 5px;
+    /*border: 1px solid black;*/
+}
+
+.error{
+    color: red !important;
+}
+
+.hidden{
+    display: none;
+}
+.ajax-loader{
+    background: url(/css/image/ajax-loader.gif);
+    height: 32px;
+    width: 32px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+}
+
+@font-face {
+    font-family: 'Kelson Sans';
+
+    src: url("/css/kelson_sans_regular_ru.ttf");
+}
+@font-face{
+    font-family: 'Kelson Sans Bold';
+    src: url("/css/kelson_sans_bold_ru.ttf");
+}
+@font-face {
+    font-family: 'Kelson Sans Light';
+    src: url("/css/kelson_sans_light_ru.ttf");
+}
+
+.table-local th, .table-local td {
+    padding: 4px 6px !important;
+}
+.table-bordered th, .table-bordered td {
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.btn-mini2 {
+    padding: 0 5px;
+    line-height: 25px;
+    border-width: 2px;
+    font-size: 12px;
+}
+.margin-right-10{
+    margin-right: 10px;
+}
+.margin-bottom-10{
+    margin-bottom: 10px;
+}
+.without-label{
+    margin-top: 25px;
+}
+.form-margin-b{
+    margin-bottom: 15px;
+}
+.text-right{
+    text-align: right !important;
+}
+.text-left{
+    text-align: left !important;
+}
+.text-center{
+    text-align: center !important;
+}
+.icon-ajax:before {
+    content: url("/css/image/ajax-loader2.gif");
+}
+.no-float{
+    float: none !important;
+}
+.bgred{
+    background-color: red !important;
+    color: #ffffff !important;
+}
+.bgred *{
+    color: #ffffff !important;
+}
+.bggreen{
+    background-color: #87b87f!important;
+    color: #ffffff !important;
+}
+.bggreen *{
+    color: #ffffff !important;
+}
