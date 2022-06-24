@@ -38,7 +38,11 @@ class DictController extends ParentController{
         $city_name = $this->_getParam('city_name', '');
         $api_key = 'ca91f038697a1a3bcb5645c1c784b3e8';
 
+        log_weather_api('POST DATA: ', $city_name);
+
         $url = 'https://api.openweathermap.org/data/2.5/weather?q='.$city_name.'&appid='.$api_key;
+
+        log_weather_api('GET DATA: ', file_get_contents($url));
 
         $weather_data = json_decode(file_get_contents($url), true);
 

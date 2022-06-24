@@ -180,6 +180,15 @@ function log_unisender($what, $error, $status = "ERROR"){
     }
 }
 
+function log_weather_api($what, $error, $status = "OK"){
+    $file = $_SERVER['DOCUMENT_ROOT']."/log/log_api_weather/".date("Y.m.d H")."-00.txt";
+    if (file_exists($file)){
+        file_put_contents($file, date("d.m.y H:i:s").":" .$what." ".$status." ". $error ."\n\n", FILE_APPEND);
+    }  else {
+        file_put_contents($file, date("d.m.y H:i:s").":" .$what." ".$status." ". $error ."\n\n", FILE_APPEND);
+    }
+}
+
 function send_to_unisender($post, $type){
     $url = '';
     if($type == 1){
